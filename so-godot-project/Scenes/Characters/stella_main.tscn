@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://u36mbm1jhasr"]
 
 [ext_resource type="Script" path="res://Scripts/Player/stella_script.gd" id="1_bufls"]
-[ext_resource type="Texture2D" uid="uid://davvmxucreqvj" path="res://Assets/Images/Sprites/stella-outline2.png" id="2_veddg"]
+[ext_resource type="Texture2D" uid="uid://0c7e8e4ukfnq" path="res://Scripts/Managers/stella-outline2.png" id="2_aami2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f77ei"]
 size = Vector2(12, 29)
@@ -11,7 +11,7 @@ script = ExtResource("1_bufls")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -17)
-texture = ExtResource("2_veddg")
+texture = ExtResource("2_aami2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -15)

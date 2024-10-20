@@ -1,7 +1,6 @@
 extends AudioStreamPlayer
 
 const menu_music = preload("res://Assets/Audio/menu_loop.mp3")
-
 const game_music_1 = preload("res://Assets/Audio/game_music1.mp3")
 
 func play_music(music: AudioStream, volume = -12.0):
@@ -12,6 +11,8 @@ func play_music(music: AudioStream, volume = -12.0):
 	volume_db = volume
 	play()
 
+
+#quick funcions so can be called wherever 
 func play_menu_music():
 	play_music(menu_music)
 
