@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://ius8h8kghj7e"]
+
+[ext_resource type="Texture2D" uid="uid://clx7li4ydg16h" path="res://Assets/Images/UI/1-Green_640x360.png" id="1_1u5gk"]
+[ext_resource type="Script" path="res://Scripts/UI/menu_main.gd" id="1_b4qor"]
+[ext_resource type="FontFile" uid="uid://dysr5xuf6dgqg" path="res://Assets/Fonts/Matemasie-Regular.ttf" id="2_ae6kj"]
+[ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="3_esfwa"]
+[ext_resource type="Script" path="res://Scripts/UI/main_menu_btn.gd" id="4_2wlai"]
+
+[node name="MenuMain" type="Node2D"]
+script = ExtResource("1_b4qor")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1156.0
+offset_bottom = 650.0
+texture = ExtResource("1_1u5gk")
+
+[node name="Main Menu" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main Menu"]
+offset_left = 241.0
+offset_top = 133.0
+offset_right = 932.0
+offset_bottom = 300.0
+theme_override_colors/default_color = Color(1, 0.615686, 0, 1)
+theme_override_colors/font_selected_color = Color(1, 0.615686, 0, 1)
+theme_override_constants/outline_size = 31
+theme_override_fonts/normal_font = ExtResource("2_ae6kj")
+theme_override_font_sizes/normal_font_size = 100
+text = " Spaced Out"
+tab_size = 5
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Main Menu"]
+offset_left = 190.0
+offset_top = 238.0
+offset_right = 952.0
+offset_bottom = 421.0
+theme_override_colors/default_color = Color(1, 0.615686, 0, 1)
+theme_override_colors/font_selected_color = Color(1, 0.615686, 0, 1)
+theme_override_constants/text_highlight_v_padding = 0
+theme_override_constants/outline_size = 31
+theme_override_fonts/normal_font = ExtResource("3_esfwa")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = " [center]An Intergalatic Journey To Find Who...? [center]"
+tab_size = 5
+
+[node name="Button" type="Button" parent="Main Menu"]
+offset_left = 456.0
+offset_top = 423.0
+offset_right = 645.0
+offset_bottom = 517.0
+theme_override_colors/font_hover_color = Color(0.83, 0.345833, 0, 1)
+theme_override_colors/font_color = Color(1, 0.615686, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_esfwa")
+theme_override_font_sizes/font_size = 36
+text = "Start >"
+script = ExtResource("4_2wlai")

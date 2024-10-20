@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Spaced Out"
-run/main_scene="res://Scenes/Stages/World-1/Level-1/main_w_1_l_1.tscn"
+run/main_scene="res://Scenes/UI/menu_main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+AudioController="*res://Scenes/Other/audio_controller.tscn"
 
 [input]
 

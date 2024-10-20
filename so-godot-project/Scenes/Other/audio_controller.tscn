@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://brg2cw0gyo06f"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/audio_controller.gd" id="1_vmnql"]
+
+[node name="AudioController" type="AudioStreamPlayer"]
+volume_db = -13.058
+script = ExtResource("1_vmnql")
