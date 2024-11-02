@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu1ph2x3j82dl"
-path="res://.godot/imported/stella-outline.png-8e3ef2e8fe782ff0bf1d055ed9365646.ctex"
+uid="uid://djeo8l0icnmer"
+path="res://.godot/imported/stella-Sheet.png-8694c8759f2747e91fa9e33fda561c1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Sprites/stella-outline.png"
-dest_files=["res://.godot/imported/stella-outline.png-8e3ef2e8fe782ff0bf1d055ed9365646.ctex"]
+source_file="res://Assets/Images/Sprites/stella-Sheet.png"
+dest_files=["res://.godot/imported/stella-Sheet.png-8694c8759f2747e91fa9e33fda561c1c.ctex"]
 
 [params]
 
