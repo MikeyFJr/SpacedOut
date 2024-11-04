@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckpdy5x43frkq"]
+
+[ext_resource type="Script" path="res://Scripts/UI/menu_cutscene.gd" id="1_bawoy"]
+[ext_resource type="PackedScene" uid="uid://brht2rcan4mow" path="res://Scenes/UI/textbox.tscn" id="1_ulqdo"]
+[ext_resource type="Texture2D" uid="uid://clx7li4ydg16h" path="res://Assets/Images/UI/1-Green_640x360.png" id="2_xdyv1"]
+
+[node name="menu_cutscene" type="Node2D"]
+scale = Vector2(1.79956, 1.79925)
+script = ExtResource("1_bawoy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.00052, 1.00139)
+texture = ExtResource("2_xdyv1")
+
+[node name="Textbox" parent="." instance=ExtResource("1_ulqdo")]

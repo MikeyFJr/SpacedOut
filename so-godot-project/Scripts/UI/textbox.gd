@@ -12,6 +12,8 @@ const DEBUG = true
 
 @onready var tween = get_tree().create_tween()
 
+signal text_finished
+
 enum State {
 	READY,
 	READING,
@@ -26,9 +28,7 @@ func _ready():
 	hide_textbox()
 #	queuing text, but this can be done different function but good for now for testing
 #all the queue needs is ["text","speaker name"]
-	queue_text(["And so we find ourselves at a new page","Narrator"])
-	queue_text(["Wait who are you?","Stella"])
-	queue_text(["Oop. And we continue....","Narrator"])
+	
 	
 	
 func _process(delta):
@@ -36,6 +36,7 @@ func _process(delta):
 		State.READY:
 			if !text_queue.is_empty():
 				display_text()
+			
 		State.READING:
 			if Input.is_action_just_pressed("ui_accept"):
 				label.visible_ratio = 1.0
@@ -44,8 +45,12 @@ func _process(delta):
 				change_state(State.FINISHED)
 		State.FINISHED:
 			if Input.is_action_just_pressed("ui_accept"):
-				change_state(State.READY)
-				hide_textbox()
+				if text_queue.is_empty():
+					hide_textbox()
+					emit_signal("text_finished")  # Only emit when all lines are done
+				else:
+					change_state(State.READY)
+					hide_textbox()
 
 func hide_textbox():
 	end_symbol.text=""
@@ -76,8 +81,10 @@ func display_text():
 	end_symbol.text = "..." 
 	
 func on_tween_finished():
+	
 	end_symbol.text = "➤"
 	change_state(State.FINISHED)
+	
 	
 func change_state(next_state):
 	current_state = next_state
