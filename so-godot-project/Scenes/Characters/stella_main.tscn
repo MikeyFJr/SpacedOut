@@ -98,7 +98,7 @@ script = ExtResource("1_bufls")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(37, -43)
-zoom = Vector2(5, 5)
+zoom = Vector2(4, 4)
 
 [node name="PlayerAnimator" type="Node2D" parent="." node_paths=PackedStringArray("player_controller", "animation_player", "sprite")]
 script = ExtResource("2_f74gj")

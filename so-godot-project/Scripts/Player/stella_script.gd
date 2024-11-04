@@ -62,6 +62,9 @@ func _ready() -> void:
 func _physics_process(delta) -> void:
 	#anim_player.play("idle")
 	# Get inputs
+	#print("velocity:",velocity.y)
+	if GlobalState.dialogue_active:
+		return
 	horizontal_input = Input.get_axis("move_left", "move_right")
 	var jump_attempted := Input.is_action_just_pressed("jump")
 	var boost_attempted :=Input.is_action_just_pressed("boost")

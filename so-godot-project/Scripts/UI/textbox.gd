@@ -36,6 +36,7 @@ func _process(delta):
 		State.READY:
 			if !text_queue.is_empty():
 				display_text()
+				#get_tree().paused = true
 			
 		State.READING:
 			if Input.is_action_just_pressed("ui_accept"):
@@ -53,8 +54,10 @@ func _process(delta):
 					hide_textbox()
 
 func hide_textbox():
+	GlobalState.dialogue_active = false
 	end_symbol.text=""
 	label.text = ""
+	#get_tree().paused = false
 	textbox_container.hide()
 	speaker_container.hide()
 
@@ -66,6 +69,7 @@ func show_textbox():
 	speaker_container.show()
 
 func display_text():
+	GlobalState.dialogue_active = true
 	tween = get_tree().create_tween()
 	var next = text_queue.pop_front()
 	var next_text = next[0]
