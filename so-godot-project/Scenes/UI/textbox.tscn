@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://brht2rcan4mow"]
+
+[ext_resource type="Script" path="res://Scripts/UI/textbox.gd" id="1_a3xds"]
+[ext_resource type="StyleBox" uid="uid://s0l121588gtm" path="res://Assets/UI/textbox-style.tres" id="1_opbol"]
+[ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="2_0xlig"]
+[ext_resource type="LabelSettings" uid="uid://digfdl3delti3" path="res://Assets/UI/textbox_text.tres" id="3_cigcx"]
+[ext_resource type="LabelSettings" uid="uid://bx85h0aolsqtl" path="res://Assets/UI/textbox_speaker.tres" id="4_o8ui2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2axg"]
+bg_color = Color(0.0922767, 0.31, 0.0434, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="Textbox" type="CanvasLayer"]
+script = ExtResource("1_a3xds")
+
+[node name="TextContainer" type="MarginContainer" parent="."]
+offset_left = 68.0
+offset_top = 415.0
+offset_right = 1071.0
+offset_bottom = 624.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Panel" type="Panel" parent="TextContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_opbol")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 8
+
+[node name="Panel" type="Panel" parent="TextContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="TextContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.65
+theme_override_fonts/font = ExtResource("2_0xlig")
+theme_override_font_sizes/font_size = 31
+text = "Placeholder text ... ... ..."
+label_settings = ExtResource("3_cigcx")
+autowrap_mode = 3
+
+[node name="Continue" type="Label" parent="TextContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(35, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0xlig")
+theme_override_font_sizes/font_size = 36
+text = "➤"
+label_settings = ExtResource("4_o8ui2")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="SpeakerContainer" type="MarginContainer" parent="."]
+offset_left = 92.0
+offset_top = 363.0
+offset_right = 346.0
+offset_bottom = 459.0
+
+[node name="Panel" type="Panel" parent="SpeakerContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a2axg")
+
+[node name="MarginContainer" type="MarginContainer" parent="SpeakerContainer/Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 19.0
+offset_right = 230.0
+offset_bottom = 74.0
+
+[node name="Label" type="Label" parent="SpeakerContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0xlig")
+theme_override_font_sizes/font_size = 36
+text = "Speaker"
+label_settings = ExtResource("4_o8ui2")
+horizontal_alignment = 1

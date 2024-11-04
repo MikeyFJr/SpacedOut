@@ -4,6 +4,36 @@
 [ext_resource type="Script" path="res://Scripts/Player/player_animator.gd" id="2_f74gj"]
 [ext_resource type="Texture2D" uid="uid://djeo8l0icnmer" path="res://Assets/Images/Sprites/stella-Sheet.png" id="3_7k3jq"]
 
+[sub_resource type="Animation" id="Animation_g6eeq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_628p3"]
+resource_name = "fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(64, 80, 32, 40)]
+}
+
 [sub_resource type="Animation" id="Animation_fgork"]
 resource_name = "idle"
 loop_mode = 1
@@ -20,8 +50,8 @@ tracks/0/keys = {
 "values": [Rect2(0, 40, 32, 40), Rect2(32, 40, 32, 40)]
 }
 
-[sub_resource type="Animation" id="Animation_g6eeq"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_uqvha"]
+resource_name = "jump"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -32,7 +62,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Rect2(0, 0, 0, 0)]
+"values": [Rect2(0, 80, 32, 40)]
 }
 
 [sub_resource type="Animation" id="Animation_snj35"]
@@ -51,36 +81,6 @@ tracks/0/keys = {
 "values": [Rect2(0, 0, 32, 40), Rect2(32, 0, 32, 40), Rect2(64, 0, 32, 40), Rect2(96, 0, 32, 40)]
 }
 
-[sub_resource type="Animation" id="Animation_uqvha"]
-resource_name = "jump"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 80, 32, 40)]
-}
-
-[sub_resource type="Animation" id="Animation_628p3"]
-resource_name = "fall"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(64, 80, 32, 40)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ektqo"]
 _data = {
 "RESET": SubResource("Animation_g6eeq"),
@@ -92,7 +92,6 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2imu"]
 radius = 8.0
-height = 34.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_bufls")
@@ -119,5 +118,5 @@ texture = ExtResource("3_7k3jq")
 region_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -17)
+position = Vector2(0, -16)
 shape = SubResource("CapsuleShape2D_g2imu")

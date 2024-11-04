@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://digfdl3delti3"]
+
+[ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="1_adnei"]
+
+[resource]
+font = ExtResource("1_adnei")
+font_size = 31
+font_color = Color(0, 0, 0, 1)
+shadow_size = 0
+shadow_color = Color(0.13, 0.13, 0.13, 0.427451)
+shadow_offset = Vector2(2, 2)
