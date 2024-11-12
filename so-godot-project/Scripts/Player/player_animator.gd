@@ -6,6 +6,8 @@ extends Node2D
 
 func _process(_delta):
 	# flips the character sprite
+	if GlobalState.dialogue_active:
+		return
 	if player_controller.horizontal_input == 1:
 		sprite.flip_h = false
 	elif player_controller.horizontal_input == -1:

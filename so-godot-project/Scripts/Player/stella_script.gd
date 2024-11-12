@@ -59,6 +59,9 @@ func _ready() -> void:
 	add_child(coyote_timer)
 	coyote_timer.timeout.connect(coyote_timeout)
 
+func is_player() -> bool:
+	return true
+	
 func _physics_process(delta) -> void:
 	#anim_player.play("idle")
 	# Get inputs

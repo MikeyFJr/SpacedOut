@@ -51,7 +51,7 @@ func _process(delta):
 					emit_signal("text_finished")  # Only emit when all lines are done
 				else:
 					change_state(State.READY)
-					hide_textbox()
+					#hide_textbox()
 
 func hide_textbox():
 	GlobalState.dialogue_active = false
@@ -60,26 +60,31 @@ func hide_textbox():
 	#get_tree().paused = false
 	textbox_container.hide()
 	speaker_container.hide()
+	
 
 func queue_text(next_text):
 	text_queue.push_back(next_text)
 
 func show_textbox():
+	GlobalState.dialogue_active = true
 	textbox_container.show()
 	speaker_container.show()
 
 func display_text():
-	GlobalState.dialogue_active = true
+	if text_queue.is_empty():
+		return  
 	tween = get_tree().create_tween()
 	var next = text_queue.pop_front()
 	var next_text = next[0]
 	var next_speak = next[1]
 	
 	label.text = next_text
+	if DEBUG : print(label.text,"=text")
 	speaker_label.text = next_speak
-	#label.visible_ratio = 0.0
-	change_state(State.READING)
+	label.visible_ratio = 0.0
+	
 	show_textbox()
+	change_state(State.READING)
 	tween.tween_property(label, "visible_characters", len(next_text), len(next_text) * CHAR_READ_RATE).from(0).finished
 	tween.connect("finished", on_tween_finished)
 	end_symbol.text = "..." 
@@ -99,9 +104,3 @@ func change_state(next_state):
 			if DEBUG:print("Changing state to: State.READING")
 		State.FINISHED:
 			if DEBUG:print("Changing state to: State.FINISHED")
-
-
-	
-	
-	
-	

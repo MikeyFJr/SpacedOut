@@ -5,8 +5,8 @@ extends Node2D
 func _ready():
 	# For now queueing it all here
 	textbox.queue_text(["And so we find ourselves at a new page","Narrator"])
-	textbox.queue_text(["Wait who are you?","Stella"])
-	textbox.queue_text(["Oop. And we continue....","Narrator"])
+	#textbox.queue_text(["Wait who are you?","Stella"])
+	#textbox.queue_text(["Oop. And we continue....","Narrator"])
 	textbox.show_textbox() 
 	textbox.connect("text_finished", _on_text_finished)
 

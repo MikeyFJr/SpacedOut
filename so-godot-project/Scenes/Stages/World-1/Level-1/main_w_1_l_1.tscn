@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://p0ysiuhvmvop"]
+[gd_scene load_steps=9 format=4 uid="uid://p0ysiuhvmvop"]
 
 [ext_resource type="Script" path="res://Scripts/UI/main_w_1_l_1.gd" id="1_rfusk"]
 [ext_resource type="Texture2D" uid="uid://u2cgca400ftw" path="res://Assets/Images/Backgrounds/underground_background - Copy.png" id="1_yqj6x"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://u36mbm1jhasr" path="res://Scenes/Characters/stella_main.tscn" id="4_hngv2"]
 [ext_resource type="TileSet" uid="uid://nxxl82gpqgad" path="res://Assets/Images/Tilesets/lab_tiles.tres" id="5_qcowo"]
 [ext_resource type="PackedScene" uid="uid://brht2rcan4mow" path="res://Scenes/UI/textbox.tscn" id="6_f6ub1"]
+[ext_resource type="PackedScene" uid="uid://c3ciylebfirms" path="res://Scenes/Interactables/collectable_item.tscn" id="8_bs878"]
 
 [node name="main_w1_l1" type="Node2D"]
 script = ExtResource("1_rfusk")
@@ -44,6 +45,7 @@ texture = ExtResource("3_5dde7")
 position = Vector2(36, 176)
 
 [node name="Textbox" parent="." instance=ExtResource("6_f6ub1")]
+unique_name_in_owner = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("5_qcowo")
@@ -74,3 +76,6 @@ tile_set = ExtResource("5_qcowo")
 z_index = 1
 tile_map_data = PackedByteArray("AAAQAAsAAAARABMAAAAYAAsAAAARABMAAAAJAAsAAAARABMAAAARAAsAAAATABMAAAAdAAsAAAATABMAAAANAAsAAAATABMAAAAGAAsAAAATABMAAAASAAsAAAASABMAAAAXAAsAAAASABMAAAAaAAsAAAASABMAAAASAAoAAAAPABIAAAAZAAoAAAAbAAsAAAAKAAoAAAAPABIAAAAMAAoAAAAPABIAAAAFAAoAAAAOABIAAAAcAAoAAAAgAA4AAAAWAAoAAAAhAA4AAAAXAAoAAAAgAA4AAAAZAAgAAAAbAA4AAAAIAAoAAAAYAAsAAAAHAAkAAAAVAA0AAAAiAAoAAAAVAAsAAAAkAAoAAAAcAA0AAAAIAAQAAAAHAA0AAAAOAAoAAAAHAA0AAAAjAAkAAAAHAA4AAAAnAAoAAAAUAAgAAAApAAoAAAAXAAkAAAA=")
 tile_set = ExtResource("5_qcowo")
+
+[node name="Collectable_item" parent="." instance=ExtResource("8_bs878")]
+position = Vector2(320, 162)
