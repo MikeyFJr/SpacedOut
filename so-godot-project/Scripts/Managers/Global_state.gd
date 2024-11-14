@@ -4,9 +4,12 @@ extends Node
 var boosts_available = 10
 var dashes_available = 10
 #maybe this can be changed at the begginning of each level calling it?
-var dialogue_active = false #used to "pause" movement while dialogue happening
-							#since get tree pause() will stop music 
-
+var paused = false #used to "pause" movement while dialogue happening
+							#since get tree pause() will stop music and i believe process.
+func setPaused(pause):
+	paused = pause
+	AudioController.set_paused(pause) 
+	
 #tracking item pickup 
 #were using array of items with predefined enum of them so we dont accidentally do it twice.
 #This also means defining them here first

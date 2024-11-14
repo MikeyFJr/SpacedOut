@@ -28,8 +28,10 @@ func _input(event):
 			STATE.MENU:
 				if menu.visible == true:
 					animation_player.play("hide_menu")
+					GlobalState.setPaused(false)
 				else:
 					animation_player.play("show_menu")
+					GlobalState.setPaused(true)
 
 func set_description(item):
 	#GlobalState.item_data[item]["dialogue"] - how it was accessed in diff script

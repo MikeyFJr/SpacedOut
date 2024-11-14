@@ -68,7 +68,7 @@ func is_player() -> bool:
 func _physics_process(delta) -> void:
 	# Get inputs
 	#print("velocity:",velocity.y)
-	if GlobalState.dialogue_active:
+	if GlobalState.paused:
 		return
 		
 	horizontal_input = Input.get_axis("move_left", "move_right")

@@ -54,7 +54,7 @@ func _process(delta):
 					#hide_textbox()
 
 func hide_textbox():
-	GlobalState.dialogue_active = false
+	GlobalState.paused = false
 	end_symbol.text=""
 	label.text = ""
 	#get_tree().paused = false
@@ -66,7 +66,7 @@ func queue_text(next_text):
 	text_queue.push_back(next_text)
 
 func show_textbox():
-	GlobalState.dialogue_active = true
+	GlobalState.paused = true
 	textbox_container.show()
 	speaker_container.show()
 
