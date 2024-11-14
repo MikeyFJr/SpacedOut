@@ -40,8 +40,11 @@ var coyote_timer : Timer # Reference to the coyote timer
 var coyote_jump_available := true
 var horizontal_input
 
+var is_dashing = false
+const DASH_SPEED = 2
+var can_dash = true
 
-
+@onready var dash_duration_timer = $DashDurationTimer
 
 #@onready var anim_player: AnimationPlayer = $AnimationPlayer
 
@@ -63,68 +66,69 @@ func is_player() -> bool:
 	return true
 	
 func _physics_process(delta) -> void:
-	#anim_player.play("idle")
 	# Get inputs
 	#print("velocity:",velocity.y)
 	if GlobalState.dialogue_active:
 		return
+		
 	horizontal_input = Input.get_axis("move_left", "move_right")
 	var jump_attempted := Input.is_action_just_pressed("jump")
-	var boost_attempted :=Input.is_action_just_pressed("boost")
+	var boost_attempted := Input.is_action_just_pressed("boost") 
+	var dash_attempted = (horizontal_input != 0 and Input.is_action_just_pressed("dash"))
 
-	# Add the gravity and handle jumping
+	# Boost Jump (Up + Boost)
+	if boost_attempted and GlobalState.boosts_available > 0 :
+		if DEBUG: print("Boost jump triggered")
+		velocity.y = BOOST_VELOCITY
+		GlobalState.boosts_available -= 1
+		if DEBUG: print("Boosts available ", GlobalState.boosts_available)
+
+	# Dash
+	elif dash_attempted and GlobalState.dashes_available > 0:
+#		can dash coulddd be used to limit the amt of times dashed, but i think we are going to limit that
+#		with an actual number, so maybe a puzzle requires you to use two dashes at once?
+#add in a global var for number of dashes
+		is_dashing = true
+		#can_dash = false
+		direction = sign(horizontal_input)
+		dash_duration_timer.start()
+		GlobalState.dashes_available -= 1
+		if DEBUG: print("Dash triggered, Dashes available ",GlobalState.dashes_available)
+
+	# Apply jump or buffered jump
 	if jump_attempted or input_buffer.time_left > 0:
-		if coyote_jump_available: # If jumping on the ground
-			velocity.y = JUMP_VELOCITY
+		if is_on_floor() or coyote_jump_available:
+			velocity.y = -450.0
 			coyote_jump_available = false
-		elif is_on_wall() and horizontal_input != 0: # If jumping off a wall
-			velocity.y = WALL_JUMP_VELOCITY
-			velocity.x = WALL_JUMP_PUSHBACK * -sign(horizontal_input)
-		elif jump_attempted: # Queue input buffer if jump was attempted
+		elif is_on_wall() and horizontal_input != 0:
+			velocity.y = -300.0
+			velocity.x = 300.0 * -sign(horizontal_input)
+		elif jump_attempted:
 			input_buffer.start()
-	
-	if boost_attempted and GlobalState.boosts_available >0 :
-		if DEBUG: print("Boost tried")
-		velocity.y += BOOST_VELOCITY
-		GlobalState.boosts_available -=1
-		if DEBUG: print("Boosts available ",GlobalState.boosts_available)
 
-	# Shorten jump if jump key is released
-	if Input.is_action_just_released("jump") and velocity.y < 0:
-		velocity.y = JUMP_VELOCITY / 4
-
-	
-	# Apply gravity and reset coyote jump
+	# Gravity and floor reset
 	if is_on_floor():
 		coyote_jump_available = true
+		#can_dash = true 
 		coyote_timer.stop()
+	elif not is_dashing:
+		velocity.y += get_gravity_now() * delta
+		if coyote_jump_available and coyote_timer.is_stopped():
+			coyote_timer.start()
+
+	# Apply horizontal movement, only if not dashing
+	if is_dashing:
+		velocity.x = direction * SPEED * DASH_SPEED
 	else:
-		if coyote_jump_available:
-			if coyote_timer.is_stopped():
-				coyote_timer.start()
-		velocity.y += get_gravity_now(horizontal_input) * delta
-
-	# HYandle horizontal motion and friction
-	var floor_damping := 1.0 if is_on_floor() else 0.5 # Set floor damping, friction is less when in air
-
-	if horizontal_input and jump_attempted and not boost_attempted:
-		velocity.x = (horizontal_input * SPEED/4) 
-	elif horizontal_input:
-		velocity.x = horizontal_input * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, (FRICTION * delta) * floor_damping)
-	
-#	cant tell which way I want to do it
-
-	#if horizontal_input:
-		#velocity.x = move_toward(velocity.x, horizontal_input * SPEED, ACCELERATION * delta)
-	#else:
-		#velocity.x = move_toward(velocity.x, 0, (FRICTION * delta) * floor_damping)
+		if horizontal_input:
+			velocity.x = horizontal_input * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, 1700.0 * delta)
 
 	# Apply velocity
 	move_and_slide()
 
-## Returns the gravity based on the state of the player
+# Returns the gravity based on the state of the player
 func get_gravity_now(input_dir : float = 0) -> float:
 	if Input.is_action_pressed("fast_fall"):
 		return FAST_FALL_GRAVITY
@@ -132,6 +136,12 @@ func get_gravity_now(input_dir : float = 0) -> float:
 		return WALL_GRAVITY
 	return GRAVITY if velocity.y < 0 else FALL_GRAVITY
 
-## Reset coyote jump
+# Reset coyote jump
 func coyote_timeout() -> void:
 	coyote_jump_available = false
+
+
+#duration for how long dash is
+func _on_dash_duration_timer_timeout() -> void:
+	is_dashing = false
+	dash_duration_timer.stop()

@@ -2,6 +2,8 @@ extends Node
 #Global to hold boosts, tracking item pickup, etc
 
 var boosts_available = 10
+var dashes_available = 10
+#maybe this can be changed at the begginning of each level calling it?
 var dialogue_active = false #used to "pause" movement while dialogue happening
 							#since get tree pause() will stop music 
 
