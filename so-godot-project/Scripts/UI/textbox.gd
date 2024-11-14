@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 const CHAR_READ_RATE = 0.03
-const DEBUG = true
+const DEBUG = false
 
 @onready var textbox_container = $TextContainer
 @onready var label = $TextContainer/MarginContainer/HBoxContainer/Text
@@ -79,7 +79,7 @@ func display_text():
 	var next_speak = next[1]
 	
 	label.text = next_text
-	if DEBUG : print(label.text,"=text")
+	if DEBUG : print(label.text)
 	speaker_label.text = next_speak
 	label.visible_ratio = 0.0
 	

@@ -1,0 +1,512 @@
+[gd_scene load_steps=20 format=3 uid="uid://hth0m8l21bei"]
+
+[ext_resource type="FontFile" uid="uid://dysr5xuf6dgqg" path="res://Assets/Fonts/Matemasie-Regular.ttf" id="1_28kg0"]
+[ext_resource type="StyleBox" uid="uid://cu5mqk2d34bq1" path="res://Assets/UI/hov_menu_button.tres" id="2_r2ki1"]
+[ext_resource type="StyleBox" uid="uid://dvjvnoct4jekt" path="res://Assets/UI/menu_button.tres" id="3_s6y3b"]
+[ext_resource type="Script" path="res://Scripts/UI/open_menu.gd" id="4_j2d58"]
+[ext_resource type="Texture2D" uid="uid://djh5lnkq55y22" path="res://Assets/Images/UI/GUI.png" id="4_usplx"]
+[ext_resource type="Texture2D" uid="uid://w314sq43p63g" path="res://Assets/Images/UI/item_slot.png" id="6_50m2f"]
+[ext_resource type="PackedScene" uid="uid://bjacaarlff45e" path="res://Scenes/UI/item_slot.tscn" id="7_2kstn"]
+[ext_resource type="LabelSettings" uid="uid://buo6uwddjv7la" path="res://Assets/UI/inven_world_label.tres" id="7_tnkru"]
+[ext_resource type="Resource" uid="uid://bwi5q5oqwh2bv" path="res://Assets/Items/Note_1.tres" id="8_8uk2g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua5lp"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qhtmt"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="Theme" id="Theme_o23t2"]
+default_font = ExtResource("1_28kg0")
+default_font_size = 27
+Button/font_sizes/font_size = 22
+Button/fonts/font = ExtResource("1_28kg0")
+Button/styles/hover = ExtResource("2_r2ki1")
+Button/styles/normal = ExtResource("3_s6y3b")
+Label/font_sizes/font_size = 41
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_selected_color = Color(0, 0, 0, 0)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
+RichTextLabel/colors/selection_color = Color(0.1, 0.1, 1, 0.8)
+RichTextLabel/colors/table_border = Color(0, 0, 0, 0)
+RichTextLabel/colors/table_even_row_bg = Color(0, 0, 0, 0)
+RichTextLabel/colors/table_odd_row_bg = Color(0, 0, 0, 0)
+RichTextLabel/constants/line_separation = 0
+RichTextLabel/constants/outline_size = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/shadow_outline_size = 1
+RichTextLabel/constants/table_h_separation = 3
+RichTextLabel/constants/table_v_separation = 3
+RichTextLabel/constants/text_highlight_h_padding = 3
+RichTextLabel/constants/text_highlight_v_padding = 3
+RichTextLabel/font_sizes/normal_font_size = 8
+RichTextLabel/styles/focus = SubResource("StyleBoxFlat_ua5lp")
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_qhtmt")
+
+[sub_resource type="LabelSettings" id="LabelSettings_4lpcl"]
+font_size = 25
+font_color = Color(0.247059, 0.156863, 0.196078, 1)
+
+[sub_resource type="Animation" id="Animation_6u03f"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../..:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../../Menu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../../../Menu:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(486.5, 234)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../..:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(300, 162)]
+}
+
+[sub_resource type="Animation" id="Animation_g3v6p"]
+resource_name = "show_menu"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../../../Menu:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../../Menu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(489.462, -330), Vector2(486.5, 234)]
+}
+
+[sub_resource type="Animation" id="Animation_orgok"]
+resource_name = "hide_menu"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../../../Menu:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../../Menu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(486.5, 234), Vector2(486.5, -351)]
+}
+
+[sub_resource type="Animation" id="Animation_eco8e"]
+resource_name = "show_inventory"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../..:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../..:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(300, -503), Vector2(300, 162)]
+}
+
+[sub_resource type="Animation" id="Animation_4nwwx"]
+resource_name = "hide_inventory"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../..:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../..:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(300, 162), Vector2(312.656, -492)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vhmr6"]
+_data = {
+"RESET": SubResource("Animation_6u03f"),
+"hide_inventory": SubResource("Animation_4nwwx"),
+"hide_menu": SubResource("Animation_orgok"),
+"show_inventory": SubResource("Animation_eco8e"),
+"show_menu": SubResource("Animation_g3v6p")
+}
+
+[node name="UI" type="Control" node_paths=PackedStringArray("menu", "inventory", "description", "animation_player")]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.0011, 1)
+theme = SubResource("Theme_o23t2")
+script = ExtResource("4_j2d58")
+menu = NodePath("Menu")
+inventory = NodePath("Inventory")
+description = NodePath("Inventory/Description")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="Menu" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 486.5
+offset_top = 234.0
+offset_right = 665.5
+offset_bottom = 414.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_usplx")
+region_rect = Rect2(0, 32, 48, 48)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -68.0
+offset_right = 70.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inventory" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+text = "Inventory"
+
+[node name="Button2" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+text = "Other"
+
+[node name="Quit" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Inventory" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 300.0
+offset_top = 162.0
+offset_right = 961.0
+offset_bottom = 606.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.830966, 0.827951)
+texture = ExtResource("4_usplx")
+region_rect = Rect2(0, 96, 48, 32)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 5
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Label" type="Label" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.95
+offset_top = 9.0
+offset_right = 72.05
+offset_bottom = 50.0
+grow_horizontal = 2
+text = "Inventory"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory"]
+layout_mode = 1
+offset_left = 52.4956
+offset_top = 47.1042
+offset_right = 141.496
+offset_bottom = 413.104
+
+[node name="World1_items" type="VBoxContainer" parent="Inventory/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Inventory/VBoxContainer/World1_items"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "World 1"
+label_settings = ExtResource("7_tnkru")
+
+[node name="GridContainer" type="GridContainer" parent="Inventory/VBoxContainer/World1_items"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+columns = 3
+
+[node name="PanelContainer" parent="Inventory/VBoxContainer/World1_items/GridContainer" instance=ExtResource("7_2kstn")]
+layout_mode = 2
+item = ExtResource("8_8uk2g")
+
+[node name="PanelContainer2" parent="Inventory/VBoxContainer/World1_items/GridContainer" instance=ExtResource("7_2kstn")]
+layout_mode = 2
+
+[node name="World2_items" type="VBoxContainer" parent="Inventory/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Inventory/VBoxContainer/World2_items"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "World 2
+"
+label_settings = ExtResource("7_tnkru")
+
+[node name="GridContainer" type="GridContainer" parent="Inventory/VBoxContainer/World2_items"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+columns = 3
+
+[node name="PanelContainer" parent="Inventory/VBoxContainer/World2_items/GridContainer" instance=ExtResource("7_2kstn")]
+layout_mode = 2
+
+[node name="PanelContainer2" parent="Inventory/VBoxContainer/World2_items/GridContainer" instance=ExtResource("7_2kstn")]
+layout_mode = 2
+
+[node name="World3_items" type="VBoxContainer" parent="Inventory/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Inventory/VBoxContainer/World3_items"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "World 3
+"
+label_settings = ExtResource("7_tnkru")
+
+[node name="GridContainer" type="GridContainer" parent="Inventory/VBoxContainer/World3_items"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+columns = 3
+
+[node name="PanelContainer" parent="Inventory/VBoxContainer/World3_items/GridContainer" instance=ExtResource("7_2kstn")]
+layout_mode = 2
+
+[node name="PanelContainer2" parent="Inventory/VBoxContainer/World3_items/GridContainer" instance=ExtResource("7_2kstn")]
+layout_mode = 2
+
+[node name="World4_items" type="VBoxContainer" parent="Inventory/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Inventory/VBoxContainer/World4_items"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "World 4
+"
+label_settings = ExtResource("7_tnkru")
+
+[node name="GridContainer" type="GridContainer" parent="Inventory/VBoxContainer/World4_items"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+columns = 3
+
+[node name="PanelContainer" parent="Inventory/VBoxContainer/World4_items/GridContainer" instance=ExtResource("7_2kstn")]
+layout_mode = 2
+
+[node name="PanelContainer2" parent="Inventory/VBoxContainer/World4_items/GridContainer" instance=ExtResource("7_2kstn")]
+layout_mode = 2
+
+[node name="World5_items" type="VBoxContainer" parent="Inventory/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Inventory/VBoxContainer/World5_items"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "World 5
+"
+label_settings = ExtResource("7_tnkru")
+
+[node name="GridContainer" type="GridContainer" parent="Inventory/VBoxContainer/World5_items"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+columns = 3
+
+[node name="PanelContainer" parent="Inventory/VBoxContainer/World5_items/GridContainer" instance=ExtResource("7_2kstn")]
+layout_mode = 2
+
+[node name="PanelContainer2" parent="Inventory/VBoxContainer/World5_items/GridContainer" instance=ExtResource("7_2kstn")]
+layout_mode = 2
+
+[node name="Description" type="NinePatchRect" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -381.308
+offset_top = 86.9617
+offset_right = -56.3082
+offset_bottom = 413.962
+grow_horizontal = 0
+texture = ExtResource("6_50m2f")
+region_rect = Rect2(3.01319, 3.01626, 25.841, 25.961)
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Name" type="Label" parent="Inventory/Description"]
+layout_mode = 1
+offset_left = 10.1459
+offset_top = 4.62405
+offset_right = 71.1459
+offset_bottom = 42.6241
+scale = Vector2(0.990268, 1)
+theme_override_font_sizes/font_size = 16
+text = ".."
+label_settings = SubResource("LabelSettings_4lpcl")
+
+[node name="Description" type="RichTextLabel" parent="Inventory/Description"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -104.5
+offset_top = 49.0
+offset_right = 99.5
+offset_bottom = 310.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.247059, 0.156863, 0.196078, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "..."
+
+[node name="Icon" type="TextureRect" parent="Inventory/Description"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 261.0
+offset_right = 225.0
+offset_bottom = 320.0
+
+[node name="Container" type="Container" parent="Inventory"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Inventory/VBoxContainer/World4_items/GridContainer/PanelContainer")
+libraries = {
+"": SubResource("AnimationLibrary_vhmr6")
+}
+
+[connection signal="pressed" from="Menu/VBoxContainer/Inventory" to="." method="_on_inventory_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

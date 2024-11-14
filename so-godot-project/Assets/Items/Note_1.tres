@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bwi5q5oqwh2bv"]
+
+[ext_resource type="Texture2D" uid="uid://dnhywakswssie" path="res://Assets/Images/Sprites/butter_milk_free.png" id="1_6utj5"]
+[ext_resource type="Script" path="res://Scenes/UI/item.gd" id="2_xydaq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7rri"]
+atlas = ExtResource("1_6utj5")
+region = Rect2(64, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_xydaq")
+title = "Note 1"
+icon = SubResource("AtlasTexture_u7rri")
+description = "It reads: \"I'm sorry Stella, but it had to be this way.\" .... You aren't sure what to make of this.
+It doesn't help they have bad handwriting."
+dialogue = Array[String](["A note!", "I don't understand.", "Who wrote this?"])

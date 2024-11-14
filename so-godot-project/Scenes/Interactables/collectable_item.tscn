@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3ciylebfirms"]
+[gd_scene load_steps=3 format=3 uid="uid://c3ciylebfirms"]
 
-[ext_resource type="Script" path="res://collectable_item.gd" id="1_8rgd8"]
-[ext_resource type="Texture2D" uid="uid://dnhywakswssie" path="res://Assets/Images/Sprites/butter_milk_free.png" id="2_dds0y"]
+[ext_resource type="Script" path="res://Scripts/Stages/Items/collectable_item.gd" id="1_8rgd8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iaohi"]
 radius = 9.0
@@ -16,8 +15,6 @@ script = ExtResource("1_8rgd8")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
-texture = ExtResource("2_dds0y")
-region_enabled = true
 region_rect = Rect2(48, 16, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

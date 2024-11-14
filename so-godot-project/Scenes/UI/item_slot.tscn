@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjacaarlff45e"]
+
+[ext_resource type="Script" path="res://Scripts/Stages/Items/item_slot.gd" id="1_ahaoc"]
+[ext_resource type="Texture2D" uid="uid://w314sq43p63g" path="res://Assets/Images/UI/item_slot.png" id="1_uhurl"]
+
+[node name="ItemSlot" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.68179, 1.68179)
+script = ExtResource("1_ahaoc")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_uhurl")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

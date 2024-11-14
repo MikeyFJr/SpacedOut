@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://p0ysiuhvmvop"]
+[gd_scene load_steps=11 format=4 uid="uid://p0ysiuhvmvop"]
 
-[ext_resource type="Script" path="res://Scripts/UI/main_w_1_l_1.gd" id="1_rfusk"]
+[ext_resource type="Script" path="res://Scripts/Stages/main_w_1_l_1.gd" id="1_rfusk"]
 [ext_resource type="Texture2D" uid="uid://u2cgca400ftw" path="res://Assets/Images/Backgrounds/underground_background - Copy.png" id="1_yqj6x"]
 [ext_resource type="Texture2D" uid="uid://bplvpey6eajol" path="res://Assets/Images/Backgrounds/underground_middle - Copy.png" id="2_7pvuo"]
 [ext_resource type="Texture2D" uid="uid://cvsw7r83po4b4" path="res://Assets/Images/Backgrounds/underground_front_2.png" id="3_5dde7"]
@@ -8,6 +8,8 @@
 [ext_resource type="TileSet" uid="uid://nxxl82gpqgad" path="res://Assets/Images/Tilesets/lab_tiles.tres" id="5_qcowo"]
 [ext_resource type="PackedScene" uid="uid://brht2rcan4mow" path="res://Scenes/UI/textbox.tscn" id="6_f6ub1"]
 [ext_resource type="PackedScene" uid="uid://c3ciylebfirms" path="res://Scenes/Interactables/collectable_item.tscn" id="8_bs878"]
+[ext_resource type="Resource" uid="uid://bwi5q5oqwh2bv" path="res://Assets/Items/Note_1.tres" id="9_152ye"]
+[ext_resource type="PackedScene" uid="uid://hth0m8l21bei" path="res://Scenes/UI/open_menu.tscn" id="10_aqyet"]
 
 [node name="main_w1_l1" type="Node2D"]
 script = ExtResource("1_rfusk")
@@ -47,6 +49,12 @@ position = Vector2(36, 176)
 [node name="Textbox" parent="." instance=ExtResource("6_f6ub1")]
 unique_name_in_owner = true
 
+[node name="UI" parent="Textbox" instance=ExtResource("10_aqyet")]
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 3.0
+offset_bottom = 1.0
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("5_qcowo")
 format = 2
@@ -79,3 +87,4 @@ tile_set = ExtResource("5_qcowo")
 
 [node name="Collectable_item" parent="." instance=ExtResource("8_bs878")]
 position = Vector2(320, 162)
+item = ExtResource("9_152ye")
