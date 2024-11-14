@@ -6,6 +6,15 @@ extends Control
 @export var description : NinePatchRect
 
 @export var animation_player : AnimationPlayer
+@export var world_container : VBoxContainer 
+
+#weird.. yes... but it works...
+@export var world1_panel_1 : PanelContainer
+@export var world1_panel_2 : PanelContainer
+@export var world2_panel_1 : PanelContainer
+@export var world2_panel_2 : PanelContainer
+@export var world3_panel_1 : PanelContainer
+@export var world3_panel_2 : PanelContainer
 #i think menu would be the one loading in the information into the slots ?
 enum STATE { MENU, INVENTORY }
 var ui_state = STATE.MENU
@@ -37,9 +46,29 @@ func hide_and_show(first : String, second : String):
  
 func _on_inventory_pressed():
 	ui_state = STATE.INVENTORY
+	_update_inventory_ui();
 	hide_and_show("menu", "inventory")
  
  
  
 func _on_quit_pressed():
 	get_tree().quit()
+	
+
+func _update_inventory_ui():
+	# could set items here, need to change the global state items or import a list? of items already made
+	
+	##world1_panel_1.item = Items.test_item1
+	world1_panel_1.update_panel_state()  # Update to show whether collected or not
+#
+	##world1_panel_2.item = Items.test_item2
+	world1_panel_2.update_panel_state()
+#
+	## Set items for World2 Panels
+	##world2_panel_1.item = Items.test_item3
+	world2_panel_1.update_panel_state()
+#
+	#world2_panel_2.item = Items.test_item4
+	world2_panel_2.update_panel_state()
+	
+#	still need to do rest of worlds, so far just 1 + 2

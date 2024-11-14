@@ -242,7 +242,7 @@ _data = {
 "show_menu": SubResource("Animation_g3v6p")
 }
 
-[node name="UI" type="Control" node_paths=PackedStringArray("menu", "inventory", "description", "animation_player")]
+[node name="UI" type="Control" node_paths=PackedStringArray("menu", "inventory", "description", "animation_player", "world_container", "world1_panel_1", "world1_panel_2", "world2_panel_1", "world2_panel_2", "world3_panel_1", "world3_panel_2")]
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(1.0011, 1)
@@ -252,6 +252,13 @@ menu = NodePath("Menu")
 inventory = NodePath("Inventory")
 description = NodePath("Inventory/Description")
 animation_player = NodePath("AnimationPlayer")
+world_container = NodePath("Inventory/WorldContainer")
+world1_panel_1 = NodePath("Inventory/WorldContainer/World1_items/GridContainer/PanelContainer")
+world1_panel_2 = NodePath("Inventory/WorldContainer/World1_items/GridContainer/PanelContainer2")
+world2_panel_1 = NodePath("Inventory/WorldContainer/World2_items/GridContainer/PanelContainer")
+world2_panel_2 = NodePath("Inventory/WorldContainer/World2_items/GridContainer/PanelContainer2")
+world3_panel_1 = NodePath("Inventory/WorldContainer/World3_items/GridContainer/PanelContainer")
+world3_panel_2 = NodePath("Inventory/WorldContainer/World3_items/GridContainer/PanelContainer2")
 
 [node name="Menu" type="NinePatchRect" parent="."]
 visible = false
@@ -338,116 +345,116 @@ offset_bottom = 50.0
 grow_horizontal = 2
 text = "Inventory"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Inventory"]
+[node name="WorldContainer" type="VBoxContainer" parent="Inventory"]
 layout_mode = 1
 offset_left = 52.4956
 offset_top = 47.1042
 offset_right = 141.496
 offset_bottom = 413.104
 
-[node name="World1_items" type="VBoxContainer" parent="Inventory/VBoxContainer"]
+[node name="World1_items" type="VBoxContainer" parent="Inventory/WorldContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Inventory/VBoxContainer/World1_items"]
+[node name="Label" type="Label" parent="Inventory/WorldContainer/World1_items"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
 text = "World 1"
 label_settings = ExtResource("7_tnkru")
 
-[node name="GridContainer" type="GridContainer" parent="Inventory/VBoxContainer/World1_items"]
+[node name="GridContainer" type="GridContainer" parent="Inventory/WorldContainer/World1_items"]
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
 columns = 3
 
-[node name="PanelContainer" parent="Inventory/VBoxContainer/World1_items/GridContainer" instance=ExtResource("7_2kstn")]
+[node name="PanelContainer" parent="Inventory/WorldContainer/World1_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
 item = ExtResource("8_8uk2g")
 
-[node name="PanelContainer2" parent="Inventory/VBoxContainer/World1_items/GridContainer" instance=ExtResource("7_2kstn")]
+[node name="PanelContainer2" parent="Inventory/WorldContainer/World1_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
 
-[node name="World2_items" type="VBoxContainer" parent="Inventory/VBoxContainer"]
+[node name="World2_items" type="VBoxContainer" parent="Inventory/WorldContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Inventory/VBoxContainer/World2_items"]
+[node name="Label" type="Label" parent="Inventory/WorldContainer/World2_items"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
 text = "World 2
 "
 label_settings = ExtResource("7_tnkru")
 
-[node name="GridContainer" type="GridContainer" parent="Inventory/VBoxContainer/World2_items"]
+[node name="GridContainer" type="GridContainer" parent="Inventory/WorldContainer/World2_items"]
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
 columns = 3
 
-[node name="PanelContainer" parent="Inventory/VBoxContainer/World2_items/GridContainer" instance=ExtResource("7_2kstn")]
+[node name="PanelContainer" parent="Inventory/WorldContainer/World2_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
 
-[node name="PanelContainer2" parent="Inventory/VBoxContainer/World2_items/GridContainer" instance=ExtResource("7_2kstn")]
+[node name="PanelContainer2" parent="Inventory/WorldContainer/World2_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
 
-[node name="World3_items" type="VBoxContainer" parent="Inventory/VBoxContainer"]
+[node name="World3_items" type="VBoxContainer" parent="Inventory/WorldContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Inventory/VBoxContainer/World3_items"]
+[node name="Label" type="Label" parent="Inventory/WorldContainer/World3_items"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
 text = "World 3
 "
 label_settings = ExtResource("7_tnkru")
 
-[node name="GridContainer" type="GridContainer" parent="Inventory/VBoxContainer/World3_items"]
+[node name="GridContainer" type="GridContainer" parent="Inventory/WorldContainer/World3_items"]
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
 columns = 3
 
-[node name="PanelContainer" parent="Inventory/VBoxContainer/World3_items/GridContainer" instance=ExtResource("7_2kstn")]
+[node name="PanelContainer" parent="Inventory/WorldContainer/World3_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
 
-[node name="PanelContainer2" parent="Inventory/VBoxContainer/World3_items/GridContainer" instance=ExtResource("7_2kstn")]
+[node name="PanelContainer2" parent="Inventory/WorldContainer/World3_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
 
-[node name="World4_items" type="VBoxContainer" parent="Inventory/VBoxContainer"]
+[node name="World4_items" type="VBoxContainer" parent="Inventory/WorldContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Inventory/VBoxContainer/World4_items"]
+[node name="Label" type="Label" parent="Inventory/WorldContainer/World4_items"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
 text = "World 4
 "
 label_settings = ExtResource("7_tnkru")
 
-[node name="GridContainer" type="GridContainer" parent="Inventory/VBoxContainer/World4_items"]
+[node name="GridContainer" type="GridContainer" parent="Inventory/WorldContainer/World4_items"]
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
 columns = 3
 
-[node name="PanelContainer" parent="Inventory/VBoxContainer/World4_items/GridContainer" instance=ExtResource("7_2kstn")]
+[node name="PanelContainer" parent="Inventory/WorldContainer/World4_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
 
-[node name="PanelContainer2" parent="Inventory/VBoxContainer/World4_items/GridContainer" instance=ExtResource("7_2kstn")]
+[node name="PanelContainer2" parent="Inventory/WorldContainer/World4_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
 
-[node name="World5_items" type="VBoxContainer" parent="Inventory/VBoxContainer"]
+[node name="World5_items" type="VBoxContainer" parent="Inventory/WorldContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Inventory/VBoxContainer/World5_items"]
+[node name="Label" type="Label" parent="Inventory/WorldContainer/World5_items"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
 text = "World 5
 "
 label_settings = ExtResource("7_tnkru")
 
-[node name="GridContainer" type="GridContainer" parent="Inventory/VBoxContainer/World5_items"]
+[node name="GridContainer" type="GridContainer" parent="Inventory/WorldContainer/World5_items"]
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
 columns = 3
 
-[node name="PanelContainer" parent="Inventory/VBoxContainer/World5_items/GridContainer" instance=ExtResource("7_2kstn")]
+[node name="PanelContainer" parent="Inventory/WorldContainer/World5_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
 
-[node name="PanelContainer2" parent="Inventory/VBoxContainer/World5_items/GridContainer" instance=ExtResource("7_2kstn")]
+[node name="PanelContainer2" parent="Inventory/WorldContainer/World5_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
 
 [node name="Description" type="NinePatchRect" parent="Inventory"]
@@ -503,7 +510,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Inventory/VBoxContainer/World4_items/GridContainer/PanelContainer")
+root_node = NodePath("../Inventory/WorldContainer/World4_items/GridContainer/PanelContainer")
 libraries = {
 "": SubResource("AnimationLibrary_vhmr6")
 }
