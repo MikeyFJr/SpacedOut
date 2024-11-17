@@ -303,7 +303,7 @@ text = "Inventory"
 
 [node name="Button2" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
-text = "Other"
+text = "Restart "
 
 [node name="Quit" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
@@ -516,4 +516,5 @@ libraries = {
 }
 
 [connection signal="pressed" from="Menu/VBoxContainer/Inventory" to="." method="_on_inventory_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

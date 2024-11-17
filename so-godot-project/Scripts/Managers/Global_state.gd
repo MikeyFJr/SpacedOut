@@ -9,7 +9,8 @@ var paused = false #used to "pause" movement while dialogue happening
 func setPaused(pause):
 	paused = pause
 	AudioController.set_paused(pause) 
-	
+
+var DEBUG = true
 #tracking item pickup 
 #were using array of items with predefined enum of them so we dont accidentally do it twice.
 #This also means defining them here first
@@ -61,3 +62,30 @@ var collected_items = []
 
 func is_item_collected(item: Item) -> bool:
 	return item in collected_items
+
+var visited = {
+	"w1_s1":false,
+	"w1_s2":false,
+	"w1_s3":false,
+	"w2_s1":false,
+	"w2_s2":false,
+	"w2_s3":false,
+	}  #visited bools. used for seeing intros and not seeing them again
+#	could also be used in a menu of some sort to know if you have visited that planet/scene
+
+func next_level(path):
+	get_tree().change_scene_to_file(path)
+	print("Changing scene")
+
+func set_visited(level):
+	if level in visited and visited[level] == false:
+		visited[level] = true
+		if DEBUG: print("set",level,"to true")
+	else:
+		if DEBUG: print("level not found or error")
+
+func check_visited(level):
+	return visited[level] == true
+	
+	
+	

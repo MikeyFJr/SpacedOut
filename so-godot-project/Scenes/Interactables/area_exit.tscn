@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfovs0wwwx56g"]
+
+[ext_resource type="Script" path="res://Scripts/Stages/area_exit.gd" id="1_fvnpq"]
+[ext_resource type="Texture2D" uid="uid://c2urpncbo2jb4" path="res://Assets/Images/Sprites/exit.png" id="1_hnrag"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gkaad"]
+
+[node name="Area_exit" type="Area2D"]
+script = ExtResource("1_fvnpq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_gkaad")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hnrag")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

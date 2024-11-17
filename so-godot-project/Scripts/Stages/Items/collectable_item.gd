@@ -20,7 +20,9 @@ var DEBUG = false
 @onready var sprite = $Sprite2D  # the sprite 2d node im gonna change with the item texture
 
 func _ready():
-	
+	if item in GlobalState.collected_items:
+		queue_free()
+		
 	connect("body_entered", _on_body_entered)
 	print("Texture :", sprite.texture)
 	if item:

@@ -74,3 +74,10 @@ func _update_inventory_ui():
 	world2_panel_2.update_panel_state()
 	
 #	still need to do rest of worlds, so far just 1 + 2
+
+
+func _on_button_2_pressed() -> void:
+	#pass # Replace with function body.
+	var current_scene = get_tree().current_scene
+	get_tree().reload_current_scene()
+	GlobalState.setPaused(false)

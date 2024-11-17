@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnhywakswssie"
-path="res://.godot/imported/butter_milk_free.png-631f7fa883722fa6861128dc6c9e0c54.ctex"
+uid="uid://dp6unuxh4ego0"
+path="res://.godot/imported/note-test.png-05141cc4e42de5683b47dcec0e7d2bdc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Sprites/butter_milk_free.png"
-dest_files=["res://.godot/imported/butter_milk_free.png-631f7fa883722fa6861128dc6c9e0c54.ctex"]
+source_file="res://Assets/Images/Items/note-test.png"
+dest_files=["res://.godot/imported/note-test.png-05141cc4e42de5683b47dcec0e7d2bdc.ctex"]
 
 [params]
 
