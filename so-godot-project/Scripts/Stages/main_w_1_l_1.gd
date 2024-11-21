@@ -10,10 +10,17 @@ extends Node2D
 ]
 #defaultly set to what first scene has, change it on the properties per scene
 
-
+#also think can just be changed in properties per scene, keeping same script
+#defaultly 5 each,
 @export var level: String = "w1_s1"
+@export var boosts: int = 5
+@export var dashes: int = 5
 
 func _ready():
+#	setting the boosts and dashes to the number per scene/level (as when this scene restarts they are given back the same number)
+
+	GlobalState.boosts_available = boosts
+	GlobalState.dashes_available = dashes
 	if !GlobalState.check_visited(level):
 		textbox.show_textbox() 
 		queue_text()

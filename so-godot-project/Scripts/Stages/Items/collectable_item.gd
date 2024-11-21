@@ -24,16 +24,16 @@ func _ready():
 		queue_free()
 		
 	connect("body_entered", _on_body_entered)
-	print("Texture :", sprite.texture)
+	if DEBUG: print("Texture :", sprite.texture)
 	if item:
 		sprite.texture = item.icon 
-		print("Texture assigned:", sprite.texture)
+		if DEBUG: print("Texture assigned:", sprite.texture)
 	else:
-		print("Item not inserted")
+		if DEBUG: print("Item not inserted")
 		
 #	making sure textbox exists
 	if not textbox:
-		print("textbox not found")
+		if DEBUG: print("textbox not found")
 		textbox = get_tree().get_root().get_node("./Textbox")  # Example path
 
 func _on_body_entered(body):
