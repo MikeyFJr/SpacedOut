@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=4 uid="uid://bxxptc4671sjg"]
+
+[ext_resource type="Script" path="res://Scripts/Stages/main_w_1_l_1.gd" id="1_y7lsu"]
+[ext_resource type="Texture2D" uid="uid://u2cgca400ftw" path="res://Assets/Images/Backgrounds/underground_background - Copy.png" id="2_gvwkm"]
+[ext_resource type="Texture2D" uid="uid://bplvpey6eajol" path="res://Assets/Images/Backgrounds/underground_middle - Copy.png" id="3_lg4ju"]
+[ext_resource type="Texture2D" uid="uid://cvsw7r83po4b4" path="res://Assets/Images/Backgrounds/underground_front_2.png" id="4_lkqog"]
+[ext_resource type="PackedScene" uid="uid://u36mbm1jhasr" path="res://Scenes/Characters/stella_main.tscn" id="5_e2p8k"]
+[ext_resource type="PackedScene" uid="uid://brht2rcan4mow" path="res://Scenes/UI/textbox.tscn" id="6_rw3yu"]
+[ext_resource type="PackedScene" uid="uid://hth0m8l21bei" path="res://Scenes/UI/open_menu.tscn" id="7_tedt2"]
+[ext_resource type="TileSet" uid="uid://nxxl82gpqgad" path="res://Assets/Images/Tilesets/lab_tiles.tres" id="8_fb148"]
+[ext_resource type="PackedScene" uid="uid://c3ciylebfirms" path="res://Scenes/Interactables/collectable_item.tscn" id="9_m4r0y"]
+[ext_resource type="Resource" uid="uid://bwi5q5oqwh2bv" path="res://Assets/Items/Note_1.tres" id="10_jkd13"]
+[ext_resource type="TileSet" uid="uid://bu8rlar1ocwha" path="res://Assets/Images/ground.tres" id="11_kfvus"]
+[ext_resource type="PackedScene" uid="uid://bfovs0wwwx56g" path="res://Scenes/Interactables/area_exit.tscn" id="12_03xkl"]
+
+[node name="scene_template" type="Node2D"]
+script = ExtResource("1_y7lsu")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="background_fardirt" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.5)
+motion_mirroring = Vector2(288, 180)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/background_fardirt"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_gvwkm")
+
+[node name="middle_plants" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.5)
+motion_mirroring = Vector2(288, 180)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/middle_plants"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_lg4ju")
+
+[node name="foreground_dirt" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 0.5)
+motion_mirroring = Vector2(288, 180)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/foreground_dirt"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_lkqog")
+
+[node name="Stella" parent="." instance=ExtResource("5_e2p8k")]
+position = Vector2(41, 176)
+
+[node name="Textbox" parent="." instance=ExtResource("6_rw3yu")]
+unique_name_in_owner = true
+
+[node name="UI" parent="Textbox" instance=ExtResource("7_tedt2")]
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 3.0
+offset_bottom = 1.0
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("8_fb148")
+format = 2
+
+[node name="wall" type="TileMapLayer" parent="TileMap"]
+z_index = -2
+tile_set = ExtResource("8_fb148")
+
+[node name="floor" type="TileMapLayer" parent="TileMap"]
+z_index = 1
+tile_map_data = PackedByteArray("AAAAAAsAAAAIABMAAAABAAsAAAAIABMAAAACAAsAAAAIABMAAAADAAsAAAAIABMAAAAEAAsAAAAIABMAAAAFAAsAAAAIABMAAAAGAAsAAAAIABMAAAAHAAsAAAAIABMAAAAIAAsAAAAIABMAAAAJAAsAAAAIABMAAAAKAAsAAAAIABMAAAALAAsAAAAIABMAAAAMAAsAAAAIABMAAAANAAsAAAAIABMAAAAOAAsAAAAIABMAAAAPAAsAAAAIABMAAAAQAAsAAAAIABMAAAARAAsAAAAIABMAAAASAAsAAAAIABMAAAATAAsAAAAIABMAAAAUAAsAAAAIABMAAAAVAAsAAAAIABMAAAAWAAsAAAAIABMAAAAXAAsAAAAIABMAAAAYAAsAAAAIABMAAAA=")
+tile_set = ExtResource("8_fb148")
+
+[node name="wall items" type="TileMapLayer" parent="TileMap"]
+z_index = -1
+tile_set = ExtResource("8_fb148")
+
+[node name="anotherwallalyer" type="TileMapLayer" parent="TileMap"]
+z_index = -2
+tile_set = ExtResource("8_fb148")
+
+[node name="floor items" type="TileMapLayer" parent="TileMap"]
+z_index = 1
+tile_set = ExtResource("8_fb148")
+
+[node name="Collectable_item" parent="." instance=ExtResource("9_m4r0y")]
+position = Vector2(320, 162)
+item = ExtResource("10_jkd13")
+
+[node name="Ground_tile maps" type="TileMap" parent="."]
+tile_set = ExtResource("11_kfvus")
+format = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Ground_tile maps"]
+tile_set = ExtResource("11_kfvus")
+
+[node name="Area_exit" parent="." instance=ExtResource("12_03xkl")]
+position = Vector2(382, 148)
+destination_scene_path = "res://Scenes/Stages/World-1/Level-1/main_w_1_l_2.tscn"
