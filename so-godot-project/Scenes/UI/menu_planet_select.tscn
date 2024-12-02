@@ -1,0 +1,392 @@
+[gd_scene load_steps=23 format=3 uid="uid://dy1gmvf63yucy"]
+
+[ext_resource type="Script" path="res://FigmaImporter/FigmaImporter.gd" id="1_kuo0l"]
+[ext_resource type="Script" path="res://FigmaImporter/DesignerFrame.gd" id="2_8wi52"]
+[ext_resource type="Shader" path="res://FigmaImporter/shader/vertextApplyShader.gdshader" id="3_omn8t"]
+[ext_resource type="Texture2D" uid="uid://dvlq6fxrbvmls" path="res://Assets/Images/UI/images/d962554eca642677d8a3d676e43f01cc5b84dacc.png" id="4_3wkou"]
+[ext_resource type="Script" path="res://FigmaImporter/DesignerImagePanel.gd" id="5_mqtg7"]
+[ext_resource type="Texture2D" uid="uid://d2dxk7r4ki82" path="res://Assets/Images/UI/images/3806cedd07da4152ef1f1ed2659d738372746244.png" id="6_kh03k"]
+[ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="7_x5okp"]
+[ext_resource type="Texture2D" uid="uid://0yvjea676dx0" path="res://Assets/Images/UI/images/2fcf3ccf88fc1337894c680c0239fc446f267b80.png" id="8_k2ti4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tobaq"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8m317"]
+shader = ExtResource("3_omn8t")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(810, 494)
+shader_parameter/texture_size = Vector2(794, 446)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/image_texture = ExtResource("4_3wkou")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tyhp7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyyve"]
+bg_color = Color(0.85098, 0.85098, 0.85098, 0.4)
+border_width_left = 14
+border_width_top = 14
+border_width_right = 14
+border_width_bottom = 14
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3g6jo"]
+shader = ExtResource("3_omn8t")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = true
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0.54)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(48, 48)
+shader_parameter/texture_size = Vector2(48, 48)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/image_texture = ExtResource("6_kh03k")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lugg"]
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlpww"]
+bg_color = Color(1, 0.616667, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_hxduj"]
+line_spacing = 0.0
+font = ExtResource("7_x5okp")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xiivh"]
+shader = ExtResource("3_omn8t")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(175, 175)
+shader_parameter/texture_size = Vector2(48, 48)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/image_texture = ExtResource("8_k2ti4")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ql7uh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ypn6n"]
+line_spacing = 0.0
+font = ExtResource("7_x5okp")
+font_size = 24
+font_color = Color(1, 0.616667, 0, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mt67"]
+line_spacing = 0.0
+font = ExtResource("7_x5okp")
+font_size = 32
+font_color = Color(1, 0.616667, 0, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3abjd"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8or8g"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+
+[node name="PlanetSelectScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kuo0l")
+document_json_file = "res://figma_export.json"
+SelectPage = "Page 1 xIDx0:1x"
+SelectFrame = "Planet Select xIDx21:62x"
+fonts_folder = "res://Assets/Fonts"
+images_folder = "res://Assets/Images/UI/images"
+autoPlaceImages = true
+
+[node name="PlanetSelect" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(736, 494)
+layout_mode = 0
+offset_right = 736.0
+offset_bottom = 494.0
+pivot_offset = Vector2(368, 247)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tobaq")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_8wi52")
+inner_container = NodePath("SelectFrame")
+minSize = Vector2(736, 494)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+clipFrameContents = true
+fill_color = Color(1, 1, 1, 1)
+use_solid_fill = true
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [0.0, 0.0, 0.0, 0.0]
+
+[node name="SelectFrame" type="Control" parent="PlanetSelect"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="background" type="Panel" parent="PlanetSelect/SelectFrame"]
+material = SubResource("ShaderMaterial_8m317")
+custom_minimum_size = Vector2(810, 494)
+layout_mode = 0
+offset_left = -37.0
+offset_right = 773.0
+offset_bottom = 494.0
+pivot_offset = Vector2(405, 247)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tyhp7")
+script = ExtResource("5_mqtg7")
+minSize = Vector2(810, 494)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("4_3wkou")
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+
+[node name="inner frame" type="Panel" parent="PlanetSelect/SelectFrame"]
+custom_minimum_size = Vector2(643, 406)
+layout_mode = 0
+offset_left = 47.0
+offset_top = 44.0
+offset_right = 690.0
+offset_bottom = 450.0
+pivot_offset = Vector2(321.5, 203)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wyyve")
+script = ExtResource("5_mqtg7")
+minSize = Vector2(643, 406)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0.85098, 0.85098, 0.85098, 0.4)
+use_solid_fill = true
+border_weights = [14.0, 14.0, 14.0, 14.0]
+corner_radius = [30.0, 30.0, 30.0, 30.0]
+
+[node name="World2" type="Panel" parent="PlanetSelect/SelectFrame"]
+material = SubResource("ShaderMaterial_3g6jo")
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 0
+offset_left = 585.0
+offset_top = 223.0
+offset_right = 633.0
+offset_bottom = 271.0
+pivot_offset = Vector2(24, 24)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7lugg")
+script = ExtResource("5_mqtg7")
+minSize = Vector2(48, 48)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0.54)
+use_solid_fill = true
+fill_texture = ExtResource("6_kh03k")
+corner_radius = [90.0, 90.0, 90.0, 90.0]
+
+[node name="TitleTextFrame" type="Panel" parent="PlanetSelect/SelectFrame"]
+custom_minimum_size = Vector2(251, 73)
+layout_mode = 0
+offset_left = 23.0
+offset_top = 28.0
+offset_right = 274.0
+offset_bottom = 101.0
+pivot_offset = Vector2(125.5, 36.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jlpww")
+script = ExtResource("5_mqtg7")
+minSize = Vector2(251, 73)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(1, 0.616667, 0, 1)
+use_solid_fill = true
+border_weights = [8.0, 8.0, 8.0, 8.0]
+corner_radius = [15.0, 15.0, 15.0, 15.0]
+
+[node name="TitleLabel" type="Label" parent="PlanetSelect/SelectFrame"]
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 0
+offset_left = 59.0
+offset_top = 48.0
+offset_right = 239.0
+offset_bottom = 83.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Planet Select"
+label_settings = SubResource("LabelSettings_hxduj")
+autowrap_mode = 3
+
+[node name="World1" type="Panel" parent="PlanetSelect/SelectFrame"]
+material = SubResource("ShaderMaterial_xiivh")
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 0
+offset_left = 281.0
+offset_top = 137.0
+offset_right = 456.0
+offset_bottom = 312.0
+pivot_offset = Vector2(87.5, 87.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ql7uh")
+script = ExtResource("5_mqtg7")
+minSize = Vector2(175, 175)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+fill_texture = ExtResource("8_k2ti4")
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+
+[node name="unknown_text" type="Label" parent="PlanetSelect/SelectFrame"]
+custom_minimum_size = Vector2(17, 30)
+layout_mode = 0
+offset_left = 602.0
+offset_top = 231.0
+offset_right = 619.0
+offset_bottom = 265.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "?"
+label_settings = SubResource("LabelSettings_ypn6n")
+autowrap_mode = 3
+
+[node name="World 1 Label" type="Label" parent="PlanetSelect/SelectFrame"]
+custom_minimum_size = Vector2(129, 47)
+layout_mode = 0
+offset_left = 304.0
+offset_top = 341.0
+offset_right = 433.0
+offset_bottom = 388.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "World 1"
+label_settings = SubResource("LabelSettings_7mt67")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="navigate_next" type="ScrollContainer" parent="PlanetSelect/SelectFrame"]
+clip_contents = false
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 0
+offset_left = 490.0
+offset_top = 339.0
+offset_right = 542.0
+offset_bottom = 391.0
+pivot_offset = Vector2(26, 26)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3abjd")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_8wi52")
+inner_container = NodePath("InnerContainer")
+minSize = Vector2(52, 52)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [0.0, 0.0, 0.0, 0.0]
+
+[node name="InnerContainer" type="Control" parent="PlanetSelect/SelectFrame/navigate_next"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="play_arrow" type="ScrollContainer" parent="PlanetSelect/SelectFrame"]
+clip_contents = false
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 0
+offset_left = 323.0
+offset_top = 180.0
+offset_right = 413.0
+offset_bottom = 270.0
+pivot_offset = Vector2(45, 45)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8or8g")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("2_8wi52")
+inner_container = NodePath("InnerContainer")
+minSize = Vector2(90, 90)
+maxSize = Vector2(100000, 100000)
+center_rotation = true
+fill_color = Color(0, 0, 0, 0)
+corner_radius = [0.0, 0.0, 0.0, 0.0]
+padding = [0.0, 0.0, 0.0, 0.0]
+
+[node name="InnerContainer" type="Control" parent="PlanetSelect/SelectFrame/play_arrow"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
