@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0yvjea676dx0"
-path="res://.godot/imported/2fcf3ccf88fc1337894c680c0239fc446f267b80.png-5507ad595bf4f2c6f148f3c3950b7cc7.ctex"
+uid="uid://cq8p7uu820vtx"
+path="res://.godot/imported/play_arrow_hover.png-7f3cb889765b8b5ced7fab66a95cb2ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/images/2fcf3ccf88fc1337894c680c0239fc446f267b80.png"
-dest_files=["res://.godot/imported/2fcf3ccf88fc1337894c680c0239fc446f267b80.png-5507ad595bf4f2c6f148f3c3950b7cc7.ctex"]
+source_file="res://Assets/UI/buttons/play_arrow_hover.png"
+dest_files=["res://.godot/imported/play_arrow_hover.png-7f3cb889765b8b5ced7fab66a95cb2ed.ctex"]
 
 [params]
 
