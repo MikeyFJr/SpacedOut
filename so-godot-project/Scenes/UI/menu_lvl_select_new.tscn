@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://FigmaImporter/DesignerFrame.gd" id="2_7f3sx"]
 [ext_resource type="Script" path="res://FigmaImporter/DesignerImagePanel.gd" id="3_xj8a6"]
 [ext_resource type="Shader" path="res://FigmaImporter/shader/vertextApplyShader.gdshader" id="4_8wfwg"]
-[ext_resource type="Texture2D" uid="uid://dvlq6fxrbvmls" path="res://Assets/Images/UI/images/d962554eca642677d8a3d676e43f01cc5b84dacc.png" id="6_rm64a"]
-[ext_resource type="Texture2D" uid="uid://0yvjea676dx0" path="res://Assets/Images/UI/images/2fcf3ccf88fc1337894c680c0239fc446f267b80.png" id="7_2lm4d"]
+[ext_resource type="Texture2D" uid="uid://dvlq6fxrbvmls" path="res://Assets/UI/images/d962554eca642677d8a3d676e43f01cc5b84dacc.png" id="6_rm64a"]
+[ext_resource type="Texture2D" uid="uid://0yvjea676dx0" path="res://Assets/UI/images/2fcf3ccf88fc1337894c680c0239fc446f267b80.png" id="7_2lm4d"]
 [ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="8_fsrue"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj3ry"]
@@ -474,12 +474,3 @@ text = "Go!"
 label_settings = SubResource("LabelSettings_27w80")
 horizontal_alignment = 1
 autowrap_mode = 3
-
-[node name="Button" type="Button" parent="LevelSelectFrame/LevelSelectContainer"]
-layout_mode = 0
-offset_left = 224.0
-offset_top = 336.0
-offset_right = 294.0
-offset_bottom = 375.0
-text = "Go!"
-flat = true

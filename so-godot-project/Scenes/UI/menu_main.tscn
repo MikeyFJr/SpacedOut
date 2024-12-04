@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ius8h8kghj7e"]
+[gd_scene load_steps=10 format=3 uid="uid://ius8h8kghj7e"]
 
 [ext_resource type="Texture2D" uid="uid://clx7li4ydg16h" path="res://Assets/Images/UI/1-Green_640x360.png" id="1_1u5gk"]
 [ext_resource type="Script" path="res://Scripts/UI/menu_main.gd" id="1_b4qor"]
@@ -6,6 +6,15 @@
 [ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="3_esfwa"]
 [ext_resource type="Script" path="res://Scripts/UI/main_menu_btn.gd" id="4_2wlai"]
 [ext_resource type="Theme" uid="uid://bmk4r1yn3sjxv" path="res://main_ui_theme.tres" id="5_ud8jy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqwmv"]
+bg_color = Color(1, 0.615686, 0, 0.313726)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yvmm"]
+bg_color = Color(1, 0.615686, 0, 0.313726)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dxe2"]
+bg_color = Color(1, 0.615686, 0, 0.647059)
 
 [node name="MenuMain" type="Node2D"]
 script = ExtResource("1_b4qor")
@@ -57,5 +66,8 @@ theme_override_colors/font_color = Color(1, 0.615686, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("3_esfwa")
 theme_override_font_sizes/font_size = 36
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_fqwmv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5yvmm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8dxe2")
 text = "Start >"
 script = ExtResource("4_2wlai")
