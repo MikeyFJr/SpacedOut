@@ -78,6 +78,6 @@ func _update_inventory_ui():
 
 func _on_button_2_pressed() -> void:
 	#pass # Replace with function body.
-	var current_scene = get_tree().current_scene
+	#var current_scene = get_tree().current_scene
 	get_tree().reload_current_scene()
 	GlobalState.setPaused(false)

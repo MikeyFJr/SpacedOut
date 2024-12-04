@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://bwi5q5oqwh2bv" path="res://Assets/Items/Note_1.tres" id="9_152ye"]
 [ext_resource type="PackedScene" uid="uid://hth0m8l21bei" path="res://Scenes/UI/open_menu.tscn" id="10_aqyet"]
 [ext_resource type="TileSet" uid="uid://bu8rlar1ocwha" path="res://Assets/Images/ground.tres" id="11_me0bm"]
-[ext_resource type="PackedScene" uid="uid://bfovs0wwwx56g" path="res://Scenes/Interactables/area_exit.tscn" id="12_jkmhg"]
+[ext_resource type="PackedScene" path="res://Scenes/Interactables/area_exit.tscn" id="12_jkmhg"]
 
 [node name="main_w1_l1" type="Node2D"]
 script = ExtResource("1_rfusk")
