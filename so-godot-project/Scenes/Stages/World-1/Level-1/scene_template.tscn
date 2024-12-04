@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bxxptc4671sjg"]
+[gd_scene load_steps=16 format=4 uid="uid://bxxptc4671sjg"]
 
 [ext_resource type="Script" path="res://Scripts/Stages/main_w_1_l_1.gd" id="1_y7lsu"]
 [ext_resource type="Texture2D" uid="uid://u2cgca400ftw" path="res://Assets/Images/Backgrounds/underground_background - Copy.png" id="2_gvwkm"]
@@ -8,10 +8,48 @@
 [ext_resource type="PackedScene" uid="uid://brht2rcan4mow" path="res://Scenes/UI/textbox.tscn" id="6_rw3yu"]
 [ext_resource type="PackedScene" uid="uid://hth0m8l21bei" path="res://Scenes/UI/open_menu.tscn" id="7_tedt2"]
 [ext_resource type="TileSet" uid="uid://nxxl82gpqgad" path="res://Assets/Images/Tilesets/lab_tiles.tres" id="8_fb148"]
+[ext_resource type="Texture2D" uid="uid://cdrmkmooc030p" path="res://Assets/Images/Tilesets/obstacles.png" id="9_6tx47"]
 [ext_resource type="PackedScene" uid="uid://c3ciylebfirms" path="res://Scenes/Interactables/collectable_item.tscn" id="9_m4r0y"]
 [ext_resource type="Resource" uid="uid://bwi5q5oqwh2bv" path="res://Assets/Items/Note_1.tres" id="10_jkd13"]
 [ext_resource type="TileSet" uid="uid://bu8rlar1ocwha" path="res://Assets/Images/ground.tres" id="11_kfvus"]
-[ext_resource type="PackedScene" uid="uid://bfovs0wwwx56g" path="res://Scenes/Interactables/area_exit.tscn" id="12_03xkl"]
+[ext_resource type="PackedScene" path="res://Scenes/Interactables/area_exit.tscn" id="12_03xkl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cq1wr"]
+texture = ExtResource("9_6tx47")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.625, 8, 1.375, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(5, -8, 8, -8, 8, 8, 5, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.875, -8, -3.25, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.25, -5.9375, 6.125, -6.0625, 6.375, 6.0625, -5.75, 6.0625)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6.25, -8, -6.125)
+3:1/0 = 0
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6.25, -8, -6.125)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6.25, -8, -6.125)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6.25, -8, -6.125)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, -6.3125, 1, 4.9375, 2.5, -2.3125, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.5, -4.4375, 1, 4.9375, 4.5, -0.1875, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.375, 1.3125, 8, 8, -8, 8, -6.875, 2.3125, -2.125, 5.3125)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.375, 3.8125, 8, 8, -8, 8, -6.125, -0.8125, -2.125, 5.3125)
+1:2/size_in_atlas = Vector2i(2, 2)
+1:2/0 = 0
+1:2/0/texture_origin = Vector2i(0, 8)
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.25, -2.1875, 7.125, -22.8125, 15.625, 7.6875, -16.125, 7.9375, -9.5, -6.1875)
+
+[sub_resource type="TileSet" id="TileSet_bcapc"]
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_cq1wr")
 
 [node name="scene_template" type="Node2D"]
 script = ExtResource("1_y7lsu")
@@ -81,6 +119,10 @@ tile_set = ExtResource("8_fb148")
 [node name="floor items" type="TileMapLayer" parent="TileMap"]
 z_index = 1
 tile_set = ExtResource("8_fb148")
+
+[node name="Damage_tiles" type="TileMapLayer" parent="TileMap"]
+tile_map_data = PackedByteArray("AAAPAAoAAAABAAIAAAA=")
+tile_set = SubResource("TileSet_bcapc")
 
 [node name="Collectable_item" parent="." instance=ExtResource("9_m4r0y")]
 position = Vector2(320, 162)

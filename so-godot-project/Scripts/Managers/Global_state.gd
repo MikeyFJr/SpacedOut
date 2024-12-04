@@ -86,6 +86,14 @@ func set_visited(level):
 
 func check_visited(level):
 	return visited[level] == true
+
+func on_death():
+#	if we decide to make it having a "life" system that should be easy enough, for now one hit and it restarts the level
+#it would be here and dealing with a "global" lifes that would be updated by the scene
+
+	#var current_scene = get_tree().current_scene
+#	maybe could use current scene to retrace to a difference scene but mentally easier to add export if wanted x amt lives in seperate room before going back to "main" room	
+	get_tree().reload_current_scene()
 	
 	
 	
