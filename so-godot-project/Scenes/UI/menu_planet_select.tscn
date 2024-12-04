@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://FigmaImporter/FigmaImporter.gd" id="1_kuo0l"]
 [ext_resource type="Script" path="res://FigmaImporter/DesignerFrame.gd" id="2_8wi52"]
 [ext_resource type="Shader" path="res://FigmaImporter/shader/vertextApplyShader.gdshader" id="3_omn8t"]
-[ext_resource type="Texture2D" uid="uid://dvlq6fxrbvmls" path="res://Assets/Images/UI/images/d962554eca642677d8a3d676e43f01cc5b84dacc.png" id="4_3wkou"]
+[ext_resource type="Texture2D" uid="uid://dvlq6fxrbvmls" path="res://Assets/UI/images/d962554eca642677d8a3d676e43f01cc5b84dacc.png" id="4_3wkou"]
 [ext_resource type="Script" path="res://FigmaImporter/DesignerImagePanel.gd" id="5_mqtg7"]
-[ext_resource type="Texture2D" uid="uid://d2dxk7r4ki82" path="res://Assets/Images/UI/images/3806cedd07da4152ef1f1ed2659d738372746244.png" id="6_kh03k"]
+[ext_resource type="Texture2D" uid="uid://d2dxk7r4ki82" path="res://Assets/UI/images/3806cedd07da4152ef1f1ed2659d738372746244.png" id="6_kh03k"]
 [ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="7_x5okp"]
-[ext_resource type="Texture2D" uid="uid://0yvjea676dx0" path="res://Assets/Images/UI/images/2fcf3ccf88fc1337894c680c0239fc446f267b80.png" id="8_k2ti4"]
+[ext_resource type="Texture2D" uid="uid://0yvjea676dx0" path="res://Assets/UI/images/2fcf3ccf88fc1337894c680c0239fc446f267b80.png" id="8_k2ti4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tobaq"]
 content_margin_left = 0.0
