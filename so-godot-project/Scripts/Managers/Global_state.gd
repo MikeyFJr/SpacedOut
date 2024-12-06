@@ -1,8 +1,13 @@
 extends Node
 #Global to hold boosts, tracking item pickup, etc
 
-var boosts_available = 10
-var dashes_available = 10
+var boosts_available = 10 # Jetpack
+var dashes_available = 10 # Bubble Gun
+var grapples_available = 10 # Grappling Hook
+var floats_available = 10 # Lava Boots
+var beams_available = 10 # Restoration Beam
+
+var stella_direction = 1
 #maybe this can be changed at the begginning of each level calling it?
 var paused = false #used to "pause" movement while dialogue happening
 							#since get tree pause() will stop music and i believe process.
@@ -86,14 +91,6 @@ func set_visited(level):
 
 func check_visited(level):
 	return visited[level] == true
-
-func on_death():
-#	if we decide to make it having a "life" system that should be easy enough, for now one hit and it restarts the level
-#it would be here and dealing with a "global" lifes that would be updated by the scene
-
-	#var current_scene = get_tree().current_scene
-#	maybe could use current scene to retrace to a difference scene but mentally easier to add export if wanted x amt lives in seperate room before going back to "main" room	
-	get_tree().reload_current_scene()
 	
 	
 	

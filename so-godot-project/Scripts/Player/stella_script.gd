@@ -32,8 +32,10 @@ const INPUT_BUFFER_PATIENCE = 0.1 # Input queue patience time
 const COYOTE_TIME = 0.08 # Coyote patience time
 
 const BOOST_VELOCITY = -800.0 # strength for boost
+const DASH_VELOCITY = 800.0 # strength for dash
 
 var direction = 0
+var facing_right = true
 
 var input_buffer : Timer # Reference to the input queue timer
 var coyote_timer : Timer # Reference to the coyote timer
@@ -45,8 +47,8 @@ const DASH_SPEED = 2
 var can_dash = true
 
 @onready var dash_duration_timer = $DashDurationTimer
-#death duration
-@onready var death_timer = Timer.new()
+
+
 
 #@onready var anim_player: AnimationPlayer = $AnimationPlayer
 
@@ -56,12 +58,6 @@ func _ready() -> void:
 	input_buffer.wait_time = INPUT_BUFFER_PATIENCE
 	input_buffer.one_shot = true
 	add_child(input_buffer)
-	
-#	Setting up timer for death.
-	death_timer.wait_time = .5  
-	death_timer.one_shot = true
-	death_timer.connect("timeout",_on_death_timeout)
-	add_child(death_timer)
 
 	# Set up coyote timer
 	coyote_timer = Timer.new()
@@ -79,12 +75,20 @@ func _physics_process(delta) -> void:
 	if GlobalState.paused:
 		return
 		
+	if horizontal_input == -1:
+		facing_right = false
+		GlobalState.stella_direction = -1
+	elif horizontal_input == 1:
+		facing_right = true
+		GlobalState.stella_direction = 1
+		
 	horizontal_input = Input.get_axis("move_left", "move_right")
 	var jump_attempted := Input.is_action_just_pressed("jump")
 	var boost_attempted := Input.is_action_just_pressed("boost") 
-	var dash_attempted = (horizontal_input != 0 and Input.is_action_just_pressed("dash"))
+	var dash_attempted = (Input.is_action_just_pressed("dash"))
+	var grapple_attempted = Input.is_action_just_pressed("grapple")
 
-	# Boost Jump 
+	# Boost Jump (Up + Boost)
 	if boost_attempted and GlobalState.boosts_available > 0 :
 		if DEBUG: print("Boost jump triggered")
 		velocity.y = BOOST_VELOCITY
@@ -93,15 +97,28 @@ func _physics_process(delta) -> void:
 
 	# Dash
 	elif dash_attempted and GlobalState.dashes_available > 0:
-#		can dash coulddd be used to limit the amt of times dashed, but i think we are going to limit that
+#		can dash could be used to limit the amt of times dashed, but i think we are going to limit that
 #		with an actual number, so maybe a puzzle requires you to use two dashes at once?
 #add in a global var for number of dashes
 		is_dashing = true
 		#can_dash = false
 		direction = sign(horizontal_input)
+		#velocity.x = DASH_VELOCITY
 		dash_duration_timer.start()
 		GlobalState.dashes_available -= 1
 		if DEBUG: print("Dash triggered, Dashes available ",GlobalState.dashes_available)
+		
+	# Grappling Hook
+	elif grapple_attempted and GlobalState.grapples_available > 0:
+		var Hookshot = preload("res://Scenes/Items/Hookshot.tscn").instantiate()
+		add_child(Hookshot)
+		if facing_right:
+			Hookshot.transform = $Marker2DR.transform # Currently only shoots to the right, make this flip with Stella
+		elif not facing_right:
+			Hookshot.transform = $Marker2DL.transform
+		GlobalState.grapples_available -= 1
+		if DEBUG: print("Grapple shot, shots availale: ", GlobalState.grapples_available)
+		
 
 	# Apply jump or buffered jump
 	if jump_attempted or input_buffer.time_left > 0:
@@ -143,6 +160,7 @@ func get_gravity_now(input_dir : float = 0) -> float:
 	if is_on_wall_only() and velocity.y > 0 and input_dir != 0:
 		return WALL_GRAVITY
 	return GRAVITY if velocity.y < 0 else FALL_GRAVITY
+	
 
 # Reset coyote jump
 func coyote_timeout() -> void:
@@ -153,18 +171,3 @@ func coyote_timeout() -> void:
 func _on_dash_duration_timer_timeout() -> void:
 	is_dashing = false
 	dash_duration_timer.stop()
-
-func _on_death_timeout():
-	# Reset modulate (optional, since the scene restarts
-	modulate = Color(1, 1, 1)  #setting her color back to normal
-	GlobalState.paused = false
-	GlobalState.on_death()
-	
-#for obstacles, how were handling that
-func _on_hitbox_body_entered(body: Node2D) -> void:
-#	death
-	GlobalState.paused = true
-	modulate = Color(1, 0, 0)  # Change the character to red
-	death_timer.start()        # Start the death timer
-	
-	

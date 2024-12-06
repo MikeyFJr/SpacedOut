@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://brht2rcan4mow"]
+[gd_scene load_steps=7 format=3 uid="uid://brht2rcan4mow"]
 
 [ext_resource type="Script" path="res://Scripts/UI/textbox.gd" id="1_a3xds"]
 [ext_resource type="StyleBox" uid="uid://s0l121588gtm" path="res://Assets/UI/textbox-style.tres" id="1_opbol"]
 [ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="2_0xlig"]
-[ext_resource type="Theme" uid="uid://csbejfmd85ieu" path="res://main_ui_theme.tres" id="3_dcwe4"]
+[ext_resource type="LabelSettings" uid="uid://digfdl3delti3" path="res://Assets/UI/textbox_text.tres" id="3_cigcx"]
 [ext_resource type="LabelSettings" uid="uid://bx85h0aolsqtl" path="res://Assets/UI/textbox_speaker.tres" id="4_o8ui2"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kj80k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2axg"]
 bg_color = Color(0.0922767, 0.31, 0.0434, 1)
@@ -44,26 +42,24 @@ theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 8
 
 [node name="Panel" type="Panel" parent="TextContainer/MarginContainer"]
+visible = false
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_kj80k")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextContainer/MarginContainer/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TextContainer/MarginContainer"]
 layout_mode = 2
-offset_left = 8.0
-offset_top = 43.0
-offset_right = 905.0
-offset_bottom = 142.0
 
-[node name="Text" type="RichTextLabel" parent="TextContainer/MarginContainer/Panel/HBoxContainer"]
+[node name="Text" type="Label" parent="TextContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.65
-theme = ExtResource("3_dcwe4")
+theme_override_fonts/font = ExtResource("2_0xlig")
+theme_override_font_sizes/font_size = 31
 text = "Placeholder text ... ... ..."
-autowrap_mode = 2
+label_settings = ExtResource("3_cigcx")
+autowrap_mode = 3
 
-[node name="Continue" type="Label" parent="TextContainer/MarginContainer/Panel/HBoxContainer"]
+[node name="Continue" type="Label" parent="TextContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(35, 20)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_0xlig")

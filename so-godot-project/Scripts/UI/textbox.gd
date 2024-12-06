@@ -4,8 +4,8 @@ const CHAR_READ_RATE = 0.03
 const DEBUG = false
 
 @onready var textbox_container = $TextContainer
-@onready var label = $TextContainer/MarginContainer/Panel/HBoxContainer/Text
-@onready var end_symbol = $TextContainer/MarginContainer/Panel/HBoxContainer/Continue
+@onready var label = $TextContainer/MarginContainer/HBoxContainer/Text
+@onready var end_symbol = $TextContainer/MarginContainer/HBoxContainer/Continue
 
 @onready var speaker_container = $SpeakerContainer
 @onready var speaker_label = $SpeakerContainer/Panel/MarginContainer/Label

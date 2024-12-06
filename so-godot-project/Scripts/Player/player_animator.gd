@@ -10,6 +10,7 @@ func _process(_delta):
 		return
 	if player_controller.horizontal_input == 1:
 		sprite.flip_h = false
+		
 	elif player_controller.horizontal_input == -1:
 		sprite.flip_h = true
 	# plays the movement animation
