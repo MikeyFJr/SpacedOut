@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/textbox.gd" id="1_a3xds"]
 [ext_resource type="StyleBox" uid="uid://s0l121588gtm" path="res://Assets/UI/textbox-style.tres" id="1_opbol"]
 [ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="2_0xlig"]
-[ext_resource type="Theme" uid="uid://bmk4r1yn3sjxv" path="res://main_ui_theme.tres" id="3_dcwe4"]
+[ext_resource type="Theme" uid="uid://csbejfmd85ieu" path="res://main_ui_theme.tres" id="3_dcwe4"]
 [ext_resource type="LabelSettings" uid="uid://bx85h0aolsqtl" path="res://Assets/UI/textbox_speaker.tres" id="4_o8ui2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kj80k"]

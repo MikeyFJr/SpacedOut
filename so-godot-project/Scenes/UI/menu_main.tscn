@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dysr5xuf6dgqg" path="res://Assets/Fonts/Matemasie-Regular.ttf" id="2_ae6kj"]
 [ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="3_esfwa"]
 [ext_resource type="Script" path="res://Scripts/UI/main_menu_btn.gd" id="4_2wlai"]
-[ext_resource type="Theme" uid="uid://bmk4r1yn3sjxv" path="res://main_ui_theme.tres" id="5_ud8jy"]
+[ext_resource type="Theme" uid="uid://csbejfmd85ieu" path="res://main_ui_theme.tres" id="5_ud8jy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqwmv"]
 bg_color = Color(1, 0.615686, 0, 0.313726)
