@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dw4w4d1sy6aaa"]
+
+[ext_resource type="PackedScene" uid="uid://bxxptc4671sjg" path="res://Scenes/Stages/World-1/Level-1/scene_template.tscn" id="1_yeih0"]
+[ext_resource type="Texture2D" uid="uid://bsm7dm0c51ngb" path="res://Assets/Images/Backgrounds/lava_world_1.png" id="2_yqbng"]
+[ext_resource type="Texture2D" uid="uid://u7mwu13rvblo" path="res://Assets/Images/Backgrounds/lava_world_2.png" id="3_kb6p1"]
+[ext_resource type="Texture2D" uid="uid://byhmoxcnv085x" path="res://Assets/Images/Backgrounds/lava_world_3.png" id="4_6ifmm"]
+[ext_resource type="Texture2D" uid="uid://bsj8bsjswhbjp" path="res://Assets/Images/Backgrounds/lava_world_4.png" id="5_2ggmn"]
+
+[node name="scene_template" instance=ExtResource("1_yeih0")]
+
+[node name="TextureRect" parent="ParallaxBackground/background_fardirt" index="0"]
+texture = ExtResource("2_yqbng")
+
+[node name="TextureRect" parent="ParallaxBackground/middle_plants" index="0"]
+texture = ExtResource("3_kb6p1")
+
+[node name="TextureRect" parent="ParallaxBackground/foreground_dirt" index="0"]
+texture = ExtResource("4_6ifmm")
+
+[node name="foreground_dirt2" type="ParallaxLayer" parent="ParallaxBackground" index="3"]
+motion_scale = Vector2(0.7, 0.5)
+motion_mirroring = Vector2(288, 180)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/foreground_dirt2" index="0"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_2ggmn")

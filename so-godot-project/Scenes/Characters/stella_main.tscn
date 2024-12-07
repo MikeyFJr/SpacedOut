@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://u36mbm1jhasr"]
+[gd_scene load_steps=13 format=3 uid="uid://u36mbm1jhasr"]
 
 [ext_resource type="Script" path="res://Scripts/Player/stella_script.gd" id="1_bufls"]
 [ext_resource type="Script" path="res://Scripts/Player/player_animator.gd" id="2_f74gj"]
@@ -94,6 +94,10 @@ _data = {
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2imu"]
 radius = 7.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tde6e"]
+radius = 6.0
+height = 28.0
+
 [node name="Stella" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_bufls")
@@ -125,6 +129,17 @@ visibility_layer = 3
 position = Vector2(0, -16)
 shape = SubResource("CapsuleShape2D_g2imu")
 
+[node name="Damage_hitbox" type="Area2D" parent="."]
+position = Vector2(0, -15)
+collision_layer = 0
+collision_mask = 4
+
+[node name="Damage_capsule" type="CollisionShape2D" parent="Damage_hitbox"]
+light_mask = 0
+visibility_layer = 4
+shape = SubResource("CapsuleShape2D_tde6e")
+debug_color = Color(0.954069, 5.19812e-06, 0.550326, 0.42)
+
 [node name="DashDurationTimer" type="Timer" parent="."]
 wait_time = 0.3
 
@@ -137,4 +152,5 @@ position = Vector2(7, -16)
 [node name="Marker2DL" type="Marker2D" parent="."]
 position = Vector2(-7, -16)
 
+[connection signal="body_entered" from="Damage_hitbox" to="." method="_on_damage_hitbox_body_entered"]
 [connection signal="timeout" from="DashDurationTimer" to="." method="_on_dash_duration_timer_timeout"]

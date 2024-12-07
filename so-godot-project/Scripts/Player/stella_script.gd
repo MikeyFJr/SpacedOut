@@ -48,6 +48,8 @@ var can_dash = true
 
 @onready var dash_duration_timer = $DashDurationTimer
 
+#death duration
+@onready var death_timer = Timer.new()
 
 
 #@onready var anim_player: AnimationPlayer = $AnimationPlayer
@@ -58,7 +60,13 @@ func _ready() -> void:
 	input_buffer.wait_time = INPUT_BUFFER_PATIENCE
 	input_buffer.one_shot = true
 	add_child(input_buffer)
-
+	
+	#Setting up timer for death.
+	death_timer.wait_time = .5  
+	death_timer.one_shot = true
+	death_timer.connect("timeout",_on_death_timeout)
+	add_child(death_timer)
+	
 	# Set up coyote timer
 	coyote_timer = Timer.new()
 	coyote_timer.wait_time = COYOTE_TIME
@@ -171,3 +179,16 @@ func coyote_timeout() -> void:
 func _on_dash_duration_timer_timeout() -> void:
 	is_dashing = false
 	dash_duration_timer.stop()
+
+func _on_death_timeout():
+	# Reset modulate (optional, since the scene restarts
+	modulate = Color(1, 1, 1)  #setting her color back to normal
+	GlobalState.paused = false
+	GlobalState.on_death()
+	
+#for obstacles, how were handling that
+func _on_damage_hitbox_body_entered(body: Node2D) -> void:
+	#	death
+	GlobalState.paused = true
+	modulate = Color(1, 0, 0)  # Change the character to red
+	death_timer.start()        # Start the death timer

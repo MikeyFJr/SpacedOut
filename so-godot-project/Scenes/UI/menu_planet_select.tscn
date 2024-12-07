@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dy1gmvf63yucy"]
+[gd_scene load_steps=23 format=3 uid="uid://bo058dkemrwdn"]
 
 [ext_resource type="Script" path="res://FigmaImporter/FigmaImporter.gd" id="1_kuo0l"]
 [ext_resource type="Script" path="res://FigmaImporter/DesignerFrame.gd" id="2_8wi52"]
