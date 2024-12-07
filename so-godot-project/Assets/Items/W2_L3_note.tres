@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://c4kehj8spc2rh"]
+
+[ext_resource type="Texture2D" uid="uid://dnhywakswssie" path="res://Assets/Images/Items/butter_milk_free.png" id="1_g47co"]
+[ext_resource type="Script" path="res://Scenes/UI/item.gd" id="2_iuf02"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jva30"]
+atlas = ExtResource("1_g47co")
+region = Rect2(64, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_iuf02")
+title = "Note found on Lava World"
+icon = SubResource("AtlasTexture_jva30")
+description = "It reads: \"I left the boots and maybe it would help someone else. If... If I am unlucky she will follow. They say it would have been better to take the boots, but if I can leave her something I will try. Love you Stel.\" Is this note talking about me?"
+dialogue = Array[String](["I. Don't understand."])

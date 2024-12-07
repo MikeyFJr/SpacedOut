@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://hth0m8l21bei"]
+[gd_scene load_steps=24 format=3 uid="uid://hth0m8l21bei"]
 
 [ext_resource type="FontFile" uid="uid://dysr5xuf6dgqg" path="res://Assets/Fonts/Matemasie-Regular.ttf" id="1_28kg0"]
 [ext_resource type="StyleBox" uid="uid://cu5mqk2d34bq1" path="res://Assets/UI/hov_menu_button.tres" id="2_r2ki1"]
@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://bjacaarlff45e" path="res://Scenes/UI/item_slot.tscn" id="7_2kstn"]
 [ext_resource type="LabelSettings" uid="uid://buo6uwddjv7la" path="res://Assets/UI/inven_world_label.tres" id="7_tnkru"]
 [ext_resource type="Resource" uid="uid://bwi5q5oqwh2bv" path="res://Assets/Items/Note_1.tres" id="8_8uk2g"]
+[ext_resource type="Resource" uid="uid://xoorqes60b7i" path="res://Assets/Items/W2_L1_note.tres" id="9_fc4ol"]
+[ext_resource type="Resource" uid="uid://c4kehj8spc2rh" path="res://Assets/Items/W2_L3_note.tres" id="10_jhirv"]
+[ext_resource type="FontFile" uid="uid://dxr2d2lkdafl1" path="res://Assets/Fonts/Anta-Regular.ttf" id="12_fmrgt"]
+[ext_resource type="Theme" uid="uid://bmmkyfpvq8js1" path="res://Scenes/UI/readable_text.tres" id="13_4x7wm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua5lp"]
 content_margin_left = 4.0
@@ -67,6 +71,7 @@ RichTextLabel/styles/focus = SubResource("StyleBoxFlat_ua5lp")
 RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_qhtmt")
 
 [sub_resource type="LabelSettings" id="LabelSettings_4lpcl"]
+font = ExtResource("12_fmrgt")
 font_size = 25
 font_color = Color(0.247059, 0.156863, 0.196078, 1)
 
@@ -390,9 +395,11 @@ columns = 3
 
 [node name="PanelContainer" parent="Inventory/WorldContainer/World2_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
+item = ExtResource("9_fc4ol")
 
 [node name="PanelContainer2" parent="Inventory/WorldContainer/World2_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
+item = ExtResource("10_jhirv")
 
 [node name="World3_items" type="VBoxContainer" parent="Inventory/WorldContainer"]
 layout_mode = 2
@@ -480,7 +487,7 @@ offset_right = 71.1459
 offset_bottom = 42.6241
 scale = Vector2(0.990268, 1)
 theme_override_font_sizes/font_size = 16
-text = ".."
+text = "..."
 label_settings = SubResource("LabelSettings_4lpcl")
 
 [node name="Description" type="RichTextLabel" parent="Inventory/Description"]
@@ -493,9 +500,10 @@ offset_top = 49.0
 offset_right = 99.5
 offset_bottom = 310.0
 grow_horizontal = 2
+theme = ExtResource("13_4x7wm")
 theme_override_colors/default_color = Color(0.247059, 0.156863, 0.196078, 1)
 theme_override_font_sizes/normal_font_size = 16
-text = "..."
+text = "..test"
 
 [node name="Icon" type="TextureRect" parent="Inventory/Description"]
 layout_mode = 0

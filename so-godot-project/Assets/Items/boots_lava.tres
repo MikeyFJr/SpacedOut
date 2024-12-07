@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://dsuwe0tp1aid8"]
+
+[ext_resource type="Texture2D" uid="uid://dnhywakswssie" path="res://Assets/Images/Items/butter_milk_free.png" id="1_64hrb"]
+[ext_resource type="Script" path="res://Scenes/UI/item.gd" id="2_2vycx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jva30"]
+atlas = ExtResource("1_64hrb")
+region = Rect2(48, 48, 16, 16)
+
+[resource]
+script = ExtResource("2_2vycx")
+title = "Lava Boots"
+icon = SubResource("AtlasTexture_jva30")
+description = ""
+dialogue = Array[String](["Are these what that note was talking about?", "Maybe."])

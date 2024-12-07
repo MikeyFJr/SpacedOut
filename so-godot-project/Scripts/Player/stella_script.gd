@@ -46,6 +46,8 @@ var is_dashing = false
 const DASH_SPEED = 2
 var can_dash = true
 
+var current_tilemap = TileMap
+
 @onready var dash_duration_timer = $DashDurationTimer
 
 #death duration
@@ -187,8 +189,27 @@ func _on_death_timeout():
 	GlobalState.on_death()
 	
 #for obstacles, how were handling that
-func _on_damage_hitbox_body_entered(body: Node2D) -> void:
-	#	death
-	GlobalState.paused = true
-	modulate = Color(1, 0, 0)  # Change the character to red
-	death_timer.start()        # Start the death timer
+#func _on_damage_hitbox_body_entered(body: Node2D) -> void:
+	#pass
+	##GlobalState.paused = true
+	##modulate = Color(1, 0, 0)  # Change the character to red
+	##death_timer.start()        # Start the death timer
+	#
+
+
+func _on_damage_hitbox_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	#if GlobalState.DEBUG: print(body_rid,"     ",body)
+	current_tilemap = body
+	var lava_true = false
+	if GlobalState.lava_boots:
+		var collided_tile_coords = current_tilemap.get_coords_for_body_rid(body_rid)
+		#if GlobalState.DEBUG: print("coords",collided_tile_coords)
+		var tile_data = current_tilemap.get_cell_tile_data(collided_tile_coords)
+		#if !tile_data is TileData:
+			#
+		lava_true = tile_data.get_custom_data_by_layer_id(0) # 0 as I only put one data layer on 
+#	dealing with if it is lava and we have lava boots
+	if !lava_true:
+		GlobalState.paused = true
+		modulate = Color(1, 0, 0)  # Change the character to red
+		death_timer.start()        # Start the death timer

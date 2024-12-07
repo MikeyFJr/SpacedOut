@@ -6,6 +6,9 @@ var dashes_available = 10 # Bubble Gun
 var grapples_available = 10 # Grappling Hook
 var floats_available = 10 # Lava Boots
 var beams_available = 10 # Restoration Beam
+#vary hard coded.....
+var  lava_boots = false
+
 
 var stella_direction = 1
 #maybe this can be changed at the begginning of each level calling it?
@@ -64,6 +67,8 @@ var DEBUG = true
 #i changed a bit, most of the above might not be needed anymore, but maybe a seperate file for items
 
 var collected_items = []
+#boots would be collected into collected items as 
+#VERY hard coded but boots are <Resource#-9223371975802485477> 
 
 func is_item_collected(item: Item) -> bool:
 	return item in collected_items

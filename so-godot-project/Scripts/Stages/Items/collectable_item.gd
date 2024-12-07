@@ -41,6 +41,11 @@ func _on_body_entered(body):
 		collect_item()
 
 func collect_item():
+	#print(item.title)
+#	hard coded. if lava boots, set var in Global state to true
+	if item.title == "Lava Boots":
+		GlobalState.lava_boots = true
+		
 	if item not in GlobalState.collected_items:
 		GlobalState.collected_items.append(item)
 		# signal for collected item (so we could maybe use in hud when we do that ig)

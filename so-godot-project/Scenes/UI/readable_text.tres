@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bmmkyfpvq8js1"]
+
+[ext_resource type="FontFile" uid="uid://dxr2d2lkdafl1" path="res://Assets/Fonts/Anta-Regular.ttf" id="1_8nsdh"]
+
+[resource]
+default_font = ExtResource("1_8nsdh")
+default_font_size = 8

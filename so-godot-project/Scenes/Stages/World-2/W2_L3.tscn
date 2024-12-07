@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://2tdf05sbq1a5"]
+
+[ext_resource type="PackedScene" uid="uid://dw4w4d1sy6aaa" path="res://Scenes/Stages/World-2/W2_L1.tscn" id="1_pyanl"]
+[ext_resource type="Resource" uid="uid://c4kehj8spc2rh" path="res://Assets/Items/W2_L3_note.tres" id="2_xjslx"]
+
+[node name="scene_template" instance=ExtResource("1_pyanl")]
+
+[node name="Collectable_item" parent="." index="4"]
+item = ExtResource("2_xjslx")
