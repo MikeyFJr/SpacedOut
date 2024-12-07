@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 		if DEBUG: print("Hookshot retracting")
 	elif grapple_shot and length == maxlength:
 		if DEBUG: print ("Hookshot didn't hit anything")
+		GlobalState.grapple_shot = false
 		queue_free()
 	
 	if horizontal_input == -1:
@@ -50,6 +51,13 @@ func _process(delta: float) -> void:
 	elif fired and length >= (maxlength / 2) and length <= maxlength and not hit:
 		position -= transform.x * speed * delta * direction
 		length += 1
+	
+	if fired and hit: # "Freeze" in place
+		position -= transform.x * speed * delta * direction
+	
+	if not GlobalState.grapple_shot: # Stops the hookshot if Stella jumps early
+		queue_free()
+		
 	pass
 	
 	
@@ -59,9 +67,11 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_meta("Grappleable") and fired: # Check if object shot is a platform the grappling hook latches onto
 		if DEBUG: print("Wall Hit")	 
-		speed = 0
+		speed = 300
 		hit = true
-		
-		
-	#queue_free()
+		GlobalState.grappling = true 
+	if body.has_meta("Stella") and GlobalState.grappling:
+		GlobalState.grappling = false
+		GlobalState.grapple_shot = false
+		queue_free()
 	pass # Replace with function body.

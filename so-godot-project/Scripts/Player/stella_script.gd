@@ -46,6 +46,9 @@ var is_dashing = false
 const DASH_SPEED = 2
 var can_dash = true
 
+var GRAPPLE_SPEED = 1.5
+# var grapple_shot = false 
+
 var current_tilemap = TileMap
 
 @onready var dash_duration_timer = $DashDurationTimer
@@ -119,16 +122,25 @@ func _physics_process(delta) -> void:
 		if DEBUG: print("Dash triggered, Dashes available ",GlobalState.dashes_available)
 		
 	# Grappling Hook
-	elif grapple_attempted and GlobalState.grapples_available > 0:
+	elif grapple_attempted and not GlobalState.grapple_shot and GlobalState.grapples_available > 0:
+		GlobalState.grapple_shot = true
 		var Hookshot = preload("res://Scenes/Items/Hookshot.tscn").instantiate()
 		add_child(Hookshot)
 		if facing_right:
-			Hookshot.transform = $Marker2DR.transform # Currently only shoots to the right, make this flip with Stella
+			Hookshot.transform = $Marker2DR.transform
 		elif not facing_right:
 			Hookshot.transform = $Marker2DL.transform
 		GlobalState.grapples_available -= 1
 		if DEBUG: print("Grapple shot, shots availale: ", GlobalState.grapples_available)
-		
+	if GlobalState.grappling:
+		velocity.y = 0
+		if facing_right: # Pulls Stella toward the hookshot head or until she jumps
+			position += transform.x * SPEED * GRAPPLE_SPEED * delta
+		else:
+			position -= transform.x * SPEED * GRAPPLE_SPEED * delta
+		if jump_attempted or is_on_wall():
+			GlobalState.grappling = false
+			GlobalState.grapple_shot = false
 
 	# Apply jump or buffered jump
 	if jump_attempted or input_buffer.time_left > 0:
@@ -195,7 +207,6 @@ func _on_death_timeout():
 	##modulate = Color(1, 0, 0)  # Change the character to red
 	##death_timer.start()        # Start the death timer
 	#
-
 
 func _on_damage_hitbox_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	#if GlobalState.DEBUG: print(body_rid,"     ",body)

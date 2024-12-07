@@ -8,7 +8,8 @@ var floats_available = 10 # Lava Boots
 var beams_available = 10 # Restoration Beam
 #vary hard coded.....
 var  lava_boots = false
-
+var grappling = false # Detects if Stella is travelling on the grappling hook
+var grapple_shot = false # Limits Stella to one grappling hook at a time
 
 var stella_direction = 1
 #maybe this can be changed at the begginning of each level calling it?

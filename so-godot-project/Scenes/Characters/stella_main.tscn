@@ -102,6 +102,7 @@ height = 32.0
 collision_layer = 3
 collision_mask = 5
 script = ExtResource("1_bufls")
+metadata/Stella = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(38, -32)
