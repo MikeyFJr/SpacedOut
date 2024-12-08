@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://u36mbm1jhasr"]
+[gd_scene load_steps=14 format=3 uid="uid://u36mbm1jhasr"]
 
 [ext_resource type="Script" path="res://Scripts/Player/stella_script.gd" id="1_bufls"]
+[ext_resource type="Script" path="res://Scripts/Player/camera_2d.gd" id="2_6vc1h"]
 [ext_resource type="Script" path="res://Scripts/Player/player_animator.gd" id="2_f74gj"]
 [ext_resource type="Texture2D" uid="uid://djeo8l0icnmer" path="res://Assets/Images/Sprites/stella-Sheet.png" id="3_7k3jq"]
 [ext_resource type="PackedScene" uid="uid://ds42qr53jy6d8" path="res://Scenes/Items/Hookshot.tscn" id="4_f35y6"]
@@ -107,6 +108,7 @@ metadata/Stella = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(38, -32)
 zoom = Vector2(4, 4)
+script = ExtResource("2_6vc1h")
 
 [node name="PlayerAnimator" type="Node2D" parent="." node_paths=PackedStringArray("player_controller", "animation_player", "sprite")]
 script = ExtResource("2_f74gj")

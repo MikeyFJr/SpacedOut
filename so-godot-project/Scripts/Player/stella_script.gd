@@ -64,6 +64,8 @@ var max_glide_speed = 150.0 # speed going down while while gliding
 #@onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var glide_timer = Timer.new() # Timer node for glide activation window
 
+@onready var camera_node = $Camera2D
+
 func _ready() -> void:
 	# Set up input buffer timer
 	input_buffer = Timer.new()
@@ -97,7 +99,8 @@ func _physics_process(delta) -> void:
 	#print("velocity:",velocity.y)
 	if GlobalState.paused:
 		return
-		
+	
+	
 	if horizontal_input == -1:
 		facing_right = false
 		GlobalState.stella_direction = -1
@@ -115,7 +118,8 @@ func _physics_process(delta) -> void:
 		State.IDLE:
 			if not is_on_floor():
 				current_state = State.FALLING
-		
+			if camera_node:
+				camera_node.update_camera(velocity)	
 		State.FALLING:
 			#if falling and attemptt o jump is held while timer is still active
 			if velocity.y >0 and glide_timer.is_stopped() == false:
@@ -129,9 +133,11 @@ func _physics_process(delta) -> void:
 				current_state = State.IDLE
 			elif velocity.y > max_glide_speed:
 				velocity.y = max_glide_speed
+			if camera_node:
+				camera_node.update_camera(velocity)	
 				
 	
-	print("Current state",current_state)
+	#print("Current state",current_state)
 	# Boost Jump (Up + Boost)
 	if boost_attempted and GlobalState.boosts_available > 0 :
 		if DEBUG: print("Boost jump triggered")
