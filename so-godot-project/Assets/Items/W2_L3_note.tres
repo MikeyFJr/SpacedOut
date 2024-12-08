@@ -9,7 +9,7 @@ region = Rect2(64, 16, 16, 16)
 
 [resource]
 script = ExtResource("2_iuf02")
-title = "Note found on Lava World"
+title = "Note from.. my Father?"
 icon = SubResource("AtlasTexture_jva30")
-description = "It reads: \"I left the boots and maybe it would help someone else. If... If I am unlucky she will follow. They say it would have been better to take the boots, but if I can leave her something I will try. Love you Stel.\" Is this note talking about me?"
-dialogue = Array[String](["I. Don't understand."])
+description = "\"Stella, you need to understand this planet wasn’t always this. Before, I’d take you here to play on the beaches… But now you need to be careful. I tried to leave as much for you as I could, because you are our last hope. My last hope… My sweet daughter.\" "
+dialogue = Array[String](["My father is writing these notes?! Where did he go?", "I have to find him to get more answers.", "And what does he mean by me being his last hope?", "None of this makes any sense…"])

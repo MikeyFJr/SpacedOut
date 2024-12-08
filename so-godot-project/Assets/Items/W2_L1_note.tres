@@ -9,7 +9,7 @@ region = Rect2(64, 16, 16, 16)
 
 [resource]
 script = ExtResource("1_ggpkv")
-title = "Note found on Lava World"
+title = "Note about a tool"
 icon = SubResource("AtlasTexture_jva30")
-description = "It reads: \"Gods above anyone finds this note. It's trecherous to navigate this landscape let alone the heat. I hear there is something to help someone get past this easier. Heres to hopeing my daughter will follow.\" "
+description = "\"Gods above anyone finds this note. It's trecherous to navigate this landscape let alone the heat. I hear there is something to help someone get past this easier. Heres to hopeing she will follow.\" "
 dialogue = Array[String](["It mentions something to help get past this lava. ", "I hope I can find it."])

@@ -11,10 +11,18 @@ extends Control
 #weird.. yes... but it works...
 @export var world1_panel_1 : PanelContainer
 @export var world1_panel_2 : PanelContainer
+
 @export var world2_panel_1 : PanelContainer
 @export var world2_panel_2 : PanelContainer
+
 @export var world3_panel_1 : PanelContainer
 @export var world3_panel_2 : PanelContainer
+
+@export var world4_panel_1 : PanelContainer
+@export var world4_panel_2 : PanelContainer
+
+@export var world5_panel_1 : PanelContainer
+@export var world5_panel_2 : PanelContainer
 #i think menu would be the one loading in the information into the slots ?
 enum STATE { MENU, INVENTORY }
 var ui_state = STATE.MENU
@@ -62,20 +70,20 @@ func _update_inventory_ui():
 	
 	##world1_panel_1.item = Items.test_item1
 	world1_panel_1.update_panel_state()  # Update to show whether collected or not
-#
-	##world1_panel_2.item = Items.test_item2
 	world1_panel_2.update_panel_state()
 #
 	## Set items for World2 Panels
-	##world2_panel_1.item = Items.test_item3
 	world2_panel_1.update_panel_state()
-#
-	#world2_panel_2.item = Items.test_item4
 	world2_panel_2.update_panel_state()
 	
-#	still need to do rest of worlds, so far just 1 + 2
+	world3_panel_1.update_panel_state()
+	world3_panel_2.update_panel_state()
 
-
+	world4_panel_1.update_panel_state()
+	world4_panel_2.update_panel_state()
+	
+	world5_panel_1.update_panel_state()
+	world5_panel_2.update_panel_state()
 func _on_button_2_pressed() -> void:
 	#pass # Replace with function body.
 	var current_scene = get_tree().current_scene

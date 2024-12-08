@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bukdjjaj807ct"]
+
+[ext_resource type="Texture2D" uid="uid://dnhywakswssie" path="res://Assets/Images/Items/butter_milk_free.png" id="1_2jjxt"]
+[ext_resource type="Script" path="res://Scenes/UI/item.gd" id="2_ei3px"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jva30"]
+atlas = ExtResource("1_2jjxt")
+region = Rect2(64, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_ei3px")
+title = "1/2 of Note"
+icon = SubResource("AtlasTexture_jva30")
+description = "\"My last stand against the Empire was a direct rebellion. I told them no more experiments, no more terraforming. That’s when they tried to take you. So that’s when we made our great escape...\" "
+dialogue = Array[String](["My Dad stood up to them. Somehow", "But I need to find the other part to this note."])

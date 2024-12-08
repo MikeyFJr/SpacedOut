@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bhyt34w7evj57"]
+
+[ext_resource type="Texture2D" uid="uid://dnhywakswssie" path="res://Assets/Images/Items/butter_milk_free.png" id="1_xkjsx"]
+[ext_resource type="Script" path="res://Scenes/UI/item.gd" id="2_kdoy5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jva30"]
+atlas = ExtResource("1_xkjsx")
+region = Rect2(64, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_kdoy5")
+title = "Loving note."
+icon = SubResource("AtlasTexture_jva30")
+description = "\"A small part of me hopes you don't find this. It's better that way. Stay safe my love.\" "
+dialogue = Array[String](["This feels like I shouldn't have seen this.", "But I can't help but tear up.", "Why?"])

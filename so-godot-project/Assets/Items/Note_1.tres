@@ -11,6 +11,6 @@ region = Rect2(64, 16, 16, 16)
 script = ExtResource("2_xydaq")
 title = "Note 1"
 icon = SubResource("AtlasTexture_u7rri")
-description = "It reads: \"I'm sorry Stella, but it had to be this way.\" .... You aren't sure what to make of this.
+description = "\"I'm sorry Stella, but it had to be this way.\" .... You aren't sure what to make of this.
 It doesn't help they have bad handwriting."
 dialogue = Array[String](["A note!", "I don't understand.", "Who wrote this?"])

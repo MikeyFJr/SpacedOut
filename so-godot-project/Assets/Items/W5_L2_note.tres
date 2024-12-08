@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bdwpwby6188oy"]
+
+[ext_resource type="Texture2D" uid="uid://dnhywakswssie" path="res://Assets/Images/Items/butter_milk_free.png" id="1_l0xn1"]
+[ext_resource type="Script" path="res://Scenes/UI/item.gd" id="2_kjfam"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jva30"]
+atlas = ExtResource("1_l0xn1")
+region = Rect2(64, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_kjfam")
+title = "2/2 of Note"
+icon = SubResource("AtlasTexture_jva30")
+description = "\"..and you landed on Terrak, away from greedy masterminds trying to use my daughter for domination. I couldn’t go with you to help, or they’d find you faster. Hopefully, you make it this far, Stella. You are this galaxy’s last stand.\" "
+dialogue = Array[String](["Dad… you did all of that for me?", "I understand now. Everything you sacrificed was to try and fix what they ruined.", "Don’t worry. Your sacrifice won’t be in vain.", "I will save this galaxy from the treachery of the Empire of the Rising Sun."])

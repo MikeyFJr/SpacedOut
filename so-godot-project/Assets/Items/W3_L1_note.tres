@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://3ru3f6mjm3qb"]
+
+[ext_resource type="Texture2D" uid="uid://dnhywakswssie" path="res://Assets/Images/Items/butter_milk_free.png" id="1_ycf16"]
+[ext_resource type="Script" path="res://Scenes/UI/item.gd" id="2_ggp8o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jva30"]
+atlas = ExtResource("1_ycf16")
+region = Rect2(64, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_ggp8o")
+title = "1/2 of Note"
+icon = SubResource("AtlasTexture_jva30")
+description = "\"This world must be so different now. The Empire didn’t care about the changes across the galaxy. And now the world has flooded because the Empire needed this entire world as a resource to fuel their schemes. Their entire mission is to...\" Its cut off."
+dialogue = Array[String](["The Empire sounds very intimidating..", " I need to find the other part of this."])
