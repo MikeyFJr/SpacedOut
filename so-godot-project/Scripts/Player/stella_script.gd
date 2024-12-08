@@ -56,8 +56,13 @@ var current_tilemap = TileMap
 #death duration
 @onready var death_timer = Timer.new()
 
+enum State {IDLE, FALLING, GLIDING}
 
+var current_state = State.IDLE
+var glide_gravity = 800.0 # gravity during gliding
+var max_glide_speed = 150.0 # speed going down while while gliding
 #@onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var glide_timer = Timer.new() # Timer node for glide activation window
 
 func _ready() -> void:
 	# Set up input buffer timer
@@ -71,6 +76,11 @@ func _ready() -> void:
 	death_timer.one_shot = true
 	death_timer.connect("timeout",_on_death_timeout)
 	add_child(death_timer)
+	
+	#Time for Glide
+	glide_timer.wait_time = 2.0 #2 seconds after boost
+	glide_timer.one_shot = true
+	add_child(glide_timer)
 	
 	# Set up coyote timer
 	coyote_timer = Timer.new()
@@ -100,11 +110,33 @@ func _physics_process(delta) -> void:
 	var boost_attempted := Input.is_action_just_pressed("boost") 
 	var dash_attempted = (Input.is_action_just_pressed("dash"))
 	var grapple_attempted = Input.is_action_just_pressed("grapple")
-
+	
+	match current_state:
+		State.IDLE:
+			if not is_on_floor():
+				current_state = State.FALLING
+		
+		State.FALLING:
+			#if falling and attemptt o jump is held while timer is still active
+			if velocity.y >0 and glide_timer.is_stopped() == false:
+				current_state = State.GLIDING
+			elif is_on_floor():
+				current_state = State.IDLE
+		State.GLIDING:
+			#if not jump_attempted or is_on_floor():
+				#current_state = State.FALLING
+			if not Input.is_action_pressed("jump") or is_on_floor():
+				current_state = State.IDLE
+			elif velocity.y > max_glide_speed:
+				velocity.y = max_glide_speed
+				
+	
+	print("Current state",current_state)
 	# Boost Jump (Up + Boost)
 	if boost_attempted and GlobalState.boosts_available > 0 :
 		if DEBUG: print("Boost jump triggered")
 		velocity.y = BOOST_VELOCITY
+		glide_timer.start()
 		GlobalState.boosts_available -= 1
 		if DEBUG: print("Boosts available ", GlobalState.boosts_available)
 
@@ -174,9 +206,13 @@ func _physics_process(delta) -> void:
 
 	# Apply velocity
 	move_and_slide()
+	if is_on_floor() and current_state != State.IDLE:
+		current_state = State.IDLE
 
 # Returns the gravity based on the state of the player
 func get_gravity_now(input_dir : float = 0) -> float:
+	if current_state == State.GLIDING:
+		return glide_gravity
 	if Input.is_action_pressed("fast_fall"):
 		return FAST_FALL_GRAVITY
 	if is_on_wall_only() and velocity.y > 0 and input_dir != 0:
@@ -200,13 +236,6 @@ func _on_death_timeout():
 	GlobalState.paused = false
 	GlobalState.on_death()
 	
-#for obstacles, how were handling that
-#func _on_damage_hitbox_body_entered(body: Node2D) -> void:
-	#pass
-	##GlobalState.paused = true
-	##modulate = Color(1, 0, 0)  # Change the character to red
-	##death_timer.start()        # Start the death timer
-	#
 
 func _on_damage_hitbox_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	#if GlobalState.DEBUG: print(body_rid,"     ",body)
