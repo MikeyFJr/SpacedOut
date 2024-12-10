@@ -24,6 +24,10 @@ GlobalState="*res://Scripts/Managers/Global_state.gd"
 
 window/stretch/mode="viewport"
 
+[gui]
+
+theme/custom="res://main_ui_theme.tres"
+
 [input]
 
 ui_cancel={
