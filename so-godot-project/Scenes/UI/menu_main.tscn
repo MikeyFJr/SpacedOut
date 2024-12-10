@@ -1,10 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://ius8h8kghj7e"]
+[gd_scene load_steps=10 format=3 uid="uid://ius8h8kghj7e"]
 
 [ext_resource type="Texture2D" uid="uid://clx7li4ydg16h" path="res://Assets/Images/UI/1-Green_640x360.png" id="1_1u5gk"]
 [ext_resource type="Script" path="res://Scripts/UI/menu_main.gd" id="1_b4qor"]
 [ext_resource type="FontFile" uid="uid://dysr5xuf6dgqg" path="res://Assets/Fonts/Matemasie-Regular.ttf" id="2_ae6kj"]
 [ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="3_esfwa"]
 [ext_resource type="Script" path="res://Scripts/UI/main_menu_btn.gd" id="4_2wlai"]
+[ext_resource type="StyleBox" uid="uid://cu5mqk2d34bq1" path="res://Assets/UI/hov_menu_button.tres" id="5_j6451"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16bov"]
+bg_color = Color(0.796078, 0.541176, 0.215686, 0.843137)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8w60"]
+bg_color = Color(0.796078, 0.541176, 0.215686, 0.843137)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5rtv"]
+bg_color = Color(0.796078, 0.541176, 0.215686, 0.843137)
 
 [node name="MenuMain" type="Node2D"]
 script = ExtResource("1_b4qor")
@@ -54,5 +64,9 @@ theme_override_colors/font_color = Color(1, 0.615686, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("3_esfwa")
 theme_override_font_sizes/font_size = 36
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_16bov")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s8w60")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s5rtv")
+theme_override_styles/normal = ExtResource("5_j6451")
 text = "Start >"
 script = ExtResource("4_2wlai")

@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=3 uid="uid://ojvw7axs385k"]
+
+[ext_resource type="Texture2D" uid="uid://dat4axxcvsvw2" path="res://Assets/Images/UI/tray_placeholders.png" id="1_vj871"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqytl"]
+atlas = ExtResource("1_vj871")
+region = Rect2(0, 0, 16.9385, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxopp"]
+atlas = ExtResource("1_vj871")
+region = Rect2(16.7829, 0.193621, 16.1933, 16.0816)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31l3n"]
+atlas = ExtResource("1_vj871")
+region = Rect2(33, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4yj4"]
+atlas = ExtResource("1_vj871")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfv10"]
+atlas = ExtResource("1_vj871")
+region = Rect2(64, 0, 16, 16)
+
+[node name="HUDTray" type="CanvasLayer"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_direction = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -110.0
+offset_right = 27.0
+offset_bottom = 16.0
+grow_vertical = 2
+scale = Vector2(1.77343, 1.83708)
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 9
+columns = 2
+
+[node name="GrappingHook" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_xqytl")
+stretch_mode = 5
+
+[node name="HookLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "∞"
+horizontal_alignment = 1
+
+[node name="LavaBoots" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_oxopp")
+stretch_mode = 5
+
+[node name="BootsLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "1"
+horizontal_alignment = 1
+
+[node name="BubbleGun" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_31l3n")
+stretch_mode = 5
+
+[node name="GunLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "1"
+horizontal_alignment = 1
+
+[node name="Jetpack" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_y4yj4")
+stretch_mode = 5
+
+[node name="JetpackLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "1"
+horizontal_alignment = 1
+
+[node name="Beam" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_vfv10")
+stretch_mode = 5
+
+[node name="BeamLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "1"
+horizontal_alignment = 1
