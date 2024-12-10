@@ -8,6 +8,7 @@ dialogue_queue = Array[Dictionary]([{
 "speaker": "Stella",
 "text": "The note is here for sure."
 }])
+level = "w3_s3"
 dashes = 2
 
 [node name="Level Complete" parent="Textbox" index="2"]

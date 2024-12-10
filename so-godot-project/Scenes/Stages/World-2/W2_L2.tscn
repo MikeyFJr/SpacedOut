@@ -11,6 +11,7 @@ dialogue_queue = Array[Dictionary]([{
 "speaker": "Stella",
 "text": "Maybe I can find that thing my dad was talking about."
 }])
+level = "w2_s2"
 
 [node name="Level Complete" parent="Textbox" index="3"]
 next_level_path = "res://Scenes/Stages/World-2/W2_L3.tscn"
