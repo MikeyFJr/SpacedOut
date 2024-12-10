@@ -1,86 +1,26 @@
-[gd_scene load_steps=25 format=3 uid="uid://br881gx7l77js"]
+[gd_scene load_steps=14 format=3 uid="uid://br881gx7l77js"]
 
-[ext_resource type="Script" path="res://FigmaImporter/FigmaImporter.gd" id="1_miabn"]
-[ext_resource type="Script" path="res://FigmaImporter/DesignerFrame.gd" id="2_7f3sx"]
-[ext_resource type="Script" path="res://FigmaImporter/DesignerImagePanel.gd" id="3_xj8a6"]
+[ext_resource type="Texture2D" uid="uid://clx7li4ydg16h" path="res://Assets/Images/UI/1-Green_640x360.png" id="2_omfdm"]
 [ext_resource type="Shader" path="res://FigmaImporter/shader/vertextApplyShader.gdshader" id="4_8wfwg"]
-[ext_resource type="Texture2D" uid="uid://dvlq6fxrbvmls" path="res://Assets/UI/images/d962554eca642677d8a3d676e43f01cc5b84dacc.png" id="6_rm64a"]
+[ext_resource type="StyleBox" uid="uid://bseafsidrt7no" path="res://Assets/UI/large_transparent_frame.tres" id="4_pqyde"]
+[ext_resource type="Texture2D" uid="uid://ehsr8rygv57x" path="res://Assets/UI/title_box.png" id="5_slrpw"]
 [ext_resource type="Texture2D" uid="uid://0yvjea676dx0" path="res://Assets/UI/images/2fcf3ccf88fc1337894c680c0239fc446f267b80.png" id="7_2lm4d"]
+[ext_resource type="Theme" uid="uid://bmk4r1yn3sjxv" path="res://main_ui_theme.tres" id="7_8nk3r"]
 [ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="8_fsrue"]
+[ext_resource type="StyleBox" uid="uid://cwfevddqpjnio" path="res://Assets/UI/inner_transparent_frame.tres" id="9_l3q1q"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj3ry"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_koumy"]
+texture = ExtResource("2_omfdm")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1o47q"]
-shader = ExtResource("4_8wfwg")
-shader_parameter/use_gradient = false
-shader_parameter/use_image = true
-shader_parameter/use_solid = false
-shader_parameter/gradient_behind = false
-shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
-shader_parameter/tolerance = 0.001
-shader_parameter/new_bg_color = Color(0, 0, 0, 0)
-shader_parameter/tint_color = Color(1, 1, 1, 1)
-shader_parameter/node_size = Vector2(810, 494)
-shader_parameter/texture_size = Vector2(794, 446)
-shader_parameter/texture_scale = 1.0
-shader_parameter/stretch = Vector2(1, 1)
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/flip_x = false
-shader_parameter/flip_y = false
-shader_parameter/keep_aspect = true
-shader_parameter/fill_rect = true
-shader_parameter/tile_texture = false
-shader_parameter/manual_scale = false
-shader_parameter/image_texture = ExtResource("6_rm64a")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hs54u"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upcuk"]
-bg_color = Color(0.85098, 0.85098, 0.85098, 0.4)
-border_width_left = 14
-border_width_top = 14
-border_width_right = 14
-border_width_bottom = 14
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwas4"]
-bg_color = Color(1, 0.616667, 0, 1)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82646"]
+texture = ExtResource("5_slrpw")
 
 [sub_resource type="LabelSettings" id="LabelSettings_crf4y"]
 line_spacing = 0.0
 font = ExtResource("8_fsrue")
-font_size = 24
+font_size = 25
 font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1pob1"]
-bg_color = Color(0, 0, 0, 0.25)
-border_width_left = 9
-border_width_top = 9
-border_width_right = 9
-border_width_bottom = 9
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 45
-corner_radius_top_right = 45
-corner_radius_bottom_right = 45
-corner_radius_bottom_left = 45
+outline_color = Color(0.000333904, 0.000333904, 0.000333904, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e6da4"]
 shader = ExtResource("4_8wfwg")
@@ -105,144 +45,39 @@ shader_parameter/tile_texture = false
 shader_parameter/manual_scale = false
 shader_parameter/image_texture = ExtResource("7_2lm4d")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_co8au"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tuip"]
-bg_color = Color(0.180392, 0.454902, 0.439216, 1)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
 [sub_resource type="LabelSettings" id="LabelSettings_covk3"]
 line_spacing = 0.0
 font = ExtResource("8_fsrue")
 font_size = 32
-font_color = Color(0.956863, 0.797908, 0.454902, 1)
+font_color = Color(0.921569, 0.94902, 0.980392, 1)
 outline_size = 20
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ot12"]
-bg_color = Color(0.180392, 0.454902, 0.439216, 1)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="LabelSettings" id="LabelSettings_mili7"]
-line_spacing = 0.0
-font = ExtResource("8_fsrue")
-font_size = 32
-font_color = Color(0.956863, 0.797908, 0.454902, 1)
-outline_size = 20
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cy3a"]
-bg_color = Color(0.180392, 0.454902, 0.439216, 1)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="LabelSettings" id="LabelSettings_ksk04"]
-line_spacing = 0.0
-font = ExtResource("8_fsrue")
-font_size = 32
-font_color = Color(0.956863, 0.797908, 0.454902, 1)
-outline_size = 20
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kb17b"]
-bg_color = Color(0.956863, 0.956863, 0.454902, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="LabelSettings" id="LabelSettings_27w80"]
-line_spacing = 0.0
-font = ExtResource("8_fsrue")
-font_size = 36
-font_color = Color(0, 0, 0, 1)
 
 [node name="LevelSelectScene" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_miabn")
-document_json_file = "res://figma_export.json"
-SelectPage = "Page 1 xIDx0:1x"
-SelectFrame = "Level Select xIDx27:96x"
-fonts_folder = "res://Assets/Fonts"
-images_folder = "res://Assets/Images/UI/images"
-autoPlaceImages = true
 
 [node name="LevelSelectFrame" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(736, 494)
 layout_mode = 0
-offset_right = 736.0
-offset_bottom = 494.0
+offset_left = 218.0
+offset_top = 73.0
+offset_right = 954.0
+offset_bottom = 567.0
+scale = Vector2(1.59183, 1.30551)
 pivot_offset = Vector2(368, 247)
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_hj3ry")
+theme_override_styles/panel = SubResource("StyleBoxTexture_koumy")
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
-script = ExtResource("2_7f3sx")
-inner_container = NodePath("LevelSelectContainer")
-minSize = Vector2(736, 494)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-clipFrameContents = true
-fill_color = Color(1, 1, 1, 1)
-use_solid_fill = true
-corner_radius = [0.0, 0.0, 0.0, 0.0]
-padding = [0.0, 0.0, 0.0, 0.0]
 
 [node name="LevelSelectContainer" type="Control" parent="LevelSelectFrame"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="background" type="Panel" parent="LevelSelectFrame/LevelSelectContainer"]
-material = SubResource("ShaderMaterial_1o47q")
-custom_minimum_size = Vector2(810, 494)
-layout_mode = 0
-offset_left = -37.0
-offset_right = 773.0
-offset_bottom = 494.0
-pivot_offset = Vector2(405, 247)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_hs54u")
-script = ExtResource("3_xj8a6")
-minSize = Vector2(810, 494)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(0, 0, 0, 0)
-fill_texture = ExtResource("6_rm64a")
-corner_radius = [0.0, 0.0, 0.0, 0.0]
 
 [node name="main_frame" type="Panel" parent="LevelSelectFrame/LevelSelectContainer"]
 custom_minimum_size = Vector2(643, 406)
@@ -254,45 +89,28 @@ offset_bottom = 450.0
 pivot_offset = Vector2(321.5, 203)
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_upcuk")
-script = ExtResource("3_xj8a6")
-minSize = Vector2(643, 406)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(0.85098, 0.85098, 0.85098, 0.4)
-use_solid_fill = true
-border_weights = [14.0, 14.0, 14.0, 14.0]
-corner_radius = [30.0, 30.0, 30.0, 30.0]
+theme_override_styles/panel = ExtResource("4_pqyde")
 
 [node name="text_box" type="Panel" parent="LevelSelectFrame/LevelSelectContainer"]
-custom_minimum_size = Vector2(251, 73)
 layout_mode = 0
-offset_left = 23.0
-offset_top = 28.0
-offset_right = 274.0
-offset_bottom = 101.0
+offset_left = 23.1138
+offset_top = 27.9293
+offset_right = 274.114
+offset_bottom = 100.929
 pivot_offset = Vector2(125.5, 36.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_hwas4")
-script = ExtResource("3_xj8a6")
-minSize = Vector2(251, 73)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(1, 0.616667, 0, 1)
-use_solid_fill = true
-border_weights = [8.0, 8.0, 8.0, 8.0]
-corner_radius = [15.0, 15.0, 15.0, 15.0]
+theme_override_styles/panel = SubResource("StyleBoxTexture_82646")
 
 [node name="title_text" type="Label" parent="LevelSelectFrame/LevelSelectContainer"]
-custom_minimum_size = Vector2(164, 35)
 layout_mode = 0
-offset_left = 66.0
-offset_top = 48.0
-offset_right = 230.0
-offset_bottom = 83.0
+offset_left = 54.5242
+offset_top = 47.8448
+offset_right = 234.524
+offset_bottom = 83.8448
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme = ExtResource("7_8nk3r")
 text = "Level Select"
 label_settings = SubResource("LabelSettings_crf4y")
 horizontal_alignment = 1
@@ -301,70 +119,51 @@ autowrap_mode = 3
 [node name="inner_frame" type="Panel" parent="LevelSelectFrame/LevelSelectContainer"]
 custom_minimum_size = Vector2(477, 261)
 layout_mode = 0
-offset_left = 133.0
-offset_top = 125.0
-offset_right = 610.0
-offset_bottom = 386.0
+offset_left = 133.678
+offset_top = 135.933
+offset_right = 610.678
+offset_bottom = 396.933
 pivot_offset = Vector2(238.5, 130.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_1pob1")
-script = ExtResource("3_xj8a6")
-minSize = Vector2(477, 261)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(0, 0, 0, 0.25)
-use_solid_fill = true
-border_weights = [9.0, 9.0, 9.0, 9.0]
-corner_radius = [45.0, 45.0, 45.0, 45.0]
+theme_override_styles/panel = ExtResource("9_l3q1q")
 
-[node name="World" type="Panel" parent="LevelSelectFrame/LevelSelectContainer"]
+[node name="World" type="TextureRect" parent="LevelSelectFrame/LevelSelectContainer"]
 material = SubResource("ShaderMaterial_e6da4")
 custom_minimum_size = Vector2(85, 85)
 layout_mode = 0
-offset_left = 109.0
-offset_top = 107.0
-offset_right = 194.0
-offset_bottom = 192.0
+offset_left = 123.627
+offset_top = 122.145
+offset_right = 208.627
+offset_bottom = 207.145
+scale = Vector2(1.24472, 1.24472)
 pivot_offset = Vector2(42.5, 42.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_co8au")
-script = ExtResource("3_xj8a6")
-minSize = Vector2(85, 85)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(0, 0, 0, 0)
-fill_texture = ExtResource("7_2lm4d")
-corner_radius = [0.0, 0.0, 0.0, 0.0]
+texture = ExtResource("7_2lm4d")
+stretch_mode = 5
 
-[node name="Level1" type="Panel" parent="LevelSelectFrame/LevelSelectContainer"]
-custom_minimum_size = Vector2(54, 66)
+[node name="LevelBtn_1" type="Button" parent="LevelSelectFrame/LevelSelectContainer"]
 layout_mode = 0
-offset_left = 189.0
-offset_top = 272.0
-offset_right = 243.0
-offset_bottom = 338.0
-pivot_offset = Vector2(27, 33)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_4tuip")
-script = ExtResource("3_xj8a6")
-minSize = Vector2(54, 66)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(0.180392, 0.454902, 0.439216, 1)
-use_solid_fill = true
-border_weights = [7.0, 7.0, 7.0, 7.0]
-corner_radius = [8.0, 8.0, 8.0, 8.0]
+offset_left = 196.0
+offset_top = 263.0
+offset_right = 208.0
+offset_bottom = 283.0
+scale = Vector2(6.58688, 4.67261)
+theme_type_variation = &"LevelButton"
+keep_pressed_outside = true
+icon_alignment = 1
+expand_icon = true
 
-[node name="1  xIDx27_104x" type="Label" parent="LevelSelectFrame/LevelSelectContainer"]
+[node name="Label_1" type="Label" parent="LevelSelectFrame/LevelSelectContainer/LevelBtn_1"]
 custom_minimum_size = Vector2(22, 47)
+layout_direction = 2
 layout_mode = 0
-offset_left = 201.0
-offset_top = 281.0
-offset_right = 228.0
-offset_bottom = 328.0
+offset_left = 2.55549
+offset_top = 2.96908
+offset_right = 24.5555
+offset_bottom = 50.9691
+scale = Vector2(0.199226, 0.285166)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = " 1"
@@ -372,75 +171,63 @@ label_settings = SubResource("LabelSettings_covk3")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Level3" type="Panel" parent="LevelSelectFrame/LevelSelectContainer"]
-custom_minimum_size = Vector2(54, 66)
+[node name="LevelBtn_2" type="Button" parent="LevelSelectFrame/LevelSelectContainer"]
 layout_mode = 0
-offset_left = 489.0
-offset_top = 269.0
-offset_right = 543.0
-offset_bottom = 335.0
-pivot_offset = Vector2(27, 33)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_1ot12")
-script = ExtResource("3_xj8a6")
-minSize = Vector2(54, 66)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(0.180392, 0.454902, 0.439216, 1)
-use_solid_fill = true
-border_weights = [7.0, 7.0, 7.0, 7.0]
-corner_radius = [8.0, 8.0, 8.0, 8.0]
+offset_left = 329.679
+offset_top = 161.21
+offset_right = 341.679
+offset_bottom = 181.21
+scale = Vector2(6.58688, 4.67261)
+theme_type_variation = &"LevelButton"
+keep_pressed_outside = true
+icon_alignment = 1
+expand_icon = true
 
-[node name="3  xIDx27_116x" type="Label" parent="LevelSelectFrame/LevelSelectContainer"]
-custom_minimum_size = Vector2(28, 47)
+[node name="Label_2" type="Label" parent="LevelSelectFrame/LevelSelectContainer/LevelBtn_2"]
+custom_minimum_size = Vector2(22, 47)
+layout_direction = 2
 layout_mode = 0
-offset_left = 500.0
-offset_top = 280.0
-offset_right = 528.0
-offset_bottom = 327.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = " 3"
-label_settings = SubResource("LabelSettings_mili7")
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="Level2" type="Panel" parent="LevelSelectFrame/LevelSelectContainer"]
-custom_minimum_size = Vector2(54, 66)
-layout_mode = 0
-offset_left = 341.0
-offset_top = 166.0
-offset_right = 395.0
-offset_bottom = 232.0
-pivot_offset = Vector2(27, 33)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_8cy3a")
-script = ExtResource("3_xj8a6")
-minSize = Vector2(54, 66)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(0.180392, 0.454902, 0.439216, 1)
-use_solid_fill = true
-border_weights = [7.0, 7.0, 7.0, 7.0]
-corner_radius = [8.0, 8.0, 8.0, 8.0]
-
-[node name="2  xIDx27_113x" type="Label" parent="LevelSelectFrame/LevelSelectContainer"]
-custom_minimum_size = Vector2(28, 47)
-layout_mode = 0
-offset_left = 350.0
-offset_top = 177.0
-offset_right = 378.0
-offset_bottom = 224.0
+offset_left = 1.4278
+offset_top = 2.0
+offset_right = 45.4278
+offset_bottom = 59.0
+scale = Vector2(0.199226, 0.285166)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = " 2"
-label_settings = SubResource("LabelSettings_ksk04")
+label_settings = SubResource("LabelSettings_covk3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelBtn_3" type="Button" parent="LevelSelectFrame/LevelSelectContainer"]
+layout_mode = 0
+offset_left = 460.975
+offset_top = 263.086
+offset_right = 472.975
+offset_bottom = 283.086
+scale = Vector2(6.58688, 4.67261)
+theme_type_variation = &"LevelButton"
+keep_pressed_outside = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label_3" type="Label" parent="LevelSelectFrame/LevelSelectContainer/LevelBtn_3"]
+custom_minimum_size = Vector2(22, 47)
+layout_direction = 2
+layout_mode = 0
+offset_left = 2.33243
+offset_top = 3.0
+offset_right = 35.3324
+offset_bottom = 51.0
+scale = Vector2(0.199226, 0.285166)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = " 3"
+label_settings = SubResource("LabelSettings_covk3")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Rectangle 6 xIDx27_132x" type="Panel" parent="LevelSelectFrame/LevelSelectContainer"]
+[node name="GoBtn" type="Button" parent="LevelSelectFrame/LevelSelectContainer"]
 custom_minimum_size = Vector2(93, 53)
 layout_mode = 0
 offset_left = 556.0
@@ -451,26 +238,16 @@ pivot_offset = Vector2(46.5, 26.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_default_cursor_shape = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_kb17b")
-script = ExtResource("3_xj8a6")
-minSize = Vector2(93, 53)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(0.956863, 0.956863, 0.454902, 1)
-use_solid_fill = true
-border_weights = [5.0, 5.0, 5.0, 5.0]
-corner_radius = [15.0, 15.0, 15.0, 15.0]
-
-[node name="Go!  xIDx27_133x" type="Label" parent="LevelSelectFrame/LevelSelectContainer"]
-custom_minimum_size = Vector2(64, 53)
-layout_mode = 0
-offset_left = 571.0
-offset_top = 352.0
-offset_right = 635.0
-offset_bottom = 405.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
+theme = ExtResource("7_8nk3r")
 text = "Go!"
-label_settings = SubResource("LabelSettings_27w80")
-horizontal_alignment = 1
-autowrap_mode = 3
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(435, 408)
+points = PackedVector2Array(-1, -3, 12, 0, 27, 2, 44, 0, 59, -11, 69, -25, 69, -41, 64, -55, 62, -73, 58, -86, 57, -100, 55, -113, 60, -128, 73, -137, 92, -139)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(605, 332)
+rotation = 1.57187
+points = PackedVector2Array(-7.00107, -0.992493, 12, 0, 27, 2, 44, 0, 59, -11, 69, -25, 73.9548, -42.0796, 72.9354, -60.0786, 62.9182, -76.0677, 52.9075, -86.057, 38.8956, -97.0419, 21.8838, -108.024, 6.87094, -120.007, -11.142, -131.988, -20.1603, -148.978, -24.1807, -167.974, -20.2012, -186.978, -14.213, -197.985, -4.22052, -204.996, 11.772, -212.013)
+default_color = Color(0, 0, 0, 1)
