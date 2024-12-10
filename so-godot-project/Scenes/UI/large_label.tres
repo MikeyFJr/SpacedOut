@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://qfj1oksvgo6h"]
+
+[ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="1_wuy3y"]
+
+[resource]
+line_spacing = 0.0
+font = ExtResource("1_wuy3y")
+font_size = 60
+font_color = Color(1, 0.616667, 0, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)

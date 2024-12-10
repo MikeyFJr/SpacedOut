@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://br881gx7l77js"]
+[gd_scene load_steps=15 format=3 uid="uid://br881gx7l77js"]
 
 [ext_resource type="Texture2D" uid="uid://clx7li4ydg16h" path="res://Assets/Images/UI/1-Green_640x360.png" id="2_omfdm"]
 [ext_resource type="Shader" path="res://FigmaImporter/shader/vertextApplyShader.gdshader" id="4_8wfwg"]
@@ -6,21 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://ehsr8rygv57x" path="res://Assets/UI/title_box.png" id="5_slrpw"]
 [ext_resource type="Texture2D" uid="uid://0yvjea676dx0" path="res://Assets/UI/images/2fcf3ccf88fc1337894c680c0239fc446f267b80.png" id="7_2lm4d"]
 [ext_resource type="Theme" uid="uid://bmk4r1yn3sjxv" path="res://main_ui_theme.tres" id="7_8nk3r"]
+[ext_resource type="Texture2D" uid="uid://hqglqut8gtvq" path="res://Assets/Images/UI/earth.png" id="7_scn80"]
 [ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="8_fsrue"]
 [ext_resource type="StyleBox" uid="uid://cwfevddqpjnio" path="res://Assets/UI/inner_transparent_frame.tres" id="9_l3q1q"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_koumy"]
 texture = ExtResource("2_omfdm")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82646"]
-texture = ExtResource("5_slrpw")
-
-[sub_resource type="LabelSettings" id="LabelSettings_crf4y"]
+[sub_resource type="LabelSettings" id="LabelSettings_covk3"]
 line_spacing = 0.0
 font = ExtResource("8_fsrue")
-font_size = 25
-font_color = Color(0, 0, 0, 1)
-outline_color = Color(0.000333904, 0.000333904, 0.000333904, 1)
+font_size = 32
+font_color = Color(0.921569, 0.94902, 0.980392, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e6da4"]
 shader = ExtResource("4_8wfwg")
@@ -45,13 +44,15 @@ shader_parameter/tile_texture = false
 shader_parameter/manual_scale = false
 shader_parameter/image_texture = ExtResource("7_2lm4d")
 
-[sub_resource type="LabelSettings" id="LabelSettings_covk3"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82646"]
+texture = ExtResource("5_slrpw")
+
+[sub_resource type="LabelSettings" id="LabelSettings_crf4y"]
 line_spacing = 0.0
 font = ExtResource("8_fsrue")
-font_size = 32
-font_color = Color(0.921569, 0.94902, 0.980392, 1)
-outline_size = 20
-outline_color = Color(0, 0, 0, 1)
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0.000333904, 0.000333904, 0.000333904, 1)
 
 [node name="LevelSelectScene" type="Control"]
 layout_mode = 3
@@ -91,71 +92,31 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_styles/panel = ExtResource("4_pqyde")
 
-[node name="text_box" type="Panel" parent="LevelSelectFrame/LevelSelectContainer"]
-layout_mode = 0
-offset_left = 23.1138
-offset_top = 27.9293
-offset_right = 274.114
-offset_bottom = 100.929
-pivot_offset = Vector2(125.5, 36.5)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_82646")
-
-[node name="title_text" type="Label" parent="LevelSelectFrame/LevelSelectContainer"]
-layout_mode = 0
-offset_left = 54.5242
-offset_top = 47.8448
-offset_right = 234.524
-offset_bottom = 83.8448
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme = ExtResource("7_8nk3r")
-text = "Level Select"
-label_settings = SubResource("LabelSettings_crf4y")
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="inner_frame" type="Panel" parent="LevelSelectFrame/LevelSelectContainer"]
+[node name="inner_frame" type="Panel" parent="LevelSelectFrame/LevelSelectContainer/main_frame"]
 custom_minimum_size = Vector2(477, 261)
 layout_mode = 0
-offset_left = 133.678
-offset_top = 135.933
-offset_right = 610.678
-offset_bottom = 396.933
+offset_left = 86.678
+offset_top = 91.933
+offset_right = 563.678
+offset_bottom = 352.933
 pivot_offset = Vector2(238.5, 130.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_styles/panel = ExtResource("9_l3q1q")
 
-[node name="World" type="TextureRect" parent="LevelSelectFrame/LevelSelectContainer"]
-material = SubResource("ShaderMaterial_e6da4")
-custom_minimum_size = Vector2(85, 85)
+[node name="LevelBtn_1" type="Button" parent="LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame"]
 layout_mode = 0
-offset_left = 123.627
-offset_top = 122.145
-offset_right = 208.627
-offset_bottom = 207.145
-scale = Vector2(1.24472, 1.24472)
-pivot_offset = Vector2(42.5, 42.5)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = ExtResource("7_2lm4d")
-stretch_mode = 5
-
-[node name="LevelBtn_1" type="Button" parent="LevelSelectFrame/LevelSelectContainer"]
-layout_mode = 0
-offset_left = 196.0
-offset_top = 263.0
-offset_right = 208.0
-offset_bottom = 283.0
+offset_left = 62.322
+offset_top = 127.067
+offset_right = 74.322
+offset_bottom = 147.067
 scale = Vector2(6.58688, 4.67261)
 theme_type_variation = &"LevelButton"
 keep_pressed_outside = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label_1" type="Label" parent="LevelSelectFrame/LevelSelectContainer/LevelBtn_1"]
+[node name="Label_1" type="Label" parent="LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame/LevelBtn_1"]
 custom_minimum_size = Vector2(22, 47)
 layout_direction = 2
 layout_mode = 0
@@ -171,19 +132,19 @@ label_settings = SubResource("LabelSettings_covk3")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="LevelBtn_2" type="Button" parent="LevelSelectFrame/LevelSelectContainer"]
+[node name="LevelBtn_2" type="Button" parent="LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame"]
 layout_mode = 0
-offset_left = 329.679
-offset_top = 161.21
-offset_right = 341.679
-offset_bottom = 181.21
+offset_left = 196.001
+offset_top = 25.2768
+offset_right = 208.001
+offset_bottom = 45.2768
 scale = Vector2(6.58688, 4.67261)
 theme_type_variation = &"LevelButton"
 keep_pressed_outside = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label_2" type="Label" parent="LevelSelectFrame/LevelSelectContainer/LevelBtn_2"]
+[node name="Label_2" type="Label" parent="LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame/LevelBtn_2"]
 custom_minimum_size = Vector2(22, 47)
 layout_direction = 2
 layout_mode = 0
@@ -199,19 +160,19 @@ label_settings = SubResource("LabelSettings_covk3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelBtn_3" type="Button" parent="LevelSelectFrame/LevelSelectContainer"]
+[node name="LevelBtn_3" type="Button" parent="LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame"]
 layout_mode = 0
-offset_left = 460.975
-offset_top = 263.086
-offset_right = 472.975
-offset_bottom = 283.086
+offset_left = 327.297
+offset_top = 127.153
+offset_right = 339.297
+offset_bottom = 147.153
 scale = Vector2(6.58688, 4.67261)
 theme_type_variation = &"LevelButton"
 keep_pressed_outside = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label_3" type="Label" parent="LevelSelectFrame/LevelSelectContainer/LevelBtn_3"]
+[node name="Label_3" type="Label" parent="LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame/LevelBtn_3"]
 custom_minimum_size = Vector2(22, 47)
 layout_direction = 2
 layout_mode = 0
@@ -227,13 +188,42 @@ label_settings = SubResource("LabelSettings_covk3")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="GoBtn" type="Button" parent="LevelSelectFrame/LevelSelectContainer"]
+[node name="Line2D" type="Line2D" parent="LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame"]
+position = Vector2(139.463, 178.474)
+scale = Vector2(0.628208, 0.765984)
+points = PackedVector2Array(-1, -3, 12, 0, 27, 2, 44, 0, 59, -11, 69, -25, 69, -41, 64, -55, 62, -73, 58, -86, 57, -100, 55, -113, 60, -128, 73, -137, 92, -139)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D2" type="Line2D" parent="LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame"]
+position = Vector2(246.258, 120.259)
+rotation = 1.57168
+scale = Vector2(0.765984, 0.628208)
+skew = 0.000429392
+points = PackedVector2Array(-7.00107, -0.992493, 12, 0, 27, 2, 44, 0, 59, -11, 69, -25, 73.9548, -42.0796, 72.9354, -60.0786, 62.9182, -76.0677, 52.9075, -86.057, 38.8956, -97.0419, 21.8838, -108.024, 6.87094, -120.007, -11.142, -131.988, -20.1603, -148.978, -24.1807, -167.974, -20.2012, -186.978, -14.213, -197.985, -4.22052, -204.996, 11.772, -212.013)
+default_color = Color(0, 0, 0, 1)
+
+[node name="World" type="TextureRect" parent="LevelSelectFrame/LevelSelectContainer/main_frame"]
+material = SubResource("ShaderMaterial_e6da4")
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 76.6272
+offset_top = 78.1446
+offset_right = 161.627
+offset_bottom = 163.145
+scale = Vector2(1.24472, 1.24472)
+pivot_offset = Vector2(42.5, 42.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("7_scn80")
+stretch_mode = 5
+
+[node name="GoBtn" type="Button" parent="LevelSelectFrame/LevelSelectContainer/main_frame"]
 custom_minimum_size = Vector2(93, 53)
 layout_mode = 0
-offset_left = 556.0
-offset_top = 352.0
-offset_right = 649.0
-offset_bottom = 405.0
+offset_left = 509.0
+offset_top = 308.0
+offset_right = 602.0
+offset_bottom = 366.0
 pivot_offset = Vector2(46.5, 26.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -241,13 +231,27 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("7_8nk3r")
 text = "Go!"
 
-[node name="Line2D" type="Line2D" parent="."]
-position = Vector2(435, 408)
-points = PackedVector2Array(-1, -3, 12, 0, 27, 2, 44, 0, 59, -11, 69, -25, 69, -41, 64, -55, 62, -73, 58, -86, 57, -100, 55, -113, 60, -128, 73, -137, 92, -139)
-default_color = Color(0, 0, 0, 1)
+[node name="text_box" type="Panel" parent="LevelSelectFrame/LevelSelectContainer"]
+layout_mode = 0
+offset_left = 23.1138
+offset_top = 27.9293
+offset_right = 274.114
+offset_bottom = 100.929
+pivot_offset = Vector2(125.5, 36.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_82646")
 
-[node name="Line2D2" type="Line2D" parent="."]
-position = Vector2(605, 332)
-rotation = 1.57187
-points = PackedVector2Array(-7.00107, -0.992493, 12, 0, 27, 2, 44, 0, 59, -11, 69, -25, 73.9548, -42.0796, 72.9354, -60.0786, 62.9182, -76.0677, 52.9075, -86.057, 38.8956, -97.0419, 21.8838, -108.024, 6.87094, -120.007, -11.142, -131.988, -20.1603, -148.978, -24.1807, -167.974, -20.2012, -186.978, -14.213, -197.985, -4.22052, -204.996, 11.772, -212.013)
-default_color = Color(0, 0, 0, 1)
+[node name="title_text" type="Label" parent="LevelSelectFrame/LevelSelectContainer/text_box"]
+layout_mode = 0
+offset_left = 31.4104
+offset_top = 19.9155
+offset_right = 211.41
+offset_bottom = 56.9155
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("7_8nk3r")
+text = "Level Select"
+label_settings = SubResource("LabelSettings_crf4y")
+horizontal_alignment = 1
+autowrap_mode = 3

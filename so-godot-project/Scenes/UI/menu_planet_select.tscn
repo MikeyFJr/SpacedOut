@@ -1,13 +1,16 @@
-[gd_scene load_steps=23 format=3 uid="uid://bo058dkemrwdn"]
+[gd_scene load_steps=19 format=3 uid="uid://bo058dkemrwdn"]
 
-[ext_resource type="Script" path="res://FigmaImporter/FigmaImporter.gd" id="1_kuo0l"]
-[ext_resource type="Script" path="res://FigmaImporter/DesignerFrame.gd" id="2_8wi52"]
+[ext_resource type="StyleBox" uid="uid://bseafsidrt7no" path="res://Assets/UI/large_transparent_frame.tres" id="3_gee7v"]
 [ext_resource type="Shader" path="res://FigmaImporter/shader/vertextApplyShader.gdshader" id="3_omn8t"]
 [ext_resource type="Texture2D" uid="uid://dvlq6fxrbvmls" path="res://Assets/UI/images/d962554eca642677d8a3d676e43f01cc5b84dacc.png" id="4_3wkou"]
-[ext_resource type="Script" path="res://FigmaImporter/DesignerImagePanel.gd" id="5_mqtg7"]
-[ext_resource type="Texture2D" uid="uid://d2dxk7r4ki82" path="res://Assets/UI/images/3806cedd07da4152ef1f1ed2659d738372746244.png" id="6_kh03k"]
+[ext_resource type="Texture2D" uid="uid://hqglqut8gtvq" path="res://Assets/Images/UI/earth.png" id="6_uji3n"]
+[ext_resource type="Texture2D" uid="uid://h25qq4fp6xya" path="res://Assets/Images/UI/lava.png" id="7_nf1k8"]
 [ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="7_x5okp"]
+[ext_resource type="Texture2D" uid="uid://cwo17qtvr2ckj" path="res://Assets/Images/UI/water2.png" id="8_fs03q"]
 [ext_resource type="Texture2D" uid="uid://0yvjea676dx0" path="res://Assets/UI/images/2fcf3ccf88fc1337894c680c0239fc446f267b80.png" id="8_k2ti4"]
+[ext_resource type="Texture2D" uid="uid://dkmurrg1jggoi" path="res://Assets/Images/UI/air.png" id="9_6ipft"]
+[ext_resource type="Texture2D" uid="uid://giwhydx2lxlv" path="res://Assets/Images/UI/nothing2.png" id="10_yvjwr"]
+[ext_resource type="LabelSettings" uid="uid://qfj1oksvgo6h" path="res://Scenes/UI/large_label.tres" id="11_tpopy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tobaq"]
 content_margin_left = 0.0
@@ -40,47 +43,6 @@ shader_parameter/manual_scale = false
 shader_parameter/image_texture = ExtResource("4_3wkou")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tyhp7"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyyve"]
-bg_color = Color(0.85098, 0.85098, 0.85098, 0.4)
-border_width_left = 14
-border_width_top = 14
-border_width_right = 14
-border_width_bottom = 14
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3g6jo"]
-shader = ExtResource("3_omn8t")
-shader_parameter/use_gradient = false
-shader_parameter/use_image = true
-shader_parameter/use_solid = true
-shader_parameter/gradient_behind = false
-shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
-shader_parameter/tolerance = 0.001
-shader_parameter/new_bg_color = Color(0, 0, 0, 0.54)
-shader_parameter/tint_color = Color(1, 1, 1, 1)
-shader_parameter/node_size = Vector2(48, 48)
-shader_parameter/texture_size = Vector2(48, 48)
-shader_parameter/texture_scale = 1.0
-shader_parameter/stretch = Vector2(1, 1)
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/flip_x = false
-shader_parameter/flip_y = false
-shader_parameter/keep_aspect = true
-shader_parameter/fill_rect = true
-shader_parameter/tile_texture = false
-shader_parameter/manual_scale = false
-shader_parameter/image_texture = ExtResource("6_kh03k")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lugg"]
-corner_radius_top_left = 90
-corner_radius_top_right = 90
-corner_radius_bottom_right = 90
-corner_radius_bottom_left = 90
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlpww"]
 bg_color = Color(1, 0.616667, 0, 1)
@@ -123,270 +85,215 @@ shader_parameter/tile_texture = false
 shader_parameter/manual_scale = false
 shader_parameter/image_texture = ExtResource("8_k2ti4")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ql7uh"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ypn6n"]
+[sub_resource type="LabelSettings" id="LabelSettings_jh8uw"]
 line_spacing = 0.0
 font = ExtResource("7_x5okp")
-font_size = 24
-font_color = Color(1, 0.616667, 0, 1)
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_7mt67"]
-line_spacing = 0.0
-font = ExtResource("7_x5okp")
-font_size = 32
-font_color = Color(1, 0.616667, 0, 1)
+font_size = 60
+font_color = Color(0.956863, 0.956863, 0.454902, 1)
 outline_size = 20
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3abjd"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0, 0, 0, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8or8g"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0, 0, 0, 0)
 
 [node name="PlanetSelectScene" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_kuo0l")
-document_json_file = "res://figma_export.json"
-SelectPage = "Page 1 xIDx0:1x"
-SelectFrame = "Planet Select xIDx21:62x"
-fonts_folder = "res://Assets/Fonts"
-images_folder = "res://Assets/Images/UI/images"
-autoPlaceImages = true
 
-[node name="PlanetSelect" type="ScrollContainer" parent="."]
+[node name="PlanetSelectFrame" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(736, 494)
 layout_mode = 0
-offset_right = 736.0
-offset_bottom = 494.0
+offset_right = 1148.0
+offset_bottom = 648.0
 pivot_offset = Vector2(368, 247)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tobaq")
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
-script = ExtResource("2_8wi52")
-inner_container = NodePath("SelectFrame")
-minSize = Vector2(736, 494)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-clipFrameContents = true
-fill_color = Color(1, 1, 1, 1)
-use_solid_fill = true
-corner_radius = [0.0, 0.0, 0.0, 0.0]
-padding = [0.0, 0.0, 0.0, 0.0]
 
-[node name="SelectFrame" type="Control" parent="PlanetSelect"]
+[node name="PlanetContainer" type="Control" parent="PlanetSelectFrame"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="background" type="Panel" parent="PlanetSelect/SelectFrame"]
+[node name="background" type="Panel" parent="PlanetSelectFrame/PlanetContainer"]
 material = SubResource("ShaderMaterial_8m317")
 custom_minimum_size = Vector2(810, 494)
 layout_mode = 0
 offset_left = -37.0
-offset_right = 773.0
-offset_bottom = 494.0
+offset_right = 1154.0
+offset_bottom = 649.0
 pivot_offset = Vector2(405, 247)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tyhp7")
-script = ExtResource("5_mqtg7")
-minSize = Vector2(810, 494)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(0, 0, 0, 0)
-fill_texture = ExtResource("4_3wkou")
-corner_radius = [0.0, 0.0, 0.0, 0.0]
 
-[node name="inner frame" type="Panel" parent="PlanetSelect/SelectFrame"]
+[node name="main_frame" type="Panel" parent="PlanetSelectFrame/PlanetContainer"]
 custom_minimum_size = Vector2(643, 406)
 layout_mode = 0
 offset_left = 47.0
 offset_top = 44.0
-offset_right = 690.0
-offset_bottom = 450.0
+offset_right = 1066.0
+offset_bottom = 600.0
 pivot_offset = Vector2(321.5, 203)
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_wyyve")
-script = ExtResource("5_mqtg7")
-minSize = Vector2(643, 406)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(0.85098, 0.85098, 0.85098, 0.4)
-use_solid_fill = true
-border_weights = [14.0, 14.0, 14.0, 14.0]
-corner_radius = [30.0, 30.0, 30.0, 30.0]
+theme_override_styles/panel = ExtResource("3_gee7v")
 
-[node name="World2" type="Panel" parent="PlanetSelect/SelectFrame"]
-material = SubResource("ShaderMaterial_3g6jo")
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 0
-offset_left = 585.0
-offset_top = 223.0
-offset_right = 633.0
-offset_bottom = 271.0
-pivot_offset = Vector2(24, 24)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_7lugg")
-script = ExtResource("5_mqtg7")
-minSize = Vector2(48, 48)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(0, 0, 0, 0.54)
-use_solid_fill = true
-fill_texture = ExtResource("6_kh03k")
-corner_radius = [90.0, 90.0, 90.0, 90.0]
-
-[node name="TitleTextFrame" type="Panel" parent="PlanetSelect/SelectFrame"]
+[node name="TitleTextFrame" type="Panel" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
 custom_minimum_size = Vector2(251, 73)
 layout_mode = 0
-offset_left = 23.0
-offset_top = 28.0
-offset_right = 274.0
-offset_bottom = 101.0
+offset_left = -24.0
+offset_top = -16.0
+offset_right = 227.0
+offset_bottom = 57.0
 pivot_offset = Vector2(125.5, 36.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jlpww")
-script = ExtResource("5_mqtg7")
-minSize = Vector2(251, 73)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(1, 0.616667, 0, 1)
-use_solid_fill = true
-border_weights = [8.0, 8.0, 8.0, 8.0]
-corner_radius = [15.0, 15.0, 15.0, 15.0]
 
-[node name="TitleLabel" type="Label" parent="PlanetSelect/SelectFrame"]
+[node name="TitleLabel" type="Label" parent="PlanetSelectFrame/PlanetContainer/main_frame/TitleTextFrame"]
 custom_minimum_size = Vector2(180, 35)
 layout_mode = 0
-offset_left = 59.0
-offset_top = 48.0
-offset_right = 239.0
-offset_bottom = 83.0
+offset_left = 36.0
+offset_top = 20.0
+offset_right = 216.0
+offset_bottom = 56.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Planet Select"
 label_settings = SubResource("LabelSettings_hxduj")
 autowrap_mode = 3
 
-[node name="World1" type="Panel" parent="PlanetSelect/SelectFrame"]
+[node name="World1" type="TextureRect" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
 material = SubResource("ShaderMaterial_xiivh")
 custom_minimum_size = Vector2(175, 175)
 layout_mode = 0
-offset_left = 281.0
-offset_top = 137.0
-offset_right = 456.0
-offset_bottom = 312.0
+offset_left = 40.0
+offset_top = 182.0
+offset_right = 215.0
+offset_bottom = 357.0
 pivot_offset = Vector2(87.5, 87.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ql7uh")
-script = ExtResource("5_mqtg7")
-minSize = Vector2(175, 175)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(0, 0, 0, 0)
-fill_texture = ExtResource("8_k2ti4")
-corner_radius = [0.0, 0.0, 0.0, 0.0]
+texture = ExtResource("6_uji3n")
 
-[node name="unknown_text" type="Label" parent="PlanetSelect/SelectFrame"]
-custom_minimum_size = Vector2(17, 30)
+[node name="Button1" type="Button" parent="PlanetSelectFrame/PlanetContainer/main_frame/World1"]
 layout_mode = 0
-offset_left = 602.0
-offset_top = 231.0
-offset_right = 619.0
-offset_bottom = 265.0
+offset_left = 49.0
+offset_top = 48.0
+offset_right = 59.0
+offset_bottom = 58.0
+scale = Vector2(7.88159, 7.88159)
+theme_type_variation = &"PlayButton"
+
+[node name="World2" type="TextureRect" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
+material = SubResource("ShaderMaterial_xiivh")
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 0
+offset_left = 236.0
+offset_top = 181.0
+offset_right = 411.0
+offset_bottom = 356.0
+pivot_offset = Vector2(87.5, 87.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "?"
-label_settings = SubResource("LabelSettings_ypn6n")
-autowrap_mode = 3
+texture = ExtResource("7_nf1k8")
 
-[node name="World 1 Label" type="Label" parent="PlanetSelect/SelectFrame"]
+[node name="Button2" type="Button" parent="PlanetSelectFrame/PlanetContainer/main_frame/World2"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 49.0
+offset_right = 62.0
+offset_bottom = 59.0
+scale = Vector2(7.88159, 7.88159)
+theme_type_variation = &"PlayButton"
+
+[node name="World3" type="TextureRect" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
+material = SubResource("ShaderMaterial_xiivh")
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 0
+offset_left = 429.0
+offset_top = 182.0
+offset_right = 604.0
+offset_bottom = 357.0
+pivot_offset = Vector2(87.5, 87.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("8_fs03q")
+
+[node name="Button3" type="Button" parent="PlanetSelectFrame/PlanetContainer/main_frame/World3"]
+layout_mode = 0
+offset_left = 51.0001
+offset_top = 49.0
+offset_right = 61.0001
+offset_bottom = 59.0
+scale = Vector2(7.88159, 7.88159)
+theme_type_variation = &"PlayButton"
+
+[node name="World4" type="TextureRect" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
+material = SubResource("ShaderMaterial_xiivh")
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 0
+offset_left = 624.0
+offset_top = 187.0
+offset_right = 799.0
+offset_bottom = 362.0
+pivot_offset = Vector2(87.5, 87.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9_6ipft")
+
+[node name="Button4" type="Button" parent="PlanetSelectFrame/PlanetContainer/main_frame/World4"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 44.0
+offset_right = 60.0
+offset_bottom = 54.0
+scale = Vector2(7.88159, 7.88159)
+theme_type_variation = &"PlayButton"
+
+[node name="World5" type="TextureRect" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
+material = SubResource("ShaderMaterial_xiivh")
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 0
+offset_left = 817.0
+offset_top = 182.0
+offset_right = 992.0
+offset_bottom = 357.0
+pivot_offset = Vector2(87.5, 87.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("10_yvjwr")
+
+[node name="Label" type="Label" parent="PlanetSelectFrame/PlanetContainer/main_frame/World5"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 44.0
+offset_right = 139.0
+offset_bottom = 132.0
+text = "???"
+label_settings = SubResource("LabelSettings_jh8uw")
+
+[node name="WorldLabel" type="Label" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
 custom_minimum_size = Vector2(129, 47)
 layout_mode = 0
-offset_left = 304.0
-offset_top = 341.0
-offset_right = 433.0
-offset_bottom = 388.0
+offset_left = 349.0
+offset_top = 431.0
+offset_right = 687.0
+offset_bottom = 519.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "World 1"
-label_settings = SubResource("LabelSettings_7mt67")
+label_settings = ExtResource("11_tpopy")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="navigate_next" type="ScrollContainer" parent="PlanetSelect/SelectFrame"]
-clip_contents = false
-custom_minimum_size = Vector2(52, 52)
+[node name="NextBtn" type="Button" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
 layout_mode = 0
-offset_left = 490.0
-offset_top = 339.0
-offset_right = 542.0
-offset_bottom = 391.0
-pivot_offset = Vector2(26, 26)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_3abjd")
-horizontal_scroll_mode = 3
-vertical_scroll_mode = 3
-script = ExtResource("2_8wi52")
-inner_container = NodePath("InnerContainer")
-minSize = Vector2(52, 52)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(0, 0, 0, 0)
-corner_radius = [0.0, 0.0, 0.0, 0.0]
-padding = [0.0, 0.0, 0.0, 0.0]
-
-[node name="InnerContainer" type="Control" parent="PlanetSelect/SelectFrame/navigate_next"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="play_arrow" type="ScrollContainer" parent="PlanetSelect/SelectFrame"]
-clip_contents = false
-custom_minimum_size = Vector2(90, 90)
-layout_mode = 0
-offset_left = 323.0
-offset_top = 180.0
-offset_right = 413.0
-offset_bottom = 270.0
-pivot_offset = Vector2(45, 45)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_8or8g")
-horizontal_scroll_mode = 3
-vertical_scroll_mode = 3
-script = ExtResource("2_8wi52")
-inner_container = NodePath("InnerContainer")
-minSize = Vector2(90, 90)
-maxSize = Vector2(100000, 100000)
-center_rotation = true
-fill_color = Color(0, 0, 0, 0)
-corner_radius = [0.0, 0.0, 0.0, 0.0]
-padding = [0.0, 0.0, 0.0, 0.0]
-
-[node name="InnerContainer" type="Control" parent="PlanetSelect/SelectFrame/play_arrow"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+offset_left = 678.0
+offset_top = 453.0
+offset_right = 688.0
+offset_bottom = 463.0
+scale = Vector2(3.79168, 4.37046)
+theme_type_variation = &"NextButton"
