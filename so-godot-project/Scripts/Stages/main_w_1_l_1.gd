@@ -15,12 +15,15 @@ extends Node2D
 @export var level: String = "w1_s1"
 @export var boosts: int = 5
 @export var dashes: int = 5
+@export var hooks: int = 2
 
 func _ready():
 #	setting the boosts and dashes to the number per scene/level (as when this scene restarts they are given back the same number)
 
 	GlobalState.boosts_available = boosts
 	GlobalState.dashes_available = dashes
+	GlobalState.grapples_available = hooks
+	
 	if !GlobalState.check_visited(level):
 		textbox.show_textbox() 
 		queue_text()

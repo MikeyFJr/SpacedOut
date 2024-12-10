@@ -23,7 +23,7 @@ func _ready():
 	if item in GlobalState.collected_items:
 		queue_free()
 		
-	connect("body_entered", _on_body_entered)
+	#connect("body_entered", _on_body_entered)
 	if DEBUG: print("Texture :", sprite.texture)
 	if item:
 		sprite.texture = item.icon 

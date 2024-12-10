@@ -243,7 +243,7 @@ func _on_death_timeout():
 	GlobalState.on_death()
 	
 
-func _on_damage_hitbox_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+func _on_damage_hitbox_body_shape_entered(body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
 	#if GlobalState.DEBUG: print(body_rid,"     ",body)
 	current_tilemap = body
 	var lava_true = false
