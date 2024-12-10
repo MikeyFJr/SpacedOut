@@ -4,18 +4,18 @@
 
 [node name="menu_cutscene" instance=ExtResource("1_tgll1")]
 dialogue_queue = Array[Dictionary]([{
-"speaker": "Stella",
-"text": "And so we find our"
+"speaker": "Narrator",
+"text": "Stella wakes up alone in the spaceship"
 }, {
 "speaker": "Stella",
-"text": "Where am I?"
+"text": "\"What happened...Where am I?\""
 }, {
 "speaker": "Narrator",
-"text": "That one she'll find out soon enough"
+"text": "She sees a note on the dashboard that says ‘You have to find him. It’s the only way to the truth.”"
 }, {
 "speaker": "Stella",
-"text": "Nothing to do but look around then."
+"text": "\"... Ow, I…I can’t remember anything. What was I trying to do? Who was I looking for?\""
 }, {
 "speaker": "Stella",
-"text": "Here we go."
+"text": "\"Well, I guess I’m not going to find any clues here. Let’s see what the outside has to offer…\""
 }])

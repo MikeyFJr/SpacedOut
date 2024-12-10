@@ -3,3 +3,22 @@
 [ext_resource type="PackedScene" uid="uid://ckpdy5x43frkq" path="res://Scenes/UI/menu_cutscene_spaceship.tscn" id="1_iji3t"]
 
 [node name="menu_cutscene" instance=ExtResource("1_iji3t")]
+dialogue_queue = Array[Dictionary]([{
+"speaker": "Stella",
+"text": "\"Good, landed safe and sound.\""
+}, {
+"speaker": "Stella",
+"text": " \"The clues pointed in this direction, which means another part of the truth is here\".  "
+}, {
+"speaker": "Narrator",
+"text": "Outside she sees lava and fire covering a rocky landscape."
+}, {
+"speaker": "Stella",
+"text": "\"Lava?! Why in the Worlds would I need to go here? Well… I can’t give up now\"."
+}, {
+"speaker": "Stella",
+"text": "\"These notes mean something. And the person I’m supposed to find sounded so… afraid\"."
+}, {
+"speaker": "Stella",
+"text": " \"I need to keep going, no matter what.\""
+}])

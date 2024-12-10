@@ -16,7 +16,7 @@
 [ext_resource type="FontFile" uid="uid://dxr2d2lkdafl1" path="res://Assets/Fonts/Anta-Regular.ttf" id="12_fmrgt"]
 [ext_resource type="Resource" uid="uid://dkefluw7p283h" path="res://Assets/Items/Notes/W3_L3_note.tres" id="12_ltksh"]
 [ext_resource type="Theme" uid="uid://bmmkyfpvq8js1" path="res://Scenes/UI/readable_text.tres" id="13_4x7wm"]
-[ext_resource type="Resource" uid="uid://bs5whnoxne8jj" path="res://Assets/Items/Notes/W4_L1_note.tres" id="13_gx2ep"]
+[ext_resource type="Resource" uid="uid://cyk8nbngtuxwc" path="res://Assets/Items/Notes/W4_L1_again.tres" id="14_1axrw"]
 [ext_resource type="Resource" uid="uid://c1pd3pw3uevcc" path="res://Assets/Items/Notes/W4_L3_note.tres" id="14_us2yq"]
 [ext_resource type="Resource" uid="uid://bukdjjaj807ct" path="res://Assets/Items/Notes/W5_L1_note.tres" id="15_dukx2"]
 [ext_resource type="Resource" uid="uid://bdwpwby6188oy" path="res://Assets/Items/Notes/W5_L2_note.tres" id="16_6sfsa"]
@@ -273,8 +273,8 @@ world3_panel_1 = NodePath("Inventory/WorldContainer/World3_items/GridContainer/P
 world3_panel_2 = NodePath("Inventory/WorldContainer/World3_items/GridContainer/PanelContainer2")
 world4_panel_1 = NodePath("Inventory/WorldContainer/World4_items/GridContainer/PanelContainer")
 world4_panel_2 = NodePath("Inventory/WorldContainer/World4_items/GridContainer/PanelContainer2")
-world5_panel_1 = NodePath("Inventory/WorldContainer/World5_items/GridContainer/PanelContainer")
-world5_panel_2 = NodePath("Inventory/WorldContainer/World5_items/GridContainer/PanelContainer2")
+world5_panel_1 = NodePath("Inventory/WorldContainer/World4_items/GridContainer/PanelContainer3")
+world5_panel_2 = NodePath("Inventory/WorldContainer/World4_items/GridContainer/PanelContainer4")
 
 [node name="Menu" type="NinePatchRect" parent="."]
 visible = false
@@ -336,7 +336,7 @@ anchor_bottom = 0.5
 offset_left = 300.0
 offset_top = 162.0
 offset_right = 961.0
-offset_bottom = 606.0
+offset_bottom = 627.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.830966, 0.827951)
@@ -453,11 +453,19 @@ columns = 3
 
 [node name="PanelContainer" parent="Inventory/WorldContainer/World4_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
-item = ExtResource("13_gx2ep")
+item = ExtResource("14_1axrw")
 
 [node name="PanelContainer2" parent="Inventory/WorldContainer/World4_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
 item = ExtResource("14_us2yq")
+
+[node name="PanelContainer3" parent="Inventory/WorldContainer/World4_items/GridContainer" instance=ExtResource("7_2kstn")]
+layout_mode = 2
+item = ExtResource("15_dukx2")
+
+[node name="PanelContainer4" parent="Inventory/WorldContainer/World4_items/GridContainer" instance=ExtResource("7_2kstn")]
+layout_mode = 2
+item = ExtResource("16_6sfsa")
 
 [node name="World5_items" type="VBoxContainer" parent="Inventory/WorldContainer"]
 layout_mode = 2
@@ -474,13 +482,11 @@ custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
 columns = 3
 
-[node name="PanelContainer" parent="Inventory/WorldContainer/World5_items/GridContainer" instance=ExtResource("7_2kstn")]
+[node name="PanelContainer3" parent="Inventory/WorldContainer/World5_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
-item = ExtResource("15_dukx2")
 
-[node name="PanelContainer2" parent="Inventory/WorldContainer/World5_items/GridContainer" instance=ExtResource("7_2kstn")]
+[node name="PanelContainer4" parent="Inventory/WorldContainer/World5_items/GridContainer" instance=ExtResource("7_2kstn")]
 layout_mode = 2
-item = ExtResource("16_6sfsa")
 
 [node name="Description" type="NinePatchRect" parent="Inventory"]
 layout_mode = 1
