@@ -8,6 +8,7 @@ dialogue_queue = Array[Dictionary]([{
 "speaker": "Stella",
 "text": "Maybe the next part of the note is here..?"
 }])
+level = "w3_s2"
 dashes = 3
 hooks = 1
 

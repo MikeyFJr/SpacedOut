@@ -3,3 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://ckpdy5x43frkq" path="res://Scenes/UI/menu_cutscene_spaceship.tscn" id="1_tatef"]
 
 [node name="menu_cutscene" instance=ExtResource("1_tatef")]
+dialogue_queue = Array[Dictionary]([{
+"speaker": "Narrator",
+"text": "This time she lands on something soft."
+}, {
+"speaker": "Narrator",
+"text": "She looks around to find.. nothing?"
+}, {
+"speaker": "Stella",
+"text": "\"Another world, and this time there’s no ground. Is the research facility in the sky?\""
+}, {
+"speaker": "Stella",
+"text": "\"Figures… Whatever it is they’re hiding in there, I’ll uncover it, for you, Dad.\""
+}])

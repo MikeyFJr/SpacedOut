@@ -26,6 +26,7 @@ dialogue_queue = Array[Dictionary]([{
 "speaker": "Stella",
 "text": "And a computer?.."
 }])
+level = "w1_s3"
 boosts = 0
 dashes = 0
 hooks = 0

@@ -81,6 +81,12 @@ var visited = {
 	"w2_s1":false,
 	"w2_s2":false,
 	"w2_s3":false,
+	"w3_s1":false,
+	"w3_s2":false,
+	"w3_s3":false,
+	"w4_s1":false,
+	"w4_s2":false,
+	"w4_s3":false,
 	}  #visited bools. used for seeing intros and not seeing them again
 #	could also be used in a menu of some sort to know if you have visited that planet/scene
 

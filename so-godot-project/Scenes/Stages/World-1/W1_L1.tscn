@@ -147,5 +147,5 @@ tile_map_data = PackedByteArray("AADo/x0AAAAJAAAAAADp/x0AAAAJAAAAAADq/x0AAAAJAAA
 tile_set = ExtResource("14_udlnq")
 
 [node name="Area_exit" parent="." instance=ExtResource("12_sd3y3")]
-position = Vector2(1403, 11)
+position = Vector2(1377, 7)
 destination_scene_path = "res://Scenes/Stages/World-1/W1_L2.tscn"

@@ -6,14 +6,14 @@
 [ext_resource type="Resource" uid="uid://bdwpwby6188oy" path="res://Assets/Items/Notes/W5_L2_note.tres" id="4_bare1"]
 
 [node name="scene_template" instance=ExtResource("1_nxgxp")]
+level = "w4_s3"
 boosts = 1
 
 [node name="Stella" parent="." index="1"]
-position = Vector2(632, 281)
+position = Vector2(39, 147)
 
 [node name="Level Complete" parent="Textbox" index="3"]
 next_level_path = "res://Scenes/UI/menu_planet_select.tscn"
-level_select_path = "res://Scenes/UI/menu_planet_select.tscn"
 
 [node name="Collectable_item" parent="." index="4"]
 position = Vector2(184, 148)

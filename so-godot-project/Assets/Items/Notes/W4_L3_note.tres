@@ -9,7 +9,7 @@ region = Rect2(64, 16, 16, 16)
 
 [resource]
 script = ExtResource("2_1mh0p")
-title = "1/2 of note underwater"
+title = "Note from dad"
 icon = SubResource("AtlasTexture_jva30")
 description = "\"I couldn’t take it. The death. The destruction. I had to put an end to it when they saw you as a threat, too. The resistance started small, with missing notes and small mistakes. But then I grew bolder.\" What did you do, Dad?"
 dialogue = Array[String](["What did you do, Dad?", "What made them so angry they made you disappear? ", "And I still don’t know my place in all of this.", " Either way, I have to continue. The fate of the galaxy is at stake!"])
