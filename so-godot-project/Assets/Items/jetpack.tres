@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://d4dal8vqgs2hn"]
+
+[ext_resource type="Script" path="res://Scenes/UI/item.gd" id="1_5l4xl"]
+[ext_resource type="Texture2D" uid="uid://dxw7ql4fjo8c7" path="res://Assets/Images/Items/jetpack.png" id="1_k08fo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahydn"]
+atlas = ExtResource("1_k08fo")
+
+[resource]
+script = ExtResource("1_5l4xl")
+title = "Jetpack"
+icon = SubResource("AtlasTexture_ahydn")
+description = ""
+dialogue = Array[String](["I can get around so much more now!", "(Shift to boost, hold space after to glide)"])

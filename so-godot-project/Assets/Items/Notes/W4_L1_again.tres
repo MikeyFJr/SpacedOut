@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cyk8nbngtuxwc"]
+
+[ext_resource type="Script" path="res://Scenes/UI/item.gd" id="1_tmjmr"]
+[ext_resource type="Texture2D" uid="uid://dp6unuxh4ego0" path="res://Assets/Images/Items/note-test.png" id="1_wj1h7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuho2"]
+atlas = ExtResource("1_wj1h7")
+
+[resource]
+script = ExtResource("1_tmjmr")
+title = "Note from Dad"
+icon = SubResource("AtlasTexture_uuho2")
+description = "\"I left this for you. Love you Stel\""
+dialogue = Array[String](["Thank you Dad for this.", "Love you too."])

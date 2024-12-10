@@ -11,5 +11,5 @@ region = Rect2(64, 16, 16, 16)
 script = ExtResource("2_kdoy5")
 title = "Loving note."
 icon = SubResource("AtlasTexture_jva30")
-description = "\"A small part of me hopes you don't find this. It's better that way. Stay safe my love.\" "
+description = "\"I hope you don't find this. It's better that way. Stay safe my love.\" "
 dialogue = Array[String](["This feels like I shouldn't have seen this.", "But I can't help but tear up.", "Why?"])
