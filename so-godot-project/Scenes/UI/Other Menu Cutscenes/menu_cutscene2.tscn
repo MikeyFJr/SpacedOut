@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvi5vgkoave62"]
+
+[ext_resource type="PackedScene" uid="uid://ckpdy5x43frkq" path="res://Scenes/UI/menu_cutscene_spaceship.tscn" id="1_iji3t"]
+
+[node name="menu_cutscene" instance=ExtResource("1_iji3t")]

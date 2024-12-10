@@ -9,7 +9,7 @@ region = Rect2(64, 16, 16, 16)
 
 [resource]
 script = ExtResource("2_pqaeh")
-title = "1/2 of Note "
+title = "2/2 of Note "
 icon = SubResource("AtlasTexture_jva30")
 description = "\"..terraform as many planets as they can to fulfill their needs on other colonies. I didn’t know what it all meant back then. I just wanted to research the universe around me, and make a better place. I’m sorry, but I have a hand in this mess. I can only hope that you can fix it.\" "
 dialogue = Array[String](["I don't know if I can fix it all on my own.", "But, if Dad believes in me.. .", "..then I have to believe in myself, too"])

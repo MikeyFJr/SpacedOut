@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://d1w175w82csvn"]
+
+[ext_resource type="Texture2D" uid="uid://dat4axxcvsvw2" path="res://Assets/Images/UI/tray_placeholders.png" id="1_i4upe"]
+[ext_resource type="Script" path="res://Scenes/UI/item.gd" id="2_g4aiv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_082om"]
+atlas = ExtResource("1_i4upe")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_g4aiv")
+title = "Bubble Gun"
+icon = SubResource("AtlasTexture_082om")
+description = ""
+dialogue = Array[String](["What is this? It shoots bubbles?", "(Use E to dash)"])

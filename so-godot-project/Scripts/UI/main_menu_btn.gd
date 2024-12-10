@@ -1,7 +1,7 @@
 extends Button
 
 func _pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/UI/menu_cutscene_spaceship.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/menu_planet_select.tscn")
 #	changes to textbox to show a working textbox. change it back to the other one 
 #for the first scene
 #	changing once we have a real menu screen with planet select + other

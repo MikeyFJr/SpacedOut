@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://defwms232rd26"]
+
+[ext_resource type="PackedScene" uid="uid://ckpdy5x43frkq" path="res://Scenes/UI/menu_cutscene_spaceship.tscn" id="1_tgll1"]
+
+[node name="menu_cutscene" instance=ExtResource("1_tgll1")]
+dialogue_queue = Array[Dictionary]([{
+"speaker": "Stella",
+"text": "And so we find our"
+}, {
+"speaker": "Stella",
+"text": "Where am I?"
+}, {
+"speaker": "Narrator",
+"text": "That one she'll find out soon enough"
+}, {
+"speaker": "Stella",
+"text": "Nothing to do but look around then."
+}, {
+"speaker": "Stella",
+"text": "Here we go."
+}])

@@ -17,6 +17,9 @@ extends Node2D
 @export var dashes: int = 5
 @export var hooks: int = 2
 
+@onready var exit_area = $Area_exit  
+@onready var popup = $Textbox/"Level Complete"
+
 func _ready():
 #	setting the boosts and dashes to the number per scene/level (as when this scene restarts they are given back the same number)
 
@@ -24,6 +27,13 @@ func _ready():
 	GlobalState.dashes_available = dashes
 	GlobalState.grapples_available = hooks
 	
+	if !popup:
+		print("Level complete not found")
+	if !exit_area:
+		print("area exit not found")
+	
+	exit_area.connect("player_entered", _on_exit_area_entered)
+		
 	if !GlobalState.check_visited(level):
 		textbox.show_textbox() 
 		queue_text()
@@ -31,7 +41,10 @@ func _ready():
 		GlobalState.set_visited(level)
 	AudioController.play_game_music()
 	
-	
+func _on_exit_area_entered():
+	if popup:
+		popup.show_popup()
+		
 func queue_text():
 	for line in dialogue_queue:
 		textbox.queue_text([line["text"], line["speaker"]])

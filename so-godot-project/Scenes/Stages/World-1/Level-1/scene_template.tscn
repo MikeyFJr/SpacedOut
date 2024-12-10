@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bxxptc4671sjg"]
+[gd_scene load_steps=15 format=4 uid="uid://bxxptc4671sjg"]
 
 [ext_resource type="Script" path="res://Scripts/Stages/main_w_1_l_1.gd" id="1_y7lsu"]
 [ext_resource type="Texture2D" uid="uid://u2cgca400ftw" path="res://Assets/Images/Backgrounds/underground_background - Copy.png" id="2_gvwkm"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://brht2rcan4mow" path="res://Scenes/UI/textbox.tscn" id="6_rw3yu"]
 [ext_resource type="PackedScene" uid="uid://hth0m8l21bei" path="res://Scenes/UI/open_menu.tscn" id="7_tedt2"]
 [ext_resource type="TileSet" uid="uid://nxxl82gpqgad" path="res://Assets/Images/Tilesets/lab_tiles.tres" id="8_fb148"]
+[ext_resource type="PackedScene" uid="uid://8fu2tevmfx0x" path="res://Scenes/UI/level_complete.tscn" id="8_otnnq"]
 [ext_resource type="PackedScene" uid="uid://c3ciylebfirms" path="res://Scenes/Interactables/collectable_item.tscn" id="9_m4r0y"]
 [ext_resource type="Resource" uid="uid://bwi5q5oqwh2bv" path="res://Assets/Items/Note_1.tres" id="10_jkd13"]
 [ext_resource type="TileSet" uid="uid://bu8rlar1ocwha" path="res://Assets/Images/ground.tres" id="11_kfvus"]
@@ -57,6 +58,9 @@ offset_left = 3.0
 offset_top = 1.0
 offset_right = 3.0
 offset_bottom = 1.0
+
+[node name="Level Complete" parent="Textbox" instance=ExtResource("8_otnnq")]
+visible = false
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("8_fb148")
