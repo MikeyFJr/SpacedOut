@@ -171,7 +171,7 @@ func _physics_process(delta) -> void:
 		GlobalState.grapples_available -= 1
 		if DEBUG: print("Grapple shot, shots availale: ", GlobalState.grapples_available)
 	if GlobalState.grappling:
-		velocity.y = 0
+		velocity.y = -25	
 		if facing_right: # Pulls Stella toward the hookshot head or until she jumps
 			position += transform.x * SPEED * GRAPPLE_SPEED * delta
 		else:
