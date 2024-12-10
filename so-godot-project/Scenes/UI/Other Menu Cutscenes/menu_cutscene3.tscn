@@ -3,3 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://ckpdy5x43frkq" path="res://Scenes/UI/menu_cutscene_spaceship.tscn" id="1_s81jh"]
 
 [node name="menu_cutscene" instance=ExtResource("1_s81jh")]
+dialogue_queue = Array[Dictionary]([{
+"speaker": "Narrator",
+"text": "Stella finds herself landing on an island on a new world."
+}, {
+"speaker": "Stella",
+"text": "\"Finally out of the fire...\""
+}, {
+"speaker": "Narrator",
+"text": "She finally looks out to see water."
+}, {
+"speaker": "Stella",
+"text": "\"Theres no land for miles! Maybe the next secret is underwater....\""
+}, {
+"speaker": "Stella",
+"text": "\"Dad said that there were research facilities in even the darkest places. And what could be darker than the ocean? \""
+}])

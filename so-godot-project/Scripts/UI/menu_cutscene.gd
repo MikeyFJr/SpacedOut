@@ -24,6 +24,7 @@ func _ready():
 	#textbox.queue_text(["And so we find ourselves at a new page","Narrator"])
 	#textbox.queue_text(["Wait who are you?","Stella"])
 	#textbox.queue_text(["Oop. And we continue....","Narrator"])
+	AudioController.play_menu_music()
 	queue_text()
 	textbox.show_textbox() 
 	textbox.connect("text_finished", _on_text_finished)
