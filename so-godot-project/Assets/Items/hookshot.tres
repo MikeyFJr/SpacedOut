@@ -12,4 +12,4 @@ script = ExtResource("2_ofuwe")
 title = "Hookshot"
 icon = SubResource("AtlasTexture_tci2k")
 description = ""
-dialogue = Array[String](["Wow!", "(Use Z to shoot out a hookshot)"])
+dialogue = Array[String](["Wow!", "(Use Q to shoot out a hookshot)"])

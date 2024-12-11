@@ -22,7 +22,7 @@
 script = ExtResource("1_v1pfp")
 level = "w4_s1"
 boosts = 2
-dashes = 3
+dashes = 2
 hooks = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]

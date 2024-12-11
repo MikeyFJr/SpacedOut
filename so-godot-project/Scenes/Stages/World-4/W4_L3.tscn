@@ -6,6 +6,13 @@
 [ext_resource type="Resource" uid="uid://bdwpwby6188oy" path="res://Assets/Items/Notes/W5_L2_note.tres" id="4_bare1"]
 
 [node name="scene_template" instance=ExtResource("1_nxgxp")]
+dialogue_queue = Array[Dictionary]([{
+"speaker": "Stella",
+"text": "Even more of that stuff..."
+}, {
+"speaker": "Stella",
+"text": "But goopier"
+}])
 level = "w4_s3"
 boosts = 1
 

@@ -137,7 +137,7 @@ z_index = 1
 tile_set = ExtResource("10_pynxm")
 
 [node name="Collectable_item" parent="." instance=ExtResource("11_4a7gy")]
-position = Vector2(455, 146)
+position = Vector2(447, 275)
 item = ExtResource("12_rdco6")
 
 [node name="TileMap2" type="TileMap" parent="."]
