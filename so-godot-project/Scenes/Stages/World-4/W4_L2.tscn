@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://2myme1suj58l"]
+[gd_scene load_steps=17 format=4 uid="uid://2myme1suj58l"]
 
 [ext_resource type="Script" path="res://Scripts/Stages/main_w_1_l_1.gd" id="1_v1pfp"]
 [ext_resource type="Texture2D" uid="uid://0ck4adpkbqgv" path="res://Assets/Images/Backgrounds/air-polute_1.png" id="2_i807u"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://u36mbm1jhasr" path="res://Scenes/Characters/stella_main.tscn" id="5_rjxiq"]
 [ext_resource type="PackedScene" uid="uid://brht2rcan4mow" path="res://Scenes/UI/textbox.tscn" id="6_gstu2"]
 [ext_resource type="PackedScene" uid="uid://hth0m8l21bei" path="res://Scenes/UI/open_menu.tscn" id="7_ssnql"]
+[ext_resource type="PackedScene" uid="uid://ojvw7axs385k" path="res://Scenes/UI/hud_tray.tscn" id="8_b02vh"]
 [ext_resource type="TileSet" uid="uid://nxxl82gpqgad" path="res://Assets/Images/Tilesets/lab_tiles.tres" id="8_r5h5d"]
 [ext_resource type="PackedScene" uid="uid://8fu2tevmfx0x" path="res://Scenes/UI/level_complete.tscn" id="9_6d6ho"]
 [ext_resource type="PackedScene" uid="uid://c3ciylebfirms" path="res://Scenes/Interactables/collectable_item.tscn" id="9_bclt0"]
@@ -62,10 +63,12 @@ offset_bottom = 40.0
 texture = ExtResource("5_p8pjy")
 
 [node name="Stella" parent="." instance=ExtResource("5_rjxiq")]
-position = Vector2(46, 156)
+position = Vector2(44, 168)
 
 [node name="Textbox" parent="." instance=ExtResource("6_gstu2")]
 unique_name_in_owner = true
+
+[node name="HUDTray" parent="Textbox" instance=ExtResource("8_b02vh")]
 
 [node name="UI" parent="Textbox" instance=ExtResource("7_ssnql")]
 offset_left = 3.0

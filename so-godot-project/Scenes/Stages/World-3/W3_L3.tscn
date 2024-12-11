@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://bfxr12jpp4eb"]
+[gd_scene load_steps=4 format=4 uid="uid://bfxr12jpp4eb"]
 
 [ext_resource type="PackedScene" uid="uid://dvi73uk66h2dq" path="res://Scenes/Stages/World-3/W3_L1.tscn" id="1_xp207"]
 [ext_resource type="Resource" uid="uid://dkefluw7p283h" path="res://Assets/Items/Notes/W3_L3_note.tres" id="2_j7ljk"]
+[ext_resource type="PackedScene" uid="uid://ojvw7axs385k" path="res://Scenes/UI/hud_tray.tscn" id="2_lgkbf"]
 
 [node name="main_w1_l1" instance=ExtResource("1_xp207")]
 dialogue_queue = Array[Dictionary]([{
@@ -11,7 +12,9 @@ dialogue_queue = Array[Dictionary]([{
 level = "w3_s3"
 dashes = 2
 
-[node name="Level Complete" parent="Textbox" index="2"]
+[node name="HUDTray" parent="Textbox" index="2" instance=ExtResource("2_lgkbf")]
+
+[node name="Level Complete" parent="Textbox" index="3"]
 level_select_path = "res://Scenes/UI/menu_planet_select.tscn"
 
 [node name="Collectable_item" parent="." index="4"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://dw4w4d1sy6aaa"]
+[gd_scene load_steps=8 format=4 uid="uid://dw4w4d1sy6aaa"]
 
 [ext_resource type="PackedScene" uid="uid://bxxptc4671sjg" path="res://Scenes/Stages/World-1/Level-1/scene_template.tscn" id="1_yeih0"]
 [ext_resource type="Texture2D" uid="uid://bsm7dm0c51ngb" path="res://Assets/Images/Backgrounds/lava_world_1.png" id="2_yqbng"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://byhmoxcnv085x" path="res://Assets/Images/Backgrounds/lava_world_3.png" id="4_6ifmm"]
 [ext_resource type="Texture2D" uid="uid://bsj8bsjswhbjp" path="res://Assets/Images/Backgrounds/lava_world_4.png" id="5_2ggmn"]
 [ext_resource type="Resource" uid="uid://xoorqes60b7i" path="res://Assets/Items/Notes/W2_L1_note.tres" id="6_osiqk"]
+[ext_resource type="PackedScene" uid="uid://ojvw7axs385k" path="res://Scenes/UI/hud_tray.tscn" id="6_t4mvi"]
 
 [node name="scene_template" instance=ExtResource("1_yeih0")]
 dialogue_queue = Array[Dictionary]([{
@@ -49,7 +50,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("5_2ggmn")
 
-[node name="Level Complete" parent="Textbox" index="3"]
+[node name="HUDTray" parent="Textbox" index="2" instance=ExtResource("6_t4mvi")]
+
+[node name="Level Complete" parent="Textbox" index="4"]
 next_level_path = "res://Scenes/Stages/World-2/W2_L2.tscn"
 
 [node name="floor" parent="TileMap" index="2"]
