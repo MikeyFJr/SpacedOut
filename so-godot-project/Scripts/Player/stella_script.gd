@@ -154,7 +154,7 @@ func _physics_process(delta) -> void:
 #add in a global var for number of dashes
 		is_dashing = true
 		#can_dash = false
-		direction = sign(horizontal_input)
+		direction = sign(GlobalState.stella_direction)
 		#velocity.x = DASH_VELOCITY
 		dash_duration_timer.start()
 		#GlobalState.dashes_available -= 1
@@ -206,7 +206,7 @@ func _physics_process(delta) -> void:
 
 	# Apply horizontal movement, only if not dashing
 	if is_dashing:
-		velocity.x = direction * SPEED * DASH_SPEED
+		velocity.x = GlobalState.stella_direction * SPEED * DASH_SPEED
 	else:
 		if horizontal_input:
 			velocity.x = horizontal_input * SPEED

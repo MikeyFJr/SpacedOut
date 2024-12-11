@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://bo058dkemrwdn"]
+[gd_scene load_steps=20 format=3 uid="uid://bo058dkemrwdn"]
 
+[ext_resource type="Script" path="res://Scenes/UI/menu_planet_select.gd" id="1_vdhso"]
 [ext_resource type="StyleBox" uid="uid://bseafsidrt7no" path="res://Assets/UI/large_transparent_frame.tres" id="3_gee7v"]
 [ext_resource type="Shader" path="res://FigmaImporter/shader/vertextApplyShader.gdshader" id="3_omn8t"]
 [ext_resource type="Texture2D" uid="uid://dvlq6fxrbvmls" path="res://Assets/UI/images/d962554eca642677d8a3d676e43f01cc5b84dacc.png" id="4_3wkou"]
@@ -10,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://0yvjea676dx0" path="res://Assets/UI/images/2fcf3ccf88fc1337894c680c0239fc446f267b80.png" id="8_k2ti4"]
 [ext_resource type="Texture2D" uid="uid://dkmurrg1jggoi" path="res://Assets/Images/UI/air.png" id="9_6ipft"]
 [ext_resource type="Texture2D" uid="uid://giwhydx2lxlv" path="res://Assets/Images/UI/nothing2.png" id="10_yvjwr"]
-[ext_resource type="LabelSettings" path="res://Scenes/UI/large_label.tres" id="11_tpopy"]
+[ext_resource type="LabelSettings" uid="uid://qfj1oksvgo6h" path="res://Scenes/UI/large_label.tres" id="11_tpopy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tobaq"]
 content_margin_left = 0.0
@@ -93,11 +94,18 @@ font_color = Color(0.956863, 0.956863, 0.454902, 1)
 outline_size = 20
 outline_color = Color(0, 0, 0, 1)
 
-[node name="PlanetSelectScene" type="Control"]
+[node name="PlanetSelectScene" type="Control" node_paths=PackedStringArray("world_1_play", "world_2_play", "world_3_play", "world_4_play", "next_btn", "world_label")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_vdhso")
+world_1_play = NodePath("PlanetSelectFrame/PlanetContainer/main_frame/World1/Button1")
+world_2_play = NodePath("PlanetSelectFrame/PlanetContainer/main_frame/World2/Button2")
+world_3_play = NodePath("PlanetSelectFrame/PlanetContainer/main_frame/World3/Button3")
+world_4_play = NodePath("PlanetSelectFrame/PlanetContainer/main_frame/World4/Button4")
+next_btn = NodePath("PlanetSelectFrame/PlanetContainer/main_frame/NextBtn")
+world_label = NodePath("PlanetSelectFrame/PlanetContainer/main_frame/WorldLabel")
 
 [node name="PlanetSelectFrame" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(736, 494)
