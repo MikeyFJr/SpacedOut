@@ -18,3 +18,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+# world 1 play button pressed function
+func _on_button_w1_pressed() -> void:
+	#Need to add variable and assignments that pass to global state that the current_world is World 1
+	
+	get_tree().change_scene_to_file("res://Scenes/UI/menu_lvl_select_new.tscn") # transition to the world 1 level select
