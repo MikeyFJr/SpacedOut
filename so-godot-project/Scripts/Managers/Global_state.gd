@@ -101,7 +101,7 @@ var visited = {
 	"w4_s1":{"locked": true, "visited": false, "completed": false},
 	"w4_s2":{"locked": true, "visited": false, "completed": false},
 	"w4_s3":{"locked": true, "visited": false, "completed": false},
-}  #visited bools. used for seeing intros and not seeing them again
+	}  #visited bools. used for seeing intros and not seeing them again
 #	could also be used in a menu of some sort to know if you have visited that planet/scene
 
 # functions to modify the visited level dictionary
