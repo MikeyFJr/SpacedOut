@@ -11,6 +11,7 @@ func show_popup():
 	visible = true  
 #	been entered, can change things
 #setting next world to unlocked but not visited
+	GlobalState.paused = true
 	GlobalState.visited[current_level]["completed"] = true
 	GlobalState.visited[current_level]["visited"] = true
 	

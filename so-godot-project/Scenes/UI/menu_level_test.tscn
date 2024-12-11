@@ -1,9 +1,6 @@
-[gd_scene load_steps=20 format=4 uid="uid://cewf06hr6c3ll"]
+[gd_scene load_steps=20 format=4 uid="uid://bq24d2s3tlw2o"]
 
 [ext_resource type="Texture2D" uid="uid://clx7li4ydg16h" path="res://Assets/Images/UI/1-Green_640x360.png" id="1_ji51d"]
-[ext_resource type="Texture2D" uid="uid://dityeqdnydvhb" path="res://Assets/Images/UI/dry_planet.png" id="2_5xc1t"]
-[ext_resource type="Texture2D" uid="uid://bc77ic1iatjqv" path="res://Assets/Images/UI/snow_planet.png" id="3_uq25d"]
-[ext_resource type="Texture2D" uid="uid://d1tamjmife4k" path="res://Assets/Images/UI/earth_ish.png" id="4_cxlgs"]
 [ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="5_0ukia"]
 [ext_resource type="LabelSettings" uid="uid://bx85h0aolsqtl" path="res://Assets/UI/textbox_speaker.tres" id="6_a3h8w"]
 
@@ -1382,6 +1379,15 @@ corner_radius_bottom_left = 20
 [sub_resource type="Theme" id="Theme_ceqy8"]
 Button/styles/normal = null
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xh55l"]
+load_path = "res://.godot/imported/earth_ish.png-fa5a18cdab2aa492dcf519e6bdf146db.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_abxvm"]
+load_path = "res://.godot/imported/snow_planet.png-32f948e8221641f120496db0864ddd90.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5g0fo"]
+load_path = "res://.godot/imported/dry_planet.png-959c7ca70e56ffc8796813507082934e.ctex"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyedd"]
 bg_color = Color(0.904033, 0.463297, 0.135123, 1)
 border_width_left = 12
@@ -1451,7 +1457,7 @@ text = "World 1"
 [node name="EarthIsh" type="Sprite2D" parent="PlanetSelect/CanvasLayer/Panel/PlanetContainer/Control/Button"]
 position = Vector2(83, 77)
 scale = Vector2(1.415, 1.415)
-texture = ExtResource("4_cxlgs")
+texture = SubResource("CompressedTexture2D_xh55l")
 
 [node name="Button2" type="Button" parent="PlanetSelect/CanvasLayer/Panel/PlanetContainer/Control"]
 layout_mode = 2
@@ -1472,7 +1478,7 @@ text = "World 2
 [node name="SnowPlanet" type="Sprite2D" parent="PlanetSelect/CanvasLayer/Panel/PlanetContainer/Control/Button2"]
 position = Vector2(83.625, 77.625)
 scale = Vector2(1.4675, 1.4675)
-texture = ExtResource("3_uq25d")
+texture = SubResource("CompressedTexture2D_abxvm")
 
 [node name="Button3" type="Button" parent="PlanetSelect/CanvasLayer/Panel/PlanetContainer/Control"]
 layout_mode = 2
@@ -1493,7 +1499,7 @@ text = "World 3
 [node name="DryPlanet" type="Sprite2D" parent="PlanetSelect/CanvasLayer/Panel/PlanetContainer/Control/Button3"]
 position = Vector2(82.0001, 75)
 scale = Vector2(1.43375, 1.43375)
-texture = ExtResource("2_5xc1t")
+texture = SubResource("CompressedTexture2D_5g0fo")
 
 [node name="Planet Select text container" type="MarginContainer" parent="PlanetSelect/CanvasLayer"]
 offset_left = 116.0
