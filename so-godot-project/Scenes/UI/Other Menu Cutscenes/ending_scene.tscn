@@ -1,0 +1,178 @@
+[gd_scene load_steps=13 format=3 uid="uid://cn1wmayao1uop"]
+
+[ext_resource type="Script" path="res://ending_scene.gd" id="1_gqihq"]
+[ext_resource type="Texture2D" uid="uid://clx7li4ydg16h" path="res://Assets/Images/UI/1-Green_640x360.png" id="2_et22s"]
+[ext_resource type="StyleBox" uid="uid://bseafsidrt7no" path="res://Assets/UI/large_transparent_frame.tres" id="3_cva1l"]
+[ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="4_1uc1r"]
+[ext_resource type="Shader" path="res://FigmaImporter/shader/vertextApplyShader.gdshader" id="5_rg1oc"]
+[ext_resource type="Texture2D" uid="uid://0yvjea676dx0" path="res://Assets/UI/images/2fcf3ccf88fc1337894c680c0239fc446f267b80.png" id="6_08ucb"]
+[ext_resource type="Texture2D" uid="uid://giwhydx2lxlv" path="res://Assets/Images/UI/nothing2.png" id="7_wshbd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ftn1k"]
+line_spacing = 0.0
+font = ExtResource("4_1uc1r")
+font_size = 50
+font_color = Color(0.956863, 0.796078, 0.454902, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h6m7x"]
+shader = ExtResource("5_rg1oc")
+shader_parameter/use_gradient = false
+shader_parameter/use_image = true
+shader_parameter/use_solid = false
+shader_parameter/gradient_behind = false
+shader_parameter/target_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tolerance = 0.001
+shader_parameter/new_bg_color = Color(0, 0, 0, 0)
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/node_size = Vector2(175, 175)
+shader_parameter/texture_size = Vector2(48, 48)
+shader_parameter/texture_scale = 1.0
+shader_parameter/stretch = Vector2(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/flip_x = false
+shader_parameter/flip_y = false
+shader_parameter/keep_aspect = true
+shader_parameter/fill_rect = true
+shader_parameter/tile_texture = false
+shader_parameter/manual_scale = false
+shader_parameter/image_texture = ExtResource("6_08ucb")
+
+[sub_resource type="LabelSettings" id="LabelSettings_nfjcf"]
+line_spacing = 0.0
+font = ExtResource("4_1uc1r")
+font_size = 100
+font_color = Color(0.69399, 0.396507, 5.77569e-07, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqs0c"]
+bg_color = Color(1, 0.616667, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_rbt24"]
+line_spacing = 0.0
+font = ExtResource("4_1uc1r")
+font_size = 45
+font_color = Color(0, 0, 0, 1)
+
+[node name="ending_scene" type="Control" node_paths=PackedStringArray("return_btn")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gqihq")
+return_btn = NodePath("background/main_frame/Button")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 653.0
+texture = ExtResource("2_et22s")
+
+[node name="main_frame" type="Panel" parent="background"]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 78.0
+offset_right = 1092.0
+offset_bottom = 582.0
+theme_override_styles/panel = ExtResource("3_cva1l")
+
+[node name="Label" type="Label" parent="background/main_frame"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 72.0
+offset_right = 782.0
+offset_bottom = 215.0
+theme_override_font_sizes/font_size = 20
+text = "Stella has discovered the identity of the mysterious \"Who\" - her father!
+Will she be able to reunite with her dad and expose the Empire for their disasterous experiments on these worlds?"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="background/main_frame"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 215.0
+offset_right = 758.0
+offset_bottom = 294.0
+text = "To be continued ..."
+label_settings = SubResource("LabelSettings_ftn1k")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="background/main_frame"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 294.0
+offset_right = 753.0
+offset_bottom = 393.0
+text = "Thanks for playing!
+From Sam, Mikey, Nadia, and Brooke :)"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="background/main_frame"]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 414.0
+offset_right = 610.0
+offset_bottom = 472.0
+text = " Return to Main Menu "
+
+[node name="World5" type="TextureRect" parent="background"]
+material = SubResource("ShaderMaterial_h6m7x")
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 0
+offset_left = -132.0
+offset_top = 97.0
+offset_right = 306.0
+offset_bottom = 542.0
+pivot_offset = Vector2(87.5, 87.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("7_wshbd")
+
+[node name="Label" type="Label" parent="background/World5"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 154.0
+offset_right = 314.0
+offset_bottom = 304.0
+text = "???"
+label_settings = SubResource("LabelSettings_nfjcf")
+
+[node name="TitleTextFrame" type="Panel" parent="background"]
+custom_minimum_size = Vector2(251, 73)
+layout_mode = 0
+offset_left = 352.0
+offset_top = 31.0
+offset_right = 1013.0
+offset_bottom = 132.0
+pivot_offset = Vector2(125.5, 36.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fqs0c")
+
+[node name="TitleLabel" type="Label" parent="background/TitleTextFrame"]
+custom_minimum_size = Vector2(180, 35)
+layout_mode = 0
+offset_left = 36.0
+offset_top = 20.0
+offset_right = 687.0
+offset_bottom = 86.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "World 5 is coming soon!"
+label_settings = SubResource("LabelSettings_rbt24")
+autowrap_mode = 3
+
+[connection signal="pressed" from="background/main_frame/Button" to="." method="_on_button_pressed"]

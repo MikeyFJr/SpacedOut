@@ -20,7 +20,7 @@ boosts = 1
 position = Vector2(39, 156)
 
 [node name="Level Complete" parent="Textbox" index="4"]
-next_level_path = "res://Scenes/UI/menu_planet_select.tscn"
+next_level_path = "res://Scenes/UI/Other Menu Cutscenes/ending_scene.tscn"
 current_level = "w4_s3"
 
 [node name="Collectable_item" parent="." index="4"]
