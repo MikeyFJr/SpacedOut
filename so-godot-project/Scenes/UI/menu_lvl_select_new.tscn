@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://br881gx7l77js"]
+[gd_scene load_steps=19 format=3 uid="uid://br881gx7l77js"]
 
+[ext_resource type="Script" path="res://Scenes/UI/menu_lvl_select_new.gd" id="1_g6knu"]
 [ext_resource type="Texture2D" uid="uid://clx7li4ydg16h" path="res://Assets/Images/UI/1-Green_640x360.png" id="2_omfdm"]
 [ext_resource type="Shader" path="res://FigmaImporter/shader/vertextApplyShader.gdshader" id="4_8wfwg"]
 [ext_resource type="StyleBox" uid="uid://bseafsidrt7no" path="res://Assets/UI/large_transparent_frame.tres" id="4_pqyde"]
@@ -8,7 +9,10 @@
 [ext_resource type="Theme" uid="uid://bmk4r1yn3sjxv" path="res://main_ui_theme.tres" id="7_8nk3r"]
 [ext_resource type="Texture2D" uid="uid://hqglqut8gtvq" path="res://Assets/Images/UI/earth.png" id="7_scn80"]
 [ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="8_fsrue"]
+[ext_resource type="Texture2D" uid="uid://h25qq4fp6xya" path="res://Assets/Images/UI/lava.png" id="9_ifsol"]
 [ext_resource type="StyleBox" uid="uid://cwfevddqpjnio" path="res://Assets/UI/inner_transparent_frame.tres" id="9_l3q1q"]
+[ext_resource type="Texture2D" uid="uid://cwo17qtvr2ckj" path="res://Assets/Images/UI/water2.png" id="10_ap5gl"]
+[ext_resource type="Texture2D" uid="uid://dkmurrg1jggoi" path="res://Assets/Images/UI/air.png" id="11_b2kf5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_koumy"]
 texture = ExtResource("2_omfdm")
@@ -54,11 +58,20 @@ font_size = 25
 font_color = Color(0, 0, 0, 1)
 outline_color = Color(0.000333904, 0.000333904, 0.000333904, 1)
 
-[node name="LevelSelectScene" type="Control"]
+[node name="LevelSelectScene" type="Control" node_paths=PackedStringArray("w1", "w2", "w3", "w4", "level_btn_1", "level_btn_2", "level_btn_3", "go_btn")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_g6knu")
+w1 = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/World1")
+w2 = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/World2")
+w3 = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/World3")
+w4 = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/World4")
+level_btn_1 = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame/LevelBtn_1")
+level_btn_2 = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame/LevelBtn_2")
+level_btn_3 = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame/LevelBtn_3")
+go_btn = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/GoBtn")
 
 [node name="LevelSelectFrame" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(736, 494)
@@ -202,7 +215,8 @@ skew = 0.000429392
 points = PackedVector2Array(-7.00107, -0.992493, 12, 0, 27, 2, 44, 0, 59, -11, 69, -25, 73.9548, -42.0796, 72.9354, -60.0786, 62.9182, -76.0677, 52.9075, -86.057, 38.8956, -97.0419, 21.8838, -108.024, 6.87094, -120.007, -11.142, -131.988, -20.1603, -148.978, -24.1807, -167.974, -20.2012, -186.978, -14.213, -197.985, -4.22052, -204.996, 11.772, -212.013)
 default_color = Color(0, 0, 0, 1)
 
-[node name="World" type="TextureRect" parent="LevelSelectFrame/LevelSelectContainer/main_frame"]
+[node name="World1" type="TextureRect" parent="LevelSelectFrame/LevelSelectContainer/main_frame"]
+visible = false
 material = SubResource("ShaderMaterial_e6da4")
 custom_minimum_size = Vector2(85, 85)
 layout_mode = 0
@@ -215,6 +229,54 @@ pivot_offset = Vector2(42.5, 42.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource("7_scn80")
+stretch_mode = 5
+
+[node name="World2" type="TextureRect" parent="LevelSelectFrame/LevelSelectContainer/main_frame"]
+visible = false
+material = SubResource("ShaderMaterial_e6da4")
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 76.6272
+offset_top = 78.1446
+offset_right = 161.627
+offset_bottom = 163.145
+scale = Vector2(1.24472, 1.24472)
+pivot_offset = Vector2(42.5, 42.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9_ifsol")
+stretch_mode = 5
+
+[node name="World3" type="TextureRect" parent="LevelSelectFrame/LevelSelectContainer/main_frame"]
+visible = false
+material = SubResource("ShaderMaterial_e6da4")
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 76.6272
+offset_top = 78.1446
+offset_right = 161.627
+offset_bottom = 163.145
+scale = Vector2(1.24472, 1.24472)
+pivot_offset = Vector2(42.5, 42.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("10_ap5gl")
+stretch_mode = 5
+
+[node name="World4" type="TextureRect" parent="LevelSelectFrame/LevelSelectContainer/main_frame"]
+visible = false
+material = SubResource("ShaderMaterial_e6da4")
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 0
+offset_left = 76.6272
+offset_top = 78.1446
+offset_right = 161.627
+offset_bottom = 163.145
+scale = Vector2(1.24472, 1.24472)
+pivot_offset = Vector2(42.5, 42.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("11_b2kf5")
 stretch_mode = 5
 
 [node name="GoBtn" type="Button" parent="LevelSelectFrame/LevelSelectContainer/main_frame"]

@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=22 format=3 uid="uid://bmk4r1yn3sjxv"]
+[gd_resource type="Theme" load_steps=23 format=3 uid="uid://bmk4r1yn3sjxv"]
 
 [ext_resource type="FontFile" uid="uid://vvjvxupu72ek" path="res://Assets/Fonts/GajrajOne-Regular.ttf" id="1_rio3c"]
 [ext_resource type="FontFile" uid="uid://dxr2d2lkdafl1" path="res://Assets/Fonts/Anta-Regular.ttf" id="4_0x8ig"]
+[ext_resource type="Texture2D" uid="uid://dlobc5br16nuv" path="res://Assets/UI/buttons/play_arrow_inactive.png" id="5_qj4gw"]
 [ext_resource type="Texture2D" uid="uid://dehsil0gxpyfb" path="res://Assets/UI/buttons/navigate_next_hover.png" id="5_yqiv6"]
 [ext_resource type="Texture2D" uid="uid://dixefkd26mmob" path="res://Assets/UI/buttons/next_btn.png" id="6_3rgie"]
 [ext_resource type="Texture2D" uid="uid://cll7c3wa78buk" path="res://Assets/UI/buttons/play_arrow_alt.png" id="7_gf3rf"]
@@ -94,9 +95,8 @@ texture = ExtResource("6_3rgie")
 region_rect = Rect2(22, 11, 54, 79)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w4pr6"]
-texture = ExtResource("7_gf3rf")
-texture_margin_left = 8.0
-region_rect = Rect2(30, 10, 139, 160)
+texture = ExtResource("5_qj4gw")
+region_rect = Rect2(31, 8, 139, 162)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6sp8m"]
 texture = ExtResource("7_gf3rf")

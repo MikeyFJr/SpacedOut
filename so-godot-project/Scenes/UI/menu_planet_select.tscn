@@ -90,7 +90,7 @@ shader_parameter/image_texture = ExtResource("8_k2ti4")
 line_spacing = 0.0
 font = ExtResource("7_x5okp")
 font_size = 60
-font_color = Color(0.956863, 0.956863, 0.454902, 1)
+font_color = Color(0.69399, 0.396507, 5.77569e-07, 1)
 outline_size = 20
 outline_color = Color(0, 0, 0, 1)
 
@@ -216,6 +216,7 @@ offset_right = 62.0
 offset_bottom = 59.0
 scale = Vector2(7.88159, 7.88159)
 theme_type_variation = &"PlayButton"
+disabled = true
 
 [node name="World3" type="TextureRect" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
 material = SubResource("ShaderMaterial_xiivh")
@@ -238,6 +239,7 @@ offset_right = 61.0001
 offset_bottom = 59.0
 scale = Vector2(7.88159, 7.88159)
 theme_type_variation = &"PlayButton"
+disabled = true
 
 [node name="World4" type="TextureRect" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
 material = SubResource("ShaderMaterial_xiivh")
@@ -260,6 +262,7 @@ offset_right = 60.0
 offset_bottom = 54.0
 scale = Vector2(7.88159, 7.88159)
 theme_type_variation = &"PlayButton"
+disabled = true
 
 [node name="World5" type="TextureRect" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
 material = SubResource("ShaderMaterial_xiivh")
@@ -305,3 +308,5 @@ offset_right = 688.0
 offset_bottom = 463.0
 scale = Vector2(3.79168, 4.37046)
 theme_type_variation = &"NextButton"
+
+[connection signal="pressed" from="PlanetSelectFrame/PlanetContainer/main_frame/World1/Button1" to="." method="_on_button_w1_pressed"]
