@@ -1,6 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://ojvw7axs385k"]
+[gd_scene load_steps=14 format=3 uid="uid://ojvw7axs385k"]
 
+[ext_resource type="Script" path="res://Scenes/UI/hud_tray.gd" id="1_o5wc4"]
 [ext_resource type="Texture2D" uid="uid://dat4axxcvsvw2" path="res://Assets/Images/UI/tray_placeholders.png" id="1_vj871"]
+[ext_resource type="Resource" uid="uid://debvj32tpnexp" path="res://Assets/Items/hookshot.tres" id="3_1o187"]
+[ext_resource type="Script" path="res://Scenes/UI/hud_item.gd" id="3_vgvue"]
+[ext_resource type="Resource" uid="uid://dsuwe0tp1aid8" path="res://Assets/Items/boots_lava.tres" id="5_04ip6"]
+[ext_resource type="Resource" uid="uid://d1w175w82csvn" path="res://Assets/Items/bubble_gun.tres" id="6_qv458"]
+[ext_resource type="Resource" uid="uid://d4dal8vqgs2hn" path="res://Assets/Items/jetpack.tres" id="7_133i0"]
+[ext_resource type="Resource" uid="uid://bwi5q5oqwh2bv" path="res://Assets/Items/Note_1.tres" id="8_i8q11"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xqytl"]
 atlas = ExtResource("1_vj871")
@@ -23,6 +30,7 @@ atlas = ExtResource("1_vj871")
 region = Rect2(64, 0, 16, 16)
 
 [node name="HUDTray" type="CanvasLayer"]
+script = ExtResource("1_o5wc4")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_direction = 2
@@ -48,56 +56,86 @@ layout_mode = 2
 theme_override_constants/v_separation = 9
 columns = 2
 
-[node name="GrappingHook" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="GrapplingHook" type="HBoxContainer" parent="PanelContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_vgvue")
+item = ExtResource("3_1o187")
+
+[node name="Item_Image" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer/VBoxContainer/GrapplingHook"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_xqytl")
 stretch_mode = 5
 
-[node name="HookLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="Item_Label" type="Label" parent="PanelContainer/MarginContainer/GridContainer/VBoxContainer/GrapplingHook"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "∞"
 horizontal_alignment = 1
 
-[node name="LavaBoots" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="LavaBoots" type="HBoxContainer" parent="PanelContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_vgvue")
+item = ExtResource("5_04ip6")
+
+[node name="Item_Image" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer/VBoxContainer/LavaBoots"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_oxopp")
 stretch_mode = 5
 
-[node name="BootsLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="Item_Label" type="Label" parent="PanelContainer/MarginContainer/GridContainer/VBoxContainer/LavaBoots"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
-text = "1"
+text = "∞"
 horizontal_alignment = 1
 
-[node name="BubbleGun" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="BubbleGun" type="HBoxContainer" parent="PanelContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_vgvue")
+item = ExtResource("6_qv458")
+
+[node name="Item_Image" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer/VBoxContainer/BubbleGun"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_31l3n")
 stretch_mode = 5
 
-[node name="GunLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="Item_Label" type="Label" parent="PanelContainer/MarginContainer/GridContainer/VBoxContainer/BubbleGun"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "1"
 horizontal_alignment = 1
 
-[node name="Jetpack" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="Jetpack" type="HBoxContainer" parent="PanelContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_vgvue")
+item = ExtResource("7_133i0")
+
+[node name="Item_Image" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer/VBoxContainer/Jetpack"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_y4yj4")
 stretch_mode = 5
 
-[node name="JetpackLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="Item_Label" type="Label" parent="PanelContainer/MarginContainer/GridContainer/VBoxContainer/Jetpack"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "1"
 horizontal_alignment = 1
 
-[node name="Beam" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="Beam" type="HBoxContainer" parent="PanelContainer/MarginContainer/GridContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_vgvue")
+item = ExtResource("8_i8q11")
+
+[node name="Item_Image" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer/VBoxContainer/Beam"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_vfv10")
 stretch_mode = 5
 
-[node name="BeamLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+[node name="Item_Label" type="Label" parent="PanelContainer/MarginContainer/GridContainer/VBoxContainer/Beam"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "1"

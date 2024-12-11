@@ -1,9 +1,11 @@
 extends Node
 #Global to hold boosts, tracking item pickup, etc
 
-var boosts_available = 10 # Jetpack
-var dashes_available = 10 # Bubble Gun
-var grapples_available = 10 # Grappling Hook
+var boosts_available: set = _set_boosts_available, get = _get_boosts
+var dashes_available: set = _set_dashes_available, get = _get_dashes
+var grapples_available: set = _set_grapples_available, get= _get_grapples
+
+
 var floats_available = 10 # Lava Boots
 var beams_available = 10 # Restoration Beam
 #vary hard coded.....
@@ -14,58 +16,36 @@ var grapple_shot = false # Limits Stella to one grappling hook at a time
 var stella_direction = 1
 #maybe this can be changed at the begginning of each level calling it?
 var paused = false #used to "pause" movement while dialogue happening
-							#since get tree pause() will stop music and i believe process.
+							#since get tree pause() will stop music and i believe process
+							
+func new_item_collected():
+	emit_signal("ability_updated","gen")
+	
+func _set_boosts_available(value: int) -> void:
+	boosts_available = value
+	emit_signal("ability_updated", "Jetpack")
+	
+func _set_dashes_available(value: int) -> void:
+	dashes_available = value
+	emit_signal("ability_updated", "Bubble Gun")
+
+func _set_grapples_available(value: int) -> void:
+	grapples_available = value
+	emit_signal("ability_updated", "Hookshot")
+	
+func _get_boosts():
+	return boosts_available
+func _get_dashes():
+	return dashes_available
+func _get_grapples():
+	return grapples_available
 func setPaused(pause):
 	paused = pause
 	AudioController.set_paused(pause) 
 
 var DEBUG = true
-#tracking item pickup 
-#were using array of items with predefined enum of them so we dont accidentally do it twice.
-#This also means defining them here first
-#it probably would be better a different way, but this works and i am still learning it..
-#enum Items{
-	#test_item1,
-	#test_item2,
-	#test_item3,
-#}
-#items description + dialogue that can be pulled on pickup and menu to see items
 
-#the description would not be said, but read in the menu 
-#var item_data = {
-	#Items.test_item1: { 
-		#"description": "An ancient scroll with unreadable text.", 
-		#"dialogue": [
-			#"I found an old scroll!",
-			#"The symbols on it look strange...",
-			#"Maybe someone can translate this."
-		#] 
-	#},
-	#Items.test_item2: { 
-		#"description": "A small, shiny gem.", 
-		#"dialogue": [
-			#"This gem looks valuable!",
-			#"It feels warm to the touch."
-		#]
-	#},
-	#Items.test_item3: { 
-		#"description": "A mysterious, locked box.", 
-		#"dialogue": [
-			#"Wonder what's inside this box?",
-			#"I need to find a way to open it."
-		#]
-	#}
-#}
-
-
-
-#knowing what world it should be found in. In a seperate part so those can be accessed by themselves
-#var world_items = {
-	#"world_1": [Items.test_item1, Items.test_item2],
-	#"world_2": [Items.test_item3],
-	#"world_3": []
-#}
-#i changed a bit, most of the above might not be needed anymore, but maybe a seperate file for items
+signal ability_updated(ability_name: String)
 
 var collected_items = []
 #boots would be collected into collected items as 

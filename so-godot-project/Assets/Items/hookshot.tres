@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://debvj32tpnexp"]
+
+[ext_resource type="Texture2D" uid="uid://dat4axxcvsvw2" path="res://Assets/Images/UI/tray_placeholders.png" id="1_wbuvv"]
+[ext_resource type="Script" path="res://Scenes/UI/item.gd" id="2_ofuwe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tci2k"]
+atlas = ExtResource("1_wbuvv")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_ofuwe")
+title = "Hookshot"
+icon = SubResource("AtlasTexture_tci2k")
+description = ""
+dialogue = Array[String](["Wow!", "(Use Z to shoot out a hookshot)"])

@@ -143,7 +143,8 @@ func _physics_process(delta) -> void:
 		if DEBUG: print("Boost jump triggered")
 		velocity.y = BOOST_VELOCITY
 		glide_timer.start()
-		GlobalState.boosts_available -= 1
+		#GlobalState.boosts_available -= 1
+		GlobalState._set_boosts_available(GlobalState._get_boosts() - 1)
 		if DEBUG: print("Boosts available ", GlobalState.boosts_available)
 
 	# Dash
@@ -156,7 +157,8 @@ func _physics_process(delta) -> void:
 		direction = sign(horizontal_input)
 		#velocity.x = DASH_VELOCITY
 		dash_duration_timer.start()
-		GlobalState.dashes_available -= 1
+		#GlobalState.dashes_available -= 1
+		GlobalState._set_dashes_available(GlobalState._get_dashes() - 1)
 		if DEBUG: print("Dash triggered, Dashes available ",GlobalState.dashes_available)
 		
 	# Grappling Hook
@@ -168,7 +170,8 @@ func _physics_process(delta) -> void:
 			Hookshot.transform = $Marker2DR.transform
 		elif not facing_right:
 			Hookshot.transform = $Marker2DL.transform
-		GlobalState.grapples_available -= 1
+		#GlobalState.grapples_available -= 1
+		GlobalState._set_grapples_available(GlobalState._get_grapples() - 1)
 		if DEBUG: print("Grapple shot, shots availale: ", GlobalState.grapples_available)
 	if GlobalState.grappling:
 		velocity.y = -25	

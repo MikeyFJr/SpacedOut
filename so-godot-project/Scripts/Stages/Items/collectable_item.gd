@@ -11,7 +11,7 @@
 extends Area2D
 
 # Signals
-signal item_collected(item_description)
+#signal item_collected()
 var DEBUG = false
 
 @export var item : Item
@@ -50,7 +50,7 @@ func collect_item():
 		GlobalState.collected_items.append(item)
 		# signal for collected item (so we could maybe use in hud when we do that ig)
 		#var dialogue_lines = GlobalState.item_data[item]["dialogue"]
-		emit_signal("item_collected")
+		GlobalState.new_item_collected()
 		queue_free() #remove it from scene after collection
 		
 		if textbox:
