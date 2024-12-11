@@ -18,7 +18,7 @@
 [ext_resource type="TileSet" uid="uid://dybep3tv6xkgf" path="res://Assets/Images/Tilesets/damage_tiles.tres" id="14_v00kk"]
 [ext_resource type="PackedScene" uid="uid://bfovs0wwwx56g" path="res://Scenes/Interactables/area_exit.tscn" id="15_88lwq"]
 
-[node name="main_w1_l1" type="Node2D"]
+[node name="main_w1_l3" type="Node2D"]
 script = ExtResource("1_vwvps")
 dialogue_queue = Array[Dictionary]([{
 "speaker": "Stella",
@@ -100,7 +100,7 @@ unique_name_in_owner = true
 
 [node name="Level Complete" parent="Textbox" instance=ExtResource("9_8yb0l")]
 visible = false
-next_level_path = "res://Scenes/Stages/World-1/Level-1/main_w_1_l_2.tscn"
+next_level_path = "res://Scenes/UI/menu_planet_select.tscn"
 level_select_path = "res://Scenes/UI/menu_planet_select.tscn"
 
 [node name="UI" parent="Textbox" instance=ExtResource("9_831v1")]

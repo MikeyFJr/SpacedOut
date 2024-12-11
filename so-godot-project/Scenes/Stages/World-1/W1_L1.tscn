@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dgew2ooi3t3ld"]
+[gd_scene load_steps=18 format=4 uid="uid://dgew2ooi3t3ld"]
 
 [ext_resource type="Script" path="res://Scripts/Stages/main_w_1_l_1.gd" id="1_nbqt6"]
 [ext_resource type="Texture2D" uid="uid://bthodnti15dmu" path="res://Assets/Images/Backgrounds/large_normal_w_1.png" id="2_28d6j"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://brht2rcan4mow" path="res://Scenes/UI/textbox.tscn" id="6_nkm8o"]
 [ext_resource type="PackedScene" uid="uid://hth0m8l21bei" path="res://Scenes/UI/open_menu.tscn" id="7_myy0a"]
 [ext_resource type="TileSet" uid="uid://nxxl82gpqgad" path="res://Assets/Images/Tilesets/lab_tiles.tres" id="8_g7jh6"]
+[ext_resource type="PackedScene" uid="uid://ojvw7axs385k" path="res://Scenes/UI/hud_tray.tscn" id="9_dyeis"]
 [ext_resource type="PackedScene" uid="uid://c3ciylebfirms" path="res://Scenes/Interactables/collectable_item.tscn" id="9_kbfxd"]
 [ext_resource type="PackedScene" uid="uid://8fu2tevmfx0x" path="res://Scenes/UI/level_complete.tscn" id="9_y6ehf"]
 [ext_resource type="TileSet" uid="uid://bu8rlar1ocwha" path="res://Assets/Images/ground.tres" id="11_vrst2"]
@@ -17,7 +18,7 @@
 [ext_resource type="Resource" uid="uid://bu3cdyu6cyb7" path="res://Assets/Items/Notes/W1_L1_note.tres" id="12_sht2g"]
 [ext_resource type="TileSet" uid="uid://dybep3tv6xkgf" path="res://Assets/Images/Tilesets/damage_tiles.tres" id="14_udlnq"]
 
-[node name="main_w1_l1" type="Node2D"]
+[node name="main_w1_l3" type="Node2D"]
 script = ExtResource("1_nbqt6")
 dialogue_queue = Array[Dictionary]([{
 "speaker": "Stella",
@@ -93,6 +94,8 @@ position = Vector2(41, 176)
 
 [node name="Textbox" parent="." instance=ExtResource("6_nkm8o")]
 unique_name_in_owner = true
+
+[node name="HUDTray" parent="Textbox" instance=ExtResource("9_dyeis")]
 
 [node name="Level Complete" parent="Textbox" instance=ExtResource("9_y6ehf")]
 visible = false

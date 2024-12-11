@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://ci1l1bjbur31x"]
+[gd_scene load_steps=18 format=4 uid="uid://ci1l1bjbur31x"]
 
 [ext_resource type="Script" path="res://Scripts/Stages/main_w_1_l_1.gd" id="1_v1pfp"]
 [ext_resource type="Texture2D" uid="uid://0ck4adpkbqgv" path="res://Assets/Images/Backgrounds/air-polute_1.png" id="2_i807u"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://u36mbm1jhasr" path="res://Scenes/Characters/stella_main.tscn" id="5_rjxiq"]
 [ext_resource type="PackedScene" uid="uid://brht2rcan4mow" path="res://Scenes/UI/textbox.tscn" id="6_gstu2"]
 [ext_resource type="PackedScene" uid="uid://hth0m8l21bei" path="res://Scenes/UI/open_menu.tscn" id="7_ssnql"]
+[ext_resource type="PackedScene" uid="uid://ojvw7axs385k" path="res://Scenes/UI/hud_tray.tscn" id="8_7iy78"]
 [ext_resource type="TileSet" uid="uid://nxxl82gpqgad" path="res://Assets/Images/Tilesets/lab_tiles.tres" id="8_r5h5d"]
 [ext_resource type="PackedScene" uid="uid://8fu2tevmfx0x" path="res://Scenes/UI/level_complete.tscn" id="8_y7buo"]
 [ext_resource type="PackedScene" uid="uid://c3ciylebfirms" path="res://Scenes/Interactables/collectable_item.tscn" id="9_bclt0"]
@@ -17,7 +18,7 @@
 [ext_resource type="Resource" uid="uid://cyk8nbngtuxwc" path="res://Assets/Items/Notes/W4_L1_again.tres" id="12_fnati"]
 [ext_resource type="TileSet" uid="uid://dybep3tv6xkgf" path="res://Assets/Images/Tilesets/damage_tiles.tres" id="13_66c1c"]
 
-[node name="scene_template" type="Node2D"]
+[node name="scene_template3" type="Node2D"]
 script = ExtResource("1_v1pfp")
 level = "w4_s1"
 boosts = 2
@@ -67,6 +68,8 @@ position = Vector2(41, 176)
 
 [node name="Textbox" parent="." instance=ExtResource("6_gstu2")]
 unique_name_in_owner = true
+
+[node name="HUDTray" parent="Textbox" instance=ExtResource("8_7iy78")]
 
 [node name="Level Complete" parent="Textbox" instance=ExtResource("8_y7buo")]
 visible = false

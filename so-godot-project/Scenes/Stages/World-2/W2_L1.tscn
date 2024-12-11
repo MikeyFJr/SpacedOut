@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://xoorqes60b7i" path="res://Assets/Items/Notes/W2_L1_note.tres" id="6_osiqk"]
 [ext_resource type="PackedScene" uid="uid://ojvw7axs385k" path="res://Scenes/UI/hud_tray.tscn" id="6_t4mvi"]
 
-[node name="scene_template" instance=ExtResource("1_yeih0")]
+[node name="scene_template4" instance=ExtResource("1_yeih0")]
 dialogue_queue = Array[Dictionary]([{
 "speaker": "Stella",
 "text": "Ahhhhh!"

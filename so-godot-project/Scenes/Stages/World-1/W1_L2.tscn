@@ -18,7 +18,7 @@
 [ext_resource type="Resource" uid="uid://debvj32tpnexp" path="res://Assets/Items/hookshot.tres" id="14_f5hpm"]
 [ext_resource type="TileSet" uid="uid://dybep3tv6xkgf" path="res://Assets/Images/Tilesets/damage_tiles.tres" id="14_udlnq"]
 
-[node name="main_w1_l1" type="Node2D"]
+[node name="main_w1_l2" type="Node2D"]
 script = ExtResource("1_nbqt6")
 dialogue_queue = Array[Dictionary]([{
 "speaker": "Stella",

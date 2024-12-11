@@ -13,7 +13,7 @@ dialogue_queue = Array[Dictionary]([{
 }])
 level = "w2_s2"
 
-[node name="Level Complete" parent="Textbox" index="3"]
+[node name="Level Complete" parent="Textbox" index="4"]
 next_level_path = "res://Scenes/Stages/World-2/W2_L3.tscn"
 
 [node name="Collectable_item" parent="." index="4"]

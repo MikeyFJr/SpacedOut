@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bfovs0wwwx56g" path="res://Scenes/Interactables/area_exit.tscn" id="12_1pa8y"]
 [ext_resource type="TileSet" uid="uid://dybep3tv6xkgf" path="res://Assets/Images/Tilesets/damage_tiles.tres" id="13_66c1c"]
 
-[node name="scene_template" type="Node2D"]
+[node name="scene_template2" type="Node2D"]
 script = ExtResource("1_v1pfp")
 level = "w4_s2"
 boosts = 3
@@ -86,6 +86,7 @@ format = 2
 
 [node name="wall" type="TileMapLayer" parent="TileMap"]
 z_index = -2
+tile_map_data = PackedByteArray("AABXAAoAAAAAAAAAABA=")
 tile_set = ExtResource("8_r5h5d")
 
 [node name="floor" type="TileMapLayer" parent="TileMap"]

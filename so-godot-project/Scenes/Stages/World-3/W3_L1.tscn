@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dvi73uk66h2dq"]
+[gd_scene load_steps=18 format=4 uid="uid://dvi73uk66h2dq"]
 
 [ext_resource type="Script" path="res://Scripts/Stages/main_w_1_l_1.gd" id="1_xhxgf"]
 [ext_resource type="Texture2D" uid="uid://divlfdhcsd04w" path="res://Assets/Images/Backgrounds/l0_sprite_1a.png" id="2_mbpc0"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://brht2rcan4mow" path="res://Scenes/UI/textbox.tscn" id="8_lr1x6"]
 [ext_resource type="PackedScene" uid="uid://8fu2tevmfx0x" path="res://Scenes/UI/level_complete.tscn" id="9_3y0o5"]
 [ext_resource type="PackedScene" uid="uid://hth0m8l21bei" path="res://Scenes/UI/open_menu.tscn" id="9_xuyne"]
+[ext_resource type="PackedScene" uid="uid://ojvw7axs385k" path="res://Scenes/UI/hud_tray.tscn" id="9_yde3g"]
 [ext_resource type="TileSet" uid="uid://nxxl82gpqgad" path="res://Assets/Images/Tilesets/lab_tiles.tres" id="10_pynxm"]
 [ext_resource type="PackedScene" uid="uid://c3ciylebfirms" path="res://Scenes/Interactables/collectable_item.tscn" id="11_4a7gy"]
 [ext_resource type="Resource" uid="uid://3ru3f6mjm3qb" path="res://Assets/Items/Notes/W3_L1_note.tres" id="12_rdco6"]
@@ -94,6 +95,8 @@ position = Vector2(76, 164)
 
 [node name="Textbox" parent="." instance=ExtResource("8_lr1x6")]
 unique_name_in_owner = true
+
+[node name="HUDTray" parent="Textbox" instance=ExtResource("9_yde3g")]
 
 [node name="Level Complete" parent="Textbox" instance=ExtResource("9_3y0o5")]
 visible = false

@@ -3,10 +3,10 @@ extends AudioStreamPlayer
 const menu_music = preload("res://Assets/Audio/menu_loop.mp3")
 const game_music_1 = preload("res://Assets/Audio/game_music1.mp3")
 
-const DEFAULT_VOLUME = -14.0
+const DEFAULT_VOLUME = -20.0
 const DAMPENED_VOLUME = -30.0  # Lower volume for paused state
 
-func play_music(music: AudioStream, volume = -14.0):
+func play_music(music: AudioStream, volume = DEFAULT_VOLUME):
 	if stream == music:
 #		if music of playing, then dont need to do anything
 		return
