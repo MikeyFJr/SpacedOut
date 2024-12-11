@@ -101,7 +101,8 @@ unique_name_in_owner = true
 [node name="Level Complete" parent="Textbox" instance=ExtResource("9_8yb0l")]
 visible = false
 next_level_path = "res://Scenes/UI/menu_planet_select.tscn"
-level_select_path = "res://Scenes/UI/menu_planet_select.tscn"
+current_level = "w1_s3"
+next_level = "w2_s1"
 
 [node name="UI" parent="Textbox" instance=ExtResource("9_831v1")]
 offset_left = 3.0

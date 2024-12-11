@@ -15,6 +15,8 @@ level = "w2_s2"
 
 [node name="Level Complete" parent="Textbox" index="4"]
 next_level_path = "res://Scenes/Stages/World-2/W2_L3.tscn"
+current_level = "w2_s2"
+next_level = "w2_s3"
 
 [node name="Collectable_item" parent="." index="4"]
 position = Vector2(688, 170)

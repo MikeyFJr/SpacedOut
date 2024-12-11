@@ -89,19 +89,19 @@ func get_world_lock(world):
 
 # the visited and completed status of each level
 var visited = {
-	"w1_s1": {"locked": false, "completed": false},
-	"w1_s2":{"locked": true, "completed": false},
-	"w1_s3":{"locked": true, "completed": false},
-	"w2_s1":{"locked": true, "completed": false},
-	"w2_s2":{"locked": true, "completed": false},
-	"w2_s3":{"locked": true, "completed": false},
-	"w3_s1":{"locked": true, "completed": false},
-	"w3_s2":{"locked": true, "completed": false},
-	"w3_s3":{"locked": true, "completed": false},
-	"w4_s1":{"locked": true, "completed": false},
-	"w4_s2":{"locked": true, "completed": false},
-	"w4_s3":{"locked": true, "completed": false},
-	}  #visited bools. used for seeing intros and not seeing them again
+	"w1_s1": {"locked": false, "visited": false, "completed": false},
+	"w1_s2":{"locked": true, "visited": false, "completed": false},
+	"w1_s3":{"locked": true, "visited": false, "completed": false},
+	"w2_s1":{"locked": true, "visited": false, "completed": false},
+	"w2_s2":{"locked": true, "visited": false, "completed": false},
+	"w2_s3":{"locked": true, "visited": false, "completed": false},
+	"w3_s1":{"locked": true, "visited": false, "completed": false},
+	"w3_s2":{"locked": true, "visited": false, "completed": false},
+	"w3_s3":{"locked": true, "visited": false, "completed": false},
+	"w4_s1":{"locked": true, "visited": false, "completed": false},
+	"w4_s2":{"locked": true, "visited": false, "completed": false},
+	"w4_s3":{"locked": true, "visited": false, "completed": false},
+}  #visited bools. used for seeing intros and not seeing them again
 #	could also be used in a menu of some sort to know if you have visited that planet/scene
 
 # functions to modify the visited level dictionary
@@ -110,14 +110,14 @@ func next_level(path):
 	print("Changing scene")
 
 func set_visited(level):
-	if level in visited and visited[level]["locked"] == false:
-		visited[level]["locked"] = true
+	if level in visited and visited[level]["visited"] == false:
+		visited[level]["visited"] = true
 		if DEBUG: print("set",level,"to true")
 	else:
 		if DEBUG: print("level not found or error")
 
 func check_visited(level):
-	return visited[level]["locked"]
+	return visited[level]["visited"]
 	
 func on_death():
 #	if we decide to make it having a "life" system that should be easy enough, for now one hit and it restarts the level

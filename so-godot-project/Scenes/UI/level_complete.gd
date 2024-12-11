@@ -4,8 +4,18 @@ extends CanvasLayer
 @export var next_level_path = "res://Scenes/Stages/World-1/Level-1/scene_template.tscn" #default
 @export var level_select_path = "res://Scenes/UI/menu_lvl_select_new.tscn" #default
 
+@export var current_level = "w1_s1"
+@export var next_level = "w1_s2"
+
 func show_popup():
 	visible = true  
+#	been entered, can change things
+#setting next world to unlocked but not visited
+	GlobalState.visited[current_level]["completed"] = true
+	GlobalState.visited[current_level]["visited"] = true
+	
+	GlobalState.visited[next_level]["locked"] = false
+	
 
 func hide_popup():
 	visible = false  

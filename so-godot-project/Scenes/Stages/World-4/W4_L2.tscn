@@ -79,6 +79,9 @@ offset_bottom = 1.0
 [node name="Level Complete" parent="Textbox" instance=ExtResource("9_6d6ho")]
 visible = false
 next_level_path = "res://Scenes/Stages/World-4/W4_L3.tscn"
+level_select_path = "res://Scenes/UI/w4_level_select_scene.tscn"
+current_level = "w4_s2"
+next_level = "w4_s3"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("8_r5h5d")

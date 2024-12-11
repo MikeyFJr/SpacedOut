@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ckpdy5x43frkq" path="res://Scenes/UI/menu_cutscene_spaceship.tscn" id="1_iji3t"]
 
 [node name="menu_cutscene" instance=ExtResource("1_iji3t")]
+next_scene_path = "res://Scenes/Stages/World-2/W2_L1.tscn"
 dialogue_queue = Array[Dictionary]([{
 "speaker": "Stella",
 "text": "\"Good, landed safe and sound.\""

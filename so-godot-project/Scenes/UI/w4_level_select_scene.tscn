@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bipjlmq0t8u5m"]
+
+[ext_resource type="PackedScene" uid="uid://br881gx7l77js" path="res://Scenes/UI/menu_lvl_select_new.tscn" id="1_cfen4"]
+
+[node name="LevelSelectScene" instance=ExtResource("1_cfen4")]
+level_1 = "res://Scenes/UI/Other Menu Cutscenes/menu_cutscene4.tscn"
+level_2 = "res://Scenes/Stages/World-4/W4_L2.tscn"
+level_3 = "res://Scenes/Stages/World-4/W4_L3.tscn"
+level_1_name = "w4_s1"
+level_2_name = "w4_s2"
+level_3_name = "w4_s3"
+
+[node name="World4" parent="LevelSelectFrame/LevelSelectContainer/main_frame" index="4"]
+visible = true

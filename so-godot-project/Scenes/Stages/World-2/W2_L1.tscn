@@ -54,6 +54,9 @@ texture = ExtResource("5_2ggmn")
 
 [node name="Level Complete" parent="Textbox" index="4"]
 next_level_path = "res://Scenes/Stages/World-2/W2_L2.tscn"
+level_select_path = "res://Scenes/UI/w2_level_select_scene.tscn"
+current_level = "w2_s1"
+next_level = "w2_s2"
 
 [node name="floor" parent="TileMap" index="2"]
 tile_map_data = PackedByteArray()

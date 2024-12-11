@@ -58,19 +58,21 @@ font_size = 25
 font_color = Color(0, 0, 0, 1)
 outline_color = Color(0.000333904, 0.000333904, 0.000333904, 1)
 
-[node name="LevelSelectScene" type="Control" node_paths=PackedStringArray("w1", "w2", "w3", "w4", "level_btn_1", "level_btn_2", "level_btn_3", "go_btn")]
+[node name="LevelSelectScene" type="Control" node_paths=PackedStringArray("level_btn_1", "level_btn_2", "level_btn_3", "go_btn")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_g6knu")
-w1 = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/World1")
-w2 = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/World2")
-w3 = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/World3")
-w4 = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/World4")
 level_btn_1 = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame/LevelBtn_1")
 level_btn_2 = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame/LevelBtn_2")
 level_btn_3 = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame/LevelBtn_3")
+level_1 = "res://Scenes/UI/Other Menu Cutscenes/menu_cutscene_1.tscn"
+level_2 = "res://Scenes/Stages/World-1/W1_L2.tscn"
+level_3 = "res://Scenes/Stages/World-1/W1_L3.tscn"
+level_1_name = "w1_s1"
+level_2_name = "w1_s2"
+level_3_name = "w1_s3"
 go_btn = NodePath("LevelSelectFrame/LevelSelectContainer/main_frame/GoBtn")
 
 [node name="LevelSelectFrame" type="ScrollContainer" parent="."]
@@ -216,7 +218,6 @@ points = PackedVector2Array(-7.00107, -0.992493, 12, 0, 27, 2, 44, 0, 59, -11, 6
 default_color = Color(0, 0, 0, 1)
 
 [node name="World1" type="TextureRect" parent="LevelSelectFrame/LevelSelectContainer/main_frame"]
-visible = false
 material = SubResource("ShaderMaterial_e6da4")
 custom_minimum_size = Vector2(85, 85)
 layout_mode = 0
@@ -282,16 +283,17 @@ stretch_mode = 5
 [node name="GoBtn" type="Button" parent="LevelSelectFrame/LevelSelectContainer/main_frame"]
 custom_minimum_size = Vector2(93, 53)
 layout_mode = 0
-offset_left = 509.0
-offset_top = 308.0
-offset_right = 602.0
-offset_bottom = 366.0
+offset_left = -25.1425
+offset_top = 357.729
+offset_right = 134.858
+offset_bottom = 415.729
+scale = Vector2(0.949687, 1.45974)
 pivot_offset = Vector2(46.5, 26.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource("7_8nk3r")
-text = "Go!"
+text = " Go back "
 
 [node name="text_box" type="Panel" parent="LevelSelectFrame/LevelSelectContainer"]
 layout_mode = 0
@@ -317,3 +319,8 @@ text = "Level Select"
 label_settings = SubResource("LabelSettings_crf4y")
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[connection signal="pressed" from="LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame/LevelBtn_1" to="." method="_on_level_btn_1_pressed"]
+[connection signal="pressed" from="LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame/LevelBtn_2" to="." method="_on_level_btn_2_pressed"]
+[connection signal="pressed" from="LevelSelectFrame/LevelSelectContainer/main_frame/inner_frame/LevelBtn_3" to="." method="_on_level_btn_3_pressed"]
+[connection signal="pressed" from="LevelSelectFrame/LevelSelectContainer/main_frame/GoBtn" to="." method="_on_go_btn_pressed"]

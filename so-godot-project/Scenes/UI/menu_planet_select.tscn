@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://0yvjea676dx0" path="res://Assets/UI/images/2fcf3ccf88fc1337894c680c0239fc446f267b80.png" id="8_k2ti4"]
 [ext_resource type="Texture2D" uid="uid://dkmurrg1jggoi" path="res://Assets/Images/UI/air.png" id="9_6ipft"]
 [ext_resource type="Texture2D" uid="uid://giwhydx2lxlv" path="res://Assets/Images/UI/nothing2.png" id="10_yvjwr"]
-[ext_resource type="LabelSettings" uid="uid://qfj1oksvgo6h" path="res://Scenes/UI/large_label.tres" id="11_tpopy"]
+[ext_resource type="LabelSettings" path="res://Scenes/UI/large_label.tres" id="11_tpopy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tobaq"]
 content_margin_left = 0.0
@@ -104,7 +104,7 @@ world_1_play = NodePath("PlanetSelectFrame/PlanetContainer/main_frame/World1/But
 world_2_play = NodePath("PlanetSelectFrame/PlanetContainer/main_frame/World2/Button2")
 world_3_play = NodePath("PlanetSelectFrame/PlanetContainer/main_frame/World3/Button3")
 world_4_play = NodePath("PlanetSelectFrame/PlanetContainer/main_frame/World4/Button4")
-next_btn = NodePath("PlanetSelectFrame/PlanetContainer/main_frame/NextBtn")
+next_btn = NodePath("PlanetSelectFrame/PlanetContainer/main_frame/Back button")
 world_label = NodePath("PlanetSelectFrame/PlanetContainer/main_frame/WorldLabel")
 
 [node name="PlanetSelectFrame" type="ScrollContainer" parent="."]
@@ -216,7 +216,6 @@ offset_right = 62.0
 offset_bottom = 59.0
 scale = Vector2(7.88159, 7.88159)
 theme_type_variation = &"PlayButton"
-disabled = true
 
 [node name="World3" type="TextureRect" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
 material = SubResource("ShaderMaterial_xiivh")
@@ -239,7 +238,6 @@ offset_right = 61.0001
 offset_bottom = 59.0
 scale = Vector2(7.88159, 7.88159)
 theme_type_variation = &"PlayButton"
-disabled = true
 
 [node name="World4" type="TextureRect" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
 material = SubResource("ShaderMaterial_xiivh")
@@ -262,7 +260,6 @@ offset_right = 60.0
 offset_bottom = 54.0
 scale = Vector2(7.88159, 7.88159)
 theme_type_variation = &"PlayButton"
-disabled = true
 
 [node name="World5" type="TextureRect" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
 material = SubResource("ShaderMaterial_xiivh")
@@ -289,24 +286,28 @@ label_settings = SubResource("LabelSettings_jh8uw")
 [node name="WorldLabel" type="Label" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
 custom_minimum_size = Vector2(129, 47)
 layout_mode = 0
-offset_left = 349.0
+offset_left = 181.0
 offset_top = 431.0
-offset_right = 687.0
-offset_bottom = 519.0
+offset_right = 845.0
+offset_bottom = 607.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "World 1"
+text = "Choose a planet !"
 label_settings = ExtResource("11_tpopy")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="NextBtn" type="Button" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
+[node name="Back button" type="Button" parent="PlanetSelectFrame/PlanetContainer/main_frame"]
 layout_mode = 0
-offset_left = 678.0
-offset_top = 453.0
-offset_right = 688.0
-offset_bottom = 463.0
-scale = Vector2(3.79168, 4.37046)
-theme_type_variation = &"NextButton"
+offset_left = -14.0
+offset_top = 481.0
+offset_right = 136.0
+offset_bottom = 539.0
+scale = Vector2(1.32675, 1.52927)
+text = "Go back"
 
 [connection signal="pressed" from="PlanetSelectFrame/PlanetContainer/main_frame/World1/Button1" to="." method="_on_button_w1_pressed"]
+[connection signal="pressed" from="PlanetSelectFrame/PlanetContainer/main_frame/World2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="PlanetSelectFrame/PlanetContainer/main_frame/World3/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="PlanetSelectFrame/PlanetContainer/main_frame/World4/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="PlanetSelectFrame/PlanetContainer/main_frame/Back button" to="." method="_on_back_button_pressed"]

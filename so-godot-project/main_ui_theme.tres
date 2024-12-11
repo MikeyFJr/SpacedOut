@@ -60,8 +60,8 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 anti_aliasing_size = 0.239
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7f42"]
-bg_color = Color(0.396078, 0.623529, 0.513726, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85v1p"]
+bg_color = Color(0.436462, 0.364904, 0.537671, 1)
 border_width_left = 1
 border_width_top = 2
 border_width_right = 1
@@ -73,8 +73,8 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 anti_aliasing_size = 0.239
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85v1p"]
-bg_color = Color(0.180392, 0.454902, 0.439216, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7f42"]
+bg_color = Color(0.396078, 0.623529, 0.513726, 1)
 border_width_left = 1
 border_width_top = 2
 border_width_right = 1
@@ -130,8 +130,10 @@ Label/fonts/font = ExtResource("1_rio3c")
 LevelButton/base_type = &"button"
 LevelButton/font_sizes/font_size = 9
 LevelButton/styles/disabled = SubResource("StyleBoxFlat_41hu7")
+LevelButton/styles/hover = SubResource("StyleBoxFlat_85v1p")
 LevelButton/styles/normal = SubResource("StyleBoxFlat_y7f42")
 LevelButton/styles/normal_visited = SubResource("StyleBoxFlat_85v1p")
+LevelButton/styles/pressed = SubResource("StyleBoxFlat_85v1p")
 LineEdit/fonts/font = ExtResource("4_0x8ig")
 NextButton/base_type = &"Button"
 NextButton/styles/hover = SubResource("StyleBoxTexture_ik1uc")
@@ -139,8 +141,10 @@ NextButton/styles/normal = SubResource("StyleBoxTexture_s2its")
 NextButton/styles/pressed = SubResource("StyleBoxTexture_ik1uc")
 PlayButton/base_type = &"Button"
 PlayButton/styles/disabled = SubResource("StyleBoxTexture_w4pr6")
+PlayButton/styles/hover = SubResource("StyleBoxTexture_6sp8m")
 PlayButton/styles/hover_pressed = SubResource("StyleBoxTexture_6sp8m")
 PlayButton/styles/normal = SubResource("StyleBoxTexture_8gher")
+PlayButton/styles/pressed = SubResource("StyleBoxTexture_6sp8m")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.27451)
 RichTextLabel/constants/shadow_offset_x = 2

@@ -14,6 +14,7 @@ position = Vector2(39, 156)
 
 [node name="Level Complete" parent="Textbox" index="4"]
 next_level_path = "res://Scenes/UI/menu_planet_select.tscn"
+current_level = "w4_s3"
 
 [node name="Collectable_item" parent="." index="4"]
 position = Vector2(184, 148)

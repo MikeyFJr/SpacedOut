@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var textbox = $Textbox 
-@export var next_scene_path = "res://Scenes/Stages/World-1/Level-1/main_w_1_l_1.tscn"
+@export var next_scene_path = "res://Scenes/Stages/World-1/W1_L1.tscn"
 #change this in the inspector NOT in this GD script. this is default and meant to be changed
 @export var dialogue_queue : Array[Dictionary] = [
 	{"text": "Whoa....", "speaker": "Stella"},

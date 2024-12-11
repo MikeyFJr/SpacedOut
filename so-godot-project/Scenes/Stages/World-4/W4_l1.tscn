@@ -74,6 +74,9 @@ unique_name_in_owner = true
 [node name="Level Complete" parent="Textbox" instance=ExtResource("8_y7buo")]
 visible = false
 next_level_path = "res://Scenes/Stages/World-4/W4_L2.tscn"
+level_select_path = "res://Scenes/UI/w4_level_select_scene.tscn"
+current_level = "w4_s1"
+next_level = "w4_s2"
 
 [node name="UI" parent="Textbox" instance=ExtResource("7_ssnql")]
 offset_left = 3.0
