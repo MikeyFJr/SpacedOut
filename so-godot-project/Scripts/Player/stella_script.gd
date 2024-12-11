@@ -203,7 +203,7 @@ func _physics_process(delta) -> void:
 
 	# Apply horizontal movement, only if not dashing
 	if is_dashing:
-		velocity.x = direction * SPEED * DASH_SPEED
+		velocity.x = GlobalState.stella_direction * SPEED * DASH_SPEED
 	else:
 		if horizontal_input:
 			velocity.x = horizontal_input * SPEED
