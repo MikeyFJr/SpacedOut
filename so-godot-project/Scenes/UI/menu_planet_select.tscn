@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://0yvjea676dx0" path="res://Assets/UI/images/2fcf3ccf88fc1337894c680c0239fc446f267b80.png" id="8_k2ti4"]
 [ext_resource type="Texture2D" uid="uid://dkmurrg1jggoi" path="res://Assets/Images/UI/air.png" id="9_6ipft"]
 [ext_resource type="Texture2D" uid="uid://giwhydx2lxlv" path="res://Assets/Images/UI/nothing2.png" id="10_yvjwr"]
-[ext_resource type="LabelSettings" path="res://Scenes/UI/large_label.tres" id="11_tpopy"]
+[ext_resource type="LabelSettings" uid="uid://qfj1oksvgo6h" path="res://Scenes/UI/large_label.tres" id="11_tpopy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tobaq"]
 content_margin_left = 0.0
