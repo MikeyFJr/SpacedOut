@@ -5,6 +5,8 @@
 **Welcome to Spaced Out!** 
 In this game, you play as Stella, an astronaut with amnesia. When she wakes up on a planet she doesn't recognize and a mysterious note, she ventures on a journey to regain her memory and find the source of these notes. Little does she know, the truth may reveal more than she bargained for...
 
+Play the current build on the game on itch.io [here!](https://appledcrab.itch.io/spaced-out)
+
 ## Table of Contents
 - [Features](#features)
 - [Technology Stack](#technology-stack)
